@@ -1,0 +1,21 @@
+nav{
+    position: fixed;
+    top: 0;
+    padding: 10px 3vw;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.logo > h1{
+    font-size: 35px;
+    font-weight: 500;
+    color: white;
+}
+
+.logo > p{
+    display: block;
+    letter-spacing: 6px;
+    color: black;
+    font-weight: 800;
+}
