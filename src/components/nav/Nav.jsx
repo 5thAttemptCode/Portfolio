@@ -6,8 +6,12 @@ export default function Nav() {
   return (
     <nav>
         <div className="logo">
-            <h1>HENRY</h1>
-            <p>CODES</p>
+            <div className="triangle">
+              <div className="triangle-inner"></div>
+            </div>
+            <div className="name">
+              <p>H3NRY</p>
+            </div>
         </div>
     </nav>
   )

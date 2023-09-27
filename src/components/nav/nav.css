@@ -1,21 +1,66 @@
 nav{
     position: fixed;
     top: 0;
-    padding: 10px 3vw;
+    padding: 1.2vw 2.4vw;
     display: flex;
     justify-content: space-between;
     z-index: 10;
 }
 
-.logo > h1{
-    font-size: 35px;
-    font-weight: 500;
-    color: white;
+.logo{
+    display: flex;
+    gap: 5px;
 }
 
-.logo > p{
-    display: block;
-    letter-spacing: 6px;
-    color: black;
-    font-weight: 800;
+.name{
+    overflow: hidden;
+}
+
+.name:hover > p{
+    transform: translateX(-100%);
+}
+
+.name > p{
+    position: relative;
+    transition: all 0.25s ease-in-out;
+}
+
+.name > p::after{
+    content: 'H3NRY';
+    position: absolute;
+    transform: translateX(0%);
+}
+
+.name > p, .name > p::after{
+    font-size: clamp(1.5625rem, 0.7813rem + 2.5vw, 2.1875rem);
+    background: linear-gradient(to left, #38bdf8, #9e5ae1);
+    /* background: linear-gradient(to left, #1C7CE0, #150051); */
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: 700;
+}
+
+.triangle{
+    height: 30px;
+    aspect-ratio: 1;
+    background: linear-gradient(to right, #38bdf8, #c084fc);
+    clip-path: polygon(100% 0, 10% 50%, 100% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    margin-top: 10px;
+}
+
+.triangle-inner{
+    height: 60%;
+    aspect-ratio: 1;
+    clip-path: polygon(100% 0, 10% 50%, 100% 100%);
+    margin-left: 5px;
+    background: black;
+}   
+
+.logo:hover .triangle{
+    rotate: -90deg;
 }
