@@ -1,15 +1,12 @@
-nav{
-    position: fixed;
-    top: 0;
-    padding: 1.2vw 2.4vw;
-    display: flex;
-    justify-content: space-between;
-    z-index: 10;
-}
 
 .logo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1rem 2rem;
     display: flex;
     gap: 5px;
+    z-index: 10;
 }
 
 .name{
@@ -64,3 +61,19 @@ nav{
 .logo:hover .triangle{
     rotate: -90deg;
 }
+
+.info{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 1rem 2rem;
+    display: grid;
+    text-align: right;
+    z-index: 100;
+}
+
+.info > a{
+    text-decoration: none;
+    color: white;
+}
+
