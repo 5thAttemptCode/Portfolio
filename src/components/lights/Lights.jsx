@@ -4,7 +4,7 @@ import React from 'react'
 export default function Lights() {
   return (
     <>
-       <Environment resolution={1024}>
+       <Environment resolution={512}>
           {/* Ceiling */}
           <Lightformer intensity={1} rotation-x={Math.PI / 2} position={[0, 4, -9]} scale={[100, 1, 1]} />
           <Lightformer intensity={1} rotation-x={Math.PI / 2} position={[0, 4, -6]} scale={[100, 1, 1]} />
