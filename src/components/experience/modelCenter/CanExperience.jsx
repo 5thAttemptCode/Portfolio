@@ -8,7 +8,7 @@ import Triangles from '../../triangles/Triangles'
 
 export default function CanExperience() {
 
-  const [cameraPosition, setCameraPosition] = useState([0, 0, 9])
+  const [cameraPosition, setCameraPosition] = useState([0, 0.1, 9])
   
   return (
     <>
@@ -20,7 +20,7 @@ export default function CanExperience() {
         cellThickness={0.6} 
         sectionSize={3} 
         sectionThickness={1.6} 
-        sectionColor="grey" 
+        sectionColor="grey"
         fadeDistance={20} 
       />
       <ContactShadows 
@@ -33,23 +33,42 @@ export default function CanExperience() {
       <hemisphereLight intensity={1.3} />
       <Lights />
 
-      <Html rotation-y={4.5} position={[-1.3, 0.2, -0.3]} transform occlude>
+      <Html rotation-y={4.4} position={[-1.25, 0.58, -0.5]} transform occlude>
         <div className="annotation">
-          <a href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>LIVE</a>
-          <a href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>CODE</a>
+          <a className='live' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>LIVE</a>
+          <a className='code' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>CODE</a>
         </div>
       </Html>
 
-      <Html rotation-y={4.5} position={[-1.3, -0.5, -0.3]} transform occlude>
+      <Html rotation-y={4.4} position={[-1.25, -0.25, -0.5]} transform occlude>
         <div className="annotation">
-          <a href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>LIVE</a>
-          <a href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>CODE</a>
+          <a className='live' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>LIVE</a>
+          <a className='code' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>CODE</a>
+        </div>
+      </Html>
+
+      <Html rotation-y={3.6} position={[-0.55, 0.58, -1.24]} transform occlude>
+        <div className="annotation">
+          <a className='live' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>LIVE</a>
+          <a className='code' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>CODE</a>
+        </div>
+      </Html>
+
+      <Html rotation-y={3.6} position={[-0.55, -0.25, -1.24]}  transform occlude>
+        <div className="annotation">
+          <a className='live' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>LIVE</a>
+          <a className='code' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>CODE</a>
         </div>
       </Html>
 
 
       <Center>
-        <CanLabel castShadow rotation-y={3.12} />
+        <CanLabel 
+          castShadow 
+          rotation-y={3.12} 
+          onPointerEnter={ () => {document.body.style.cursor = "grab"}}
+          onPointerLeave={ () => {document.body.style.cursor = "default"}}
+        />
         {/* <Can /> */}
         
       </Center>
