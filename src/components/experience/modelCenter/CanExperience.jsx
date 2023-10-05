@@ -4,6 +4,7 @@ import { Can } from '../../can/Can'
 import { Center, Grid, ContactShadows, PerspectiveCamera, Html } from '@react-three/drei'
 import Lights from '../../lights/Lights'
 import Triangles from '../../triangles/Triangles'
+import Annotation from '../../annotations/Annotation'
 
 
 export default function CanExperience() {
@@ -29,39 +30,9 @@ export default function CanExperience() {
         scale={15} blur={0.5} 
         opacity={1}
       />
-
       <hemisphereLight intensity={1.3} />
       <Lights />
-
-      <Html rotation-y={4.4} position={[-1.25, 0.58, -0.5]} transform occlude>
-        <div className="annotation">
-          <a className='live' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>LIVE</a>
-          <a className='code' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>CODE</a>
-        </div>
-      </Html>
-
-      <Html rotation-y={4.4} position={[-1.25, -0.25, -0.5]} transform occlude>
-        <div className="annotation">
-          <a className='live' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>LIVE</a>
-          <a className='code' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>CODE</a>
-        </div>
-      </Html>
-
-      <Html rotation-y={3.6} position={[-0.55, 0.58, -1.24]} transform occlude>
-        <div className="annotation">
-          <a className='live' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>LIVE</a>
-          <a className='code' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>CODE</a>
-        </div>
-      </Html>
-
-      <Html rotation-y={3.6} position={[-0.55, -0.25, -1.24]}  transform occlude>
-        <div className="annotation">
-          <a className='live' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>LIVE</a>
-          <a className='code' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>CODE</a>
-        </div>
-      </Html>
-
-
+      <Annotation />
       <Center>
         <CanLabel 
           castShadow 
@@ -70,17 +41,8 @@ export default function CanExperience() {
           onPointerLeave={ () => {document.body.style.cursor = "default"}}
         />
         {/* <Can /> */}
-        
       </Center>
-
-      {/* <Html position={[5, 2, 0]}>
-        <div className="menu">
-          <li onClick={() => setCameraPosition([-6.88, 0.67, -5.77])}>PROJECTS</li>
-          <li onClick={() => setCameraPosition([7.81, 0.67, -4.43])}>ABOUT</li>
-          <li onClick={() => setCameraPosition([7.78, -0.74, -4.46])}>CONTACT</li>
-        </div>
-      </Html> */}
-
+      
       {/* <Triangles /> */}
     </>
   )
