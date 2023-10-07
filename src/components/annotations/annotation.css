@@ -1,37 +1,43 @@
-.annotation{
-    width: 37px;
-    height: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: transparent;
+.annotation-wrapper{
+  margin-top: 270px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.annotation > a{
-  font-size: 5px;
-  width: 17px;
-  border-radius: 50px;
+.annotation-wrapper > .annotation{
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+}
+
+.annotation-wrapper > .annotation > a{
+  color: black;
+  border: 2px solid black;
   transition: all 0.2s;
+}
+
+.annotation-wrapper > .annotation > a:hover{
+  border: 2px solid white;
+  scale: 1.05;
+}
+
+.annotation-wrapper > .annotation > .live{
+  background: linear-gradient(to right, #38bdf8, #c084fc);
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-weight: 800;
+}
+
+.annotation-wrapper > .annotation > .code{
+  background: white;
+  height: 35px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  font-family: Helvetica Neue;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
-  color: black;
-  font-weight: 500;
-  font-size: 5px;
-  padding-block: 1px;
-  font-family: Helvetica Neue;
-}
-
-.annotation > a:hover{
-  border: 1px solid #38bdf8;
-}
-
-.live{
-  background: linear-gradient(to right, #38bdf8, #c084fc);
-}
-
-.code{
-  background: white;
-  margin-left: 2px;
+  padding-bottom: 3px;
 }
