@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { CanLabel } from '../../can/CanLabel'
 import { Can } from '../../can/Can'
-import { Center, Grid, ContactShadows, PerspectiveCamera, Html } from '@react-three/drei'
+import { Center, Grid, ContactShadows, PerspectiveCamera, Lightformer } from '@react-three/drei'
 import Lights from '../../lights/Lights'
 import Triangles from '../../triangles/Triangles'
 import Annotation from '../../annotations/Annotation'
+import ContactButton from '../../contactButtons/ContactButton'
 
 
 export default function CanExperience() {
@@ -30,19 +31,21 @@ export default function CanExperience() {
         scale={15} blur={0.5} 
         opacity={1}
       />
-      <hemisphereLight intensity={1.3} />
+      <hemisphereLight intensity={1} />
       <Lights />
+
       <Annotation />
+      <ContactButton />
+
       <Center>
         <CanLabel 
-          castShadow 
+          castShadow
           rotation-y={3.12} 
           onPointerEnter={ () => {document.body.style.cursor = "grab"}}
           onPointerLeave={ () => {document.body.style.cursor = "default"}}
         />
         {/* <Can /> */}
       </Center>
-      
       {/* <Triangles /> */}
     </>
   )
