@@ -1,0 +1,33 @@
+.contact-wrapper{
+    height: 60px;
+    width: 60px;
+    background: linear-gradient(to right, #38bdf8, #c084fc);
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 1.5px;
+    transition: all 0.2s;
+}
+
+.contact-wrapper > a{
+    height: 100%;
+    width: 100%;
+}
+
+.contact-wrapper:hover{
+    box-shadow: 0 -0.5px 10px 5px #ffffff;
+    border: 2px solid white;
+}
+
+.contact-wrapper > a > img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.mail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
