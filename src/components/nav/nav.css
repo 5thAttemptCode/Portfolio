@@ -31,7 +31,6 @@
 .name > p, .name > p::after{
     font-size: clamp(1.5625rem, 0.7813rem + 2.5vw, 2.1875rem);
     background: linear-gradient(to left, #38bdf8, #9e5ae1);
-    /* background: linear-gradient(to left, #1C7CE0, #150051); */
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
@@ -58,18 +57,20 @@
     background: black;
 }   
 
-.logo:hover .triangle{
-    rotate: -90deg;
+.menu{
+    z-index: 100;
 }
 
 .info{
     position: fixed;
-    bottom: 0;
-    right: 0;
+    top: 15%;
     padding: 1rem 2rem;
+    right: 0;
     display: grid;
     text-align: right;
     z-index: 100;
+    font-size: 16px;
+    padding-block: 10px 20px;
 }
 
 .info > a{
@@ -77,3 +78,7 @@
     color: white;
 }
 
+.menu li:hover,
+.info > a:hover{
+    text-decoration: underline;
+}
