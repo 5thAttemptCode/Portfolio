@@ -1,0 +1,109 @@
+.overlay{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgb(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    padding-inline: 10px;
+}
+
+.overlay > .close{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    height: 30px;
+    aspect-ratio: 1;
+    rotate: 45deg;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.overlay > .close::after,
+.overlay > .close::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+}
+
+.overlay > .close::after{
+    height: 4px;
+    width: 100%;
+}
+
+.overlay > .close::before{
+    width: 4px;
+    height: 100%;
+}
+
+.overlay > .modal{
+    height: 80%;
+    min-width: 320px;
+    width: 350px;
+    background: rgb(0, 0, 43);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid white;
+    color: white;
+}
+
+.overlay > .modal > h1{
+    margin-bottom: 20px;
+}
+
+.overlay > .modal > form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.overlay > .modal > form > input[type="text"], 
+.overlay > .modal > form > input[type="email"], 
+.overlay > .modal > form > textarea{
+    background: none;
+    border: none;
+    border-bottom: 1px solid grey;
+    color: white;
+    padding: 5px;
+    width: 100%;
+}
+
+.overlay > .modal > form > textarea{
+    resize: none;
+    height: 180px;
+}
+
+.overlay > .modal > form > input[type="submit"] {
+    cursor: pointer;
+    background: linear-gradient(to right, #38bdf8, #c084fc);
+    color: black;
+    border: 2px solid black;
+    font-weight: 700;
+    font-size: 17px;
+    width: 50%;
+    padding-block: 10px;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.overlay > .modal > form > input[type="submit"]:hover {
+    border: 2px solid white;
+    box-shadow: 0 -0.5px 10px 5px rgb(255, 255, 255, 0.5);
+}
+
+.overlay > .modal > div{
+    margin-top: 40px;
+    display: grid;
+    gap: 5px;
+}
