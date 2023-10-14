@@ -5,8 +5,9 @@ const CameraContext = createContext()
 
 export const CameraProvider = ({ children }) => {
     const [ cameraPosition, setCameraPosition ] = useState([0, 0.1, 9])
+    const [ modalOpen, setModalOpen ] = useState(false)
 
-    return <CameraContext.Provider value={{ cameraPosition, setCameraPosition }}>
+    return <CameraContext.Provider value={{ cameraPosition, setCameraPosition, modalOpen, setModalOpen }}>
                 {children}
             </CameraContext.Provider>
         }
