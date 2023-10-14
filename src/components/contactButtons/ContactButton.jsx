@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import "./contactButton.css"
 import { Html } from '@react-three/drei'
+import { useConfigurator } from '../../context/Context'
 
 export default function ContactButton() {
+
   const [hidden, set] = useState()
+  const { modalOpen, setModalOpen } = useConfigurator()
 
   return (
     <>
@@ -17,10 +20,12 @@ export default function ContactButton() {
         style={{
           transition: 'all 0.5s',
           opacity: hidden ? 0 : 1,
-          transform: `scale(${hidden ? 0.5 : 1})`
+          transform: `scale(${hidden ? 0.5 : 1})`,
+          display: modalOpen ? "none" : "block",
+          pointerEvents: modalOpen ? "none" : "auto",
           }}
       >
-        <div className="contact-wrapper mail">
+        <div onClick={() => setModalOpen(true)} className="contact-wrapper mail">
           ✉️
         </div>
       </Html>
@@ -35,12 +40,14 @@ export default function ContactButton() {
         style={{
           transition: 'all 0.5s',
           opacity: hidden ? 0 : 1,
-          transform: `scale(${hidden ? 0.5 : 1})`
+          transform: `scale(${hidden ? 0.5 : 1})`,
+          display: modalOpen ? "none" : "block",
+          pointerEvents: modalOpen ? "none" : "auto",
           }}
       >
         <div className="contact-wrapper">
           <a href="#">
-            <img src="../../public/github-black.png" alt="" />
+            <img src="../../public/Logos/github-black.png" alt="" />
           </a>
         </div>
       </Html>
@@ -55,12 +62,14 @@ export default function ContactButton() {
         style={{
           transition: 'all 0.5s',
           opacity: hidden ? 0 : 1,
-          transform: `scale(${hidden ? 0.5 : 1})`
+          transform: `scale(${hidden ? 0.5 : 1})`,
+          display: modalOpen ? "none" : "block",
+          pointerEvents: modalOpen ? "none" : "auto",
           }}
       >
         <div className="contact-wrapper">
           <a href="#">
-            <img src="../../public/linkedin.png" alt="" />
+            <img src="../../public/Logos/linkedin.png" alt="" />
           </a>
         </div>
       </Html>
