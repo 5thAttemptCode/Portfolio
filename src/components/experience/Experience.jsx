@@ -4,7 +4,8 @@ import { OrbitControls } from '@react-three/drei'
 import CanExperience from './modelCenter/CanExperience'
 import { LoadingScreen } from '../loadingScreen/LoadingScreen';
 import { Perf } from 'r3f-perf';
-import Menu from '../nav/Menu';
+import Nav from '../nav/Nav';
+import Modal from '../modal/Modal';
 
 
 export default function Experience() {
@@ -14,7 +15,7 @@ export default function Experience() {
   return (
     <div className="canvas">
 
-      <Canvas>
+      <Canvas shadows>
         <Perf position="bottom-left" />
         <OrbitControls 
           enablePan={false} 
@@ -27,7 +28,8 @@ export default function Experience() {
         </Suspense>
       </Canvas> 
       
-      <Menu />
+      <Nav />
+      <Modal />
       <LoadingScreen 
         started={start}  
         onStarted={() => setStart(true)} 
