@@ -15,12 +15,12 @@
 .annotation-wrapper > .annotation > a{
   color: black;
   border: 2px solid black;
-  transition: all 0.2s;
+  transition: all 0.1s;
 }
 
 .annotation-wrapper > .annotation > a:hover{
   border: 2px solid white;
-  scale: 1.05;
+  box-shadow: 0 -0.5px 10px 5px #ffffff;
 }
 
 .annotation-wrapper > .annotation > .live{
