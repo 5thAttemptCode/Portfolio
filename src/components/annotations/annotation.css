@@ -13,25 +13,25 @@
 }
 
 .annotation-wrapper > .annotation > a{
-  color: black;
-  border: 2px solid black;
+  color: var(--darkColor);
+  border: 2px solid var(--darkColor);
   transition: all 0.1s;
 }
 
 .annotation-wrapper > .annotation > a:hover{
-  border: 2px solid white;
-  box-shadow: 0 -0.5px 10px 5px #ffffff;
+  border: 2px solid var(--lightColor);
+  box-shadow: 0 -0.5px 10px 5px var(--lightColor);
 }
 
 .annotation-wrapper > .annotation > .live{
-  background: linear-gradient(to right, #38bdf8, #c084fc);
+  background: var(--gradient);
   padding: 5px 20px;
   border-radius: 20px;
   font-weight: 800;
 }
 
 .annotation-wrapper > .annotation > .code{
-  background: white;
+  background: var(--lightColor);
   height: 35px;
   aspect-ratio: 1;
   border-radius: 50%;

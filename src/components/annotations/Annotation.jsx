@@ -5,6 +5,7 @@ import { useConfigurator } from '../../context/Context'
 
 
 export default function Annotation() {
+  
   const [hidden, set] = useState()
   const {modalOpen} = useConfigurator()
 
@@ -20,7 +21,7 @@ export default function Annotation() {
           style={{
             transition: 'all 0.5s',
             opacity: hidden ? 0 : 1,
-            transform: `scale(${hidden ? 0.5 : 1})`,
+            transform: `scale(${hidden ? 0 : 1})`,
             display: modalOpen ? "none" : "block",
             pointerEvents: modalOpen ? "none" : "auto",
             }}
