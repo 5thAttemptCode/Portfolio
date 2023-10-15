@@ -1,84 +1,95 @@
-
-.logo{
+.nav-item{
     position: fixed;
-    top: 0;
-    left: 0;
-    padding: 1rem 2rem;
-    display: flex;
-    gap: 5px;
     z-index: 10;
+    padding: clamp(0.8125rem, -0.0469rem + 2.75vw, 1.5rem) clamp(1.1875rem, 0.1719rem + 3.25vw, 2rem);
 }
 
-.name{
+/*_____________________________________*/
+.logo{
+    top: 0;
+    left: 0;
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.logo > .name{
     overflow: hidden;
 }
 
-.name:hover > p{
-    transform: translateX(-100%);
-}
-
-.name > p{
+.logo > .name > p{
     position: relative;
     transition: all 0.25s ease-in-out;
+    line-height: 1;
 }
 
-.name > p::after{
+.logo > .name > p::after{
     content: 'H3NRY';
     position: absolute;
     transform: translateX(0%);
 }
 
-.name > p, .name > p::after{
+.logo > .name > p, 
+.logo > .name > p::after{
     font-size: clamp(1.5625rem, 0.7813rem + 2.5vw, 2.1875rem);
-    background: linear-gradient(to left, #38bdf8, #9e5ae1);
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
     font-weight: 700;
+    background: var(--gradientLogo);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }
 
-.triangle{
-    height: 30px;
-    aspect-ratio: 1;
-    background: linear-gradient(to right, #38bdf8, #c084fc);
-    clip-path: polygon(100% 0, 10% 50%, 100% 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.2s;
-    margin-top: 10px;
+.logo > .name:hover > p{
+    transform: translateX(-100%);
 }
 
-.triangle-inner{
-    height: 60%;
-    aspect-ratio: 1;
-    clip-path: polygon(100% 0, 10% 50%, 100% 100%);
-    margin-left: 5px;
-    background: black;
+.logo > .nav-triangle{
+    height: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
+    margin-top: clamp(0.125rem, 0.0469rem + 0.25vw, 0.1875rem);
+}
+
+.logo > .nav-triangle > .nav-triangle-inner{
+    margin-left: clamp(0.1875rem, 0.0313rem + 0.5vw, 0.3125rem);
 }   
 
+/*_____________________________________*/
 .menu{
-    z-index: 100;
+    top: 0;
+    right: 0;
+    text-align: right;
+  }
+  
+.menu > p{
+    font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
 }
 
+/*_____________________________________*/
 .info{
-    position: fixed;
-    top: 15%;
-    padding: 1rem 2rem;
+    top: clamp(6.875rem, 5.3125rem + 5vw, 8.125rem);
     right: 0;
     display: grid;
     text-align: right;
-    z-index: 100;
-    font-size: 16px;
-    padding-block: 10px 20px;
+    font-size: clamp(0.75rem, 0.4375rem + 1vw, 1rem);
+    padding-top: 0;
 }
 
+.menu > p,
+.info > p,
 .info > a{
-    text-decoration: none;
-    color: white;
+    color: var(--lightColor);
+    cursor: pointer;
 }
 
-.menu li:hover,
+.menu > p:hover,
+.info > p:hover,
 .info > a:hover{
     text-decoration: underline;
+}
+
+/*_____________________________________*/
+@media (max-width: 450px){
+    .menu > p > span,
+    .info{
+        display: none;
+    }
 }
