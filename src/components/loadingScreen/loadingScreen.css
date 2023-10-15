@@ -1,35 +1,26 @@
-.loadingScreen {
+.loading-screen {
   position: fixed;
   top: 0;
   height: 100vh;
   width: 100%;
-  background: black;
+  background: var(--background);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity 3s;
-  z-index: 100;
+  z-index: 1000;
+  transition-delay: 1.5s;
 }
 
-.loadingScreen--started{
+.loading-screen--started{
   opacity: 0;
   pointer-events: none;
 }
 
 .loading-triangle{
-  height: 300px;
-  aspect-ratio: 1;
-  background: linear-gradient(to right, #38bdf8, #c084fc);
-  clip-path: polygon(100% 0, 10% 50%, 100% 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: clamp(6.25rem, -9.375rem + 50vw, 18.75rem);
 }
 
 .loading-triangle-inner{
-  height: 60%;
-  aspect-ratio: 1;
-  clip-path: polygon(100% 0, 10% 50%, 100% 100%);
-  margin-left: 50px;
-  background: black;
+  margin-left: clamp(1.04375rem, -1.5578rem + 8.325vw, 3.125rem);
 } 

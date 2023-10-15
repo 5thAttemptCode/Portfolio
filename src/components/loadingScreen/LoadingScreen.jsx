@@ -14,9 +14,9 @@ export const LoadingScreen = ({ started, onStarted }) => {
  }, [progress, onStarted]);
 
  return (
-    <div className={`loadingScreen ${started ? "loadingScreen--started" : ""}`}>
-      <div className="loading-triangle">
-         <div className="loading-triangle-inner"></div>
+    <div className={`loading-screen ${started ? "loading-screen--started" : ""}`}>
+      <div className="loading-triangle triangle">
+         <div className="loading-triangle-inner triangle-inner"></div>
       </div>
     </div>
  );
