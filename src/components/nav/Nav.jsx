@@ -5,24 +5,24 @@ import { useConfigurator } from '../../context/Context'
 
 export default function Nav() {
 
-  const { setCameraPosition } = useConfigurator()
   const { setModalOpen } = useConfigurator()
+  const { setCameraPosition } = useConfigurator()
   
   return (
     <>
-      <div className="logo nav-item" onClick={() => setCameraPosition([0, 0.1, 9])} >
+      <div className="logo nav-item">
         <div className="nav-triangle triangle">
           <div className="nav-triangle-inner triangle-inner"></div>
         </div>
-        <div className="name">
-          <p>H3NRY</p>
+        <div className="name" >
+          <p onClick={() => setCameraPosition([-0.04, 1.28, 8.82])}>H3ENRY</p>
         </div>
       </div>
 
       <div className="menu nav-item">
         <p onClick={() => setCameraPosition([-6.61, 2.11, -5.73])}>PROJECTS</p>
         <p onClick={() => setCameraPosition([7.06, 1.57, -5.31])}>ABOUT</p>
-        <p onClick={() => setCameraPosition([6.89, 0.67, -5.75])}>CONTACT <span>🡣</span></p>
+        <p onClick={() => setCameraPosition([6.89, 0.67, -5.75])}>CONTACT</p>
       </div>
 
       <div className="info nav-item">
