@@ -5,19 +5,21 @@ import { useProgress } from "@react-three/drei";
 
 export const LoadingScreen = ({ started, onStarted }) => {
 
- const { progress } = useProgress();
+   const { progress } = useProgress();
 
- useEffect(() => {
-    if (progress >= 100) {
-      onStarted();
-    }
- }, [progress, onStarted]);
+   useEffect(() => {
+      if (progress >= 100) {
+         onStarted();
+      }
+   }, [progress, onStarted]);
 
- return (
-    <div className={`loading-screen ${started ? "loading-screen--started" : ""}`}>
-      <div className="loading-triangle triangle">
-         <div className="loading-triangle-inner triangle-inner"></div>
+   return (
+      <div className={`loading-screen ${started ? "loading-screen--started" : ""}`}>
+         <div className="bar">
+            <div className="load">
+               LOADING... LOADING... LOADING... LOADING...
+            </div>
+         </div>
       </div>
-    </div>
- );
-};
+   )
+}

@@ -11,13 +11,16 @@ function Contact(props){
 
   return(
     <Html
+      onPointerEnter={ () => {document.body.style.cursor = "grab"}}
+      onPointerLeave={ () => {document.body.style.cursor = "default"}}
       position={props.position}
       rotation-y={props.rotation}
-      occlude
-      transform 
       distanceFactor={3}
+      transform 
+      occlude
       onOcclude={set}
       style={{
+        transition: 'all 0.2s',
         opacity: hidden ? 0 : 1,
         transform: `scale(${hidden ? 0 : 1})`,
         display: modalOpen ? "none" : "block",

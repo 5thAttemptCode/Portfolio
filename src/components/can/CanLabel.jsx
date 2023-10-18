@@ -9,7 +9,7 @@ import { useGLTF } from '@react-three/drei'
 export function CanLabel(props) {
   const { nodes, materials } = useGLTF('/canLabel.gltf')
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} receiveShadow>
       <mesh geometry={nodes['Can-main'].geometry} material={materials['Material.002']} position={[-0.004, 3.471, -0.29]} rotation={[Math.PI, 0, Math.PI]} scale={[-1.324, -2.473, -1.324]} />
       <mesh geometry={nodes['Can-top'].geometry} material={materials['Material.002']} position={[0, 5.857, -0.289]} rotation={[Math.PI, 0, Math.PI]} />
       <mesh geometry={nodes['Can-label'].geometry} material={materials['Material.003']} position={[0, 3.471, -0.289]} scale={[-1.324, -2.473, -1.324]} />

@@ -1,29 +1,43 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { CanLabel } from '../../can/CanLabel'
-import { Can } from '../../can/Can'
-import { Center, ContactShadows, PerspectiveCamera, useTexture } from '@react-three/drei'
+import { Center, ContactShadows, PerspectiveCamera } from '@react-three/drei'
+import { useConfigurator } from '../../../context/Context'
+import { useThree } from '@react-three/fiber'
+import { useSpring, animated, config } from '@react-spring/three'
 import Lights from '../../lights/Lights'
-import Triangles from '../../triangles/Triangles'
 import Annotation from '../../annotations/Annotation'
 import ContactButton from '../../contactButtons/ContactButton'
 import Floor from '../../floor/Floor'
-import { useConfigurator } from '../../../context/Context'
+import Triangles from '../../triangles/Triangles'
+
+
+const AnimatedPerspectiveCamera = animated(PerspectiveCamera);
 
 
 export default function CanExperience() {
 
-  const {cameraPosition} = useConfigurator()
+  //Responsive
+  const { viewport } = useThree()
+  const onMobile = window.innerWidth < 930
+
+  // Configurator context
+  const { cameraPosition } = useConfigurator()
+
+  // Camera animation
+  const springProps = useSpring({
+    loop: false,
+    config: config.slow,
+    from: { position: [-15, 10, 50] },
+    to: { position: cameraPosition }
+  });
+
 
   return (
     <>
-      <PerspectiveCamera position={cameraPosition} fov={36} makeDefault />
-      <Floor />
-      <Lights />
-      <ContactShadows 
-        resolution={1024} 
-        position={[0, -2.41, 0]} 
-        scale={15} blur={0.5} 
-        opacity={1}
+      <AnimatedPerspectiveCamera 
+        makeDefault 
+        fov={onMobile ? 44 : 38} 
+        {...springProps} 
       />
 
       <Center>
@@ -34,12 +48,19 @@ export default function CanExperience() {
           onPointerEnter={ () => {document.body.style.cursor = "grab"}}
           onPointerLeave={ () => {document.body.style.cursor = "default"}}
         />
-        {/* <Can /> */}
       </Center>
 
+      <Floor />
+      <Lights />
       <Annotation />
       <ContactButton />
-
+      <ContactShadows 
+        resolution={256} 
+        position={[0, -2.41, 0]} 
+        scale={15}
+        blur={0.3} 
+        opacity={0.8}
+      />
       {/* <Triangles /> */}
     </>
   )

@@ -1,9 +1,21 @@
+:root{
+    --grey: #4f4f4f;
+    --blue: #2e70ff;
+    --blueLighter: rgba(46,112,255,0.65);
+    --boxShadowBlue: rgba(46,112,255,0.54);
+    --boxShadowBlueLow: rgba(46,112,255,0.3);
+}
+
+::placeholder{
+    color: var(--grey);
+}
+
 .overlay{
     position: fixed;
     top: 0;
     height: 100vh;
     width: 100%;
-    background: rgb(0, 0, 0, 0.3);
+    background: rgb(7, 7, 7, 0.5);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
@@ -12,11 +24,12 @@
     padding-inline: 10px;
 }
 
+/*_____________________________________*/
 .overlay > .close{
     position: fixed;
     top: 30px;
     right: 30px;
-    height: 30px;
+    height: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
     aspect-ratio: 1;
     rotate: 45deg;
     display: flex;
@@ -33,50 +46,78 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
+    background: var(--lightColor);
+}
+
+.overlay > .close:hover::after,
+.overlay > .close:hover::before{
+    background: var(--blue);
 }
 
 .overlay > .close::after{
-    height: 4px;
+    height: clamp(0.1875rem, 0.1094rem + 0.25vw, 0.25rem);
     width: 100%;
 }
 
 .overlay > .close::before{
-    width: 4px;
+    width: clamp(0.1875rem, 0.1094rem + 0.25vw, 0.25rem);
     height: 100%;
 }
 
+/*_____________________________________*/
 .overlay > .modal{
-    height: 80%;
+    position: relative;
     min-width: 320px;
     width: 350px;
-    background: rgb(0, 0, 43);
+    background: var(--darkColor);
     border-radius: 10px;
     padding: 20px;
-    border: 1px solid white;
-    color: white;
+    border: 1px solid var(--grey);
+    color: var(--grey);
+    transition: all 0.2s;
+}
+
+.overlay > .modal:hover{
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    -webkit-box-shadow: -1px 1px 92px -8px var(--boxShadowBlue);
+    -moz-box-shadow: -1px 1px 92px -8px var(--boxShadowBlue);
+    box-shadow: -1px 1px 92px -8px var(--boxShadowBlue);
+}
+
+.overlay > .modal:hover ::placeholder{
+    color: var(--blueLighter);
 }
 
 .overlay > .modal > h1{
     margin-bottom: 20px;
 }
 
+/*_____________________________________*/
 .overlay > .modal > form{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    transition: all 0.2s;
 }
 
-.overlay > .modal > form > input[type="text"], 
-.overlay > .modal > form > input[type="email"], 
-.overlay > .modal > form > textarea{
+.overlay > .modal > form > .form-input{
     background: none;
     border: none;
-    border-bottom: 1px solid grey;
-    color: white;
+    border-bottom: 1px solid var(--grey);
+    color: var(--lightColor);
     padding: 5px;
     width: 100%;
+}
+
+.overlay > .modal:hover > form > .form-input{
+    border-bottom: 1px solid var(--blueLighter);
+}
+
+.overlay > .modal:hover > form > .form-input:focus{
+    outline: none;
+    border-bottom: 1px solid var(--blue);
 }
 
 .overlay > .modal > form > textarea{
@@ -84,11 +125,11 @@
     height: 180px;
 }
 
-.overlay > .modal > form > input[type="submit"] {
+.overlay > .modal > form > .submit {
     cursor: pointer;
-    background: linear-gradient(to right, #38bdf8, #c084fc);
-    color: black;
-    border: 2px solid black;
+    background: var(--gradient);
+    color: var(--darkColor); 
+    border: 2px solid var(--darkColor);
     font-weight: 700;
     font-size: 17px;
     width: 50%;
@@ -97,13 +138,33 @@
     transition: all 0.2s;
 }
 
-.overlay > .modal > form > input[type="submit"]:hover {
-    border: 2px solid white;
+.overlay > .modal > form > .submit:hover {
+    border: 2px solid var(--lightColor);
     box-shadow: 0 -0.5px 10px 5px rgb(255, 255, 255, 0.5);
 }
 
+
+/*_____________________________________*/
 .overlay > .modal > div{
     margin-top: 40px;
     display: grid;
     gap: 5px;
 }
+
+.overlay > .modal > div > a{
+    color: var(--grey);
+    transition: all 0.2s;
+}
+
+.overlay > .modal:hover > div > a{
+    color: var(--blue);
+}
+
+.overlay > .modal > div > a:hover{
+    text-decoration: underline;
+}
+
+.overlay > .modal > div > p{
+    user-select:text;
+}
+

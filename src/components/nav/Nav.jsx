@@ -15,7 +15,7 @@ export default function Nav() {
           <div className="nav-triangle-inner triangle-inner"></div>
         </div>
         <div className="name" >
-          <p onClick={() => setCameraPosition([-0.04, 1.28, 8.82])}>H3ENRY</p>
+          <p onClick={() => setCameraPosition([-0.04, 1.28, 8.82])}>H3NRY</p>
         </div>
       </div>
 

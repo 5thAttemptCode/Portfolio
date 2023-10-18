@@ -1,11 +1,11 @@
 import React, { Suspense, useState } from 'react'
 import { Canvas} from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
-import CanExperience from './modelCenter/CanExperience'
 import { LoadingScreen } from '../loadingScreen/LoadingScreen';
-import { Perf } from 'r3f-perf';
+import CanExperience from './modelCenter/CanExperience'
 import Nav from '../nav/Nav';
 import Modal from '../modal/Modal';
+import { Perf } from 'r3f-perf';
 
 
 export default function Experience() {
@@ -14,7 +14,6 @@ export default function Experience() {
  
   return (
     <div className="canvas">
-
       <Canvas shadows>
         <Perf position="bottom-left" />
         <OrbitControls 
@@ -34,8 +33,7 @@ export default function Experience() {
         started={start}  
         onStarted={() => setStart(true)} 
       />
-
     </div>
   )
- }
+}
  

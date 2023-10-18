@@ -4,9 +4,9 @@ import { Grid, MeshReflectorMaterial, useTexture } from '@react-three/drei'
 
 export default function Floor() {
 
-    const [ roughness, normal] = useTexture(["../../public/Textures/Roughness.jpg", "../../public/Textures/Normal.jpg"])
+  const [ roughness, normal] = useTexture(["../../public/Textures/Roughness.jpg", "../../public/Textures/Normal.jpg"])
   
-    return (
+  return (
     <>
       <Grid 
         renderOrder={-1} 
@@ -15,15 +15,20 @@ export default function Floor() {
         cellThickness={0.6} 
         sectionSize={3} 
         sectionThickness={1.6} 
-        sectionColor="#ff00ff"
+        sectionColor="blue"
         fadeDistance={20} 
       />
-      <mesh castShadow receiveShadow position-y={-2.45} rotation-x={Math.PI / -2}>
+      <mesh 
+        castShadow 
+        receiveShadow 
+        position-y={-2.45} 
+        rotation-x={Math.PI / -2}
+      >
         <planeGeometry args={[30, 30]} />
         <MeshReflectorMaterial 
           envMapIntensity={0}
           color={[0.001, 0.003, 0.015]}
-          roughness={0.7}
+          roughness={0.2}
           roughnessMap={roughness}
           normalMap={normal}
           blur={[1000, 400]}

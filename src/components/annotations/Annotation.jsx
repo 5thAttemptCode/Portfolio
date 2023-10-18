@@ -6,20 +6,22 @@ import { useConfigurator } from '../../context/Context'
 
 export default function Annotation() {
   
-  const [hidden, set] = useState()
-  const {modalOpen} = useConfigurator()
+  const [ hidden, set ] = useState()
+  const { modalOpen } = useConfigurator()
 
   return (
     <>
         <Html 
-          position={[-0.8, 0.96, -1.15]} 
+          onPointerEnter={ () => {document.body.style.cursor = "grab"}}
+          onPointerLeave={ () => {document.body.style.cursor = "default"}}
+          position={[-0.75, 0.96, -1.12]} 
           rotation-y={3.7} 
           distanceFactor={3}
           transform 
-          occlude   
+          occlude
           onOcclude={set}
           style={{
-            transition: 'all 0.5s',
+            transition: 'all 0.2s',
             opacity: hidden ? 0 : 1,
             transform: `scale(${hidden ? 0 : 1})`,
             display: modalOpen ? "none" : "block",
@@ -29,11 +31,11 @@ export default function Annotation() {
           <div className="annotation-wrapper">
             <div className="annotation zleep">
               <a className='live' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>LIVE</a>
-              <a className='code' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>&lt;/&gt;</a>
+              <a className='code' href='https://github.com/5thAttemptCode/React_R3F_Full-project_ZLEEP/tree/main/src' target='_blank'>&lt;/&gt;</a>
             </div>
             <div className="annotation sneaker-headz">
               <a className='live' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>LIVE</a>
-              <a className='code' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>&lt;/&gt;</a>
+              <a className='code' href='https://github.com/5thAttemptCode/React_Firebase_Full-project_SneakerHeadz/tree/main/src' target='_blank'>&lt;/&gt;</a>
             </div>
             <div className="annotation dough-boyz">
               <a className='live' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>LIVE</a>
@@ -41,7 +43,7 @@ export default function Annotation() {
             </div>
             <div className="annotation coffe-inc">
               <a className='live' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>LIVE</a>
-              <a className='code' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>&lt;/&gt;</a>
+              <a className='code' href='https://github.com/5thAttemptCode/React_R3F_Firebase_Full-project_CoffeeInc/tree/main/src' target='_blank'>&lt;/&gt;</a>
             </div>
           </div>
         </Html>
