@@ -8,7 +8,7 @@ import Lights from '../../lights/Lights'
 import Annotation from '../../annotations/Annotation'
 import ContactButton from '../../contactButtons/ContactButton'
 import Floor from '../../floor/Floor'
-import Triangles from '../../triangles/Triangles'
+import Clouds from '../../clouds/Clouds'
 
 
 const AnimatedPerspectiveCamera = animated(PerspectiveCamera);
@@ -27,10 +27,9 @@ export default function CanExperience() {
   const springProps = useSpring({
     loop: false,
     config: config.slow,
-    from: { position: [-15, 10, 50] },
+    from: { position: [-20, 10, 50] },
     to: { position: cameraPosition }
   });
-
 
   return (
     <>
@@ -61,7 +60,9 @@ export default function CanExperience() {
         blur={0.3} 
         opacity={0.8}
       />
-      {/* <Triangles /> */}
+
+      <Clouds />
+
     </>
   )
 }
