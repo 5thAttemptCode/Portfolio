@@ -1,59 +1,100 @@
 import React, { useRef,  useState  } from 'react'
-import { Canvas, useFrame } from "@react-three/fiber"
+import { useFrame } from "@react-three/fiber"
 import { Cloud } from "@react-three/drei"
 import * as random from "maath/random"
+import * as THREE from "three"
 
 
-export default function Clouds() {
+export default function Clouding() {
 
   return (
     <>
-      <group>
-        <Cloud seed={20} scale={1} color="#444" position={[3, 12, -25]} />
-        <Cloud seed={20} scale={1} color="#444" position={[-3, 12, -25]} />
-        <Cloud seed={20} scale={1} color="#444" position={[10, 12, -25]} />
-        <Cloud seed={20} scale={1} color="#444" position={[-10, 12, -25]} />
+      <group position={[30, 12, -40]}>
+        <LightningCloud />
+        <LightningCloud />
+        <LightningCloud />
+        <LightningCloud />
       </group>
-      <group>
-        <Cloud scale={1} color="#444" position={[3, 12, 25]} />
-        <Cloud scale={1} color="#444" position={[-3, 12, 25]} />
-        <Cloud scale={1} color="#444" position={[10, 12, 25]} />
-        <Cloud scale={1} color="#444" position={[-10, 12, 25]} />
+      <group position={[-20, 15, -50]}>
+        <LightningCloud />
+        <LightningCloud />
+        <LightningCloud />
+        <LightningCloud />
       </group>
-
-      <group>
-        <Cloud scale={1} color="#444" position={[6, 12, 12]} />
-        <Cloud scale={1} color="#444" position={[-6, 12, 12]} />
-        <Cloud scale={1} color="#444" position={[15, 12, 12]} />
-        <Cloud scale={1} color="#444" position={[-15, 12, 12]} />
+      <group position={[0, 17, 50]}>
+        <LightningCloud />
+        <LightningCloud />
+        <LightningCloud />
+        <LightningCloud />
       </group>
-
-      <group>
-        <Cloud scale={1} color="#444" position={[6, 12, -12]} />
-        <Cloud scale={1} color="#444" position={[-6, 12, -12]} />
-        <Cloud scale={1} color="#444" position={[15, 12, -12]} />
-        <Cloud scale={1} color="#444" position={[-15, 12, -12]} />
+      <group position={[-40, 15, 50]}>
+        <LightningCloud />
+        <LightningCloud />
+        <LightningCloud />
+        <LightningCloud />
       </group>
-
-      <group>
-        <Cloud scale={1} color="#444" position={[3, 12, 0]} />
-        <Cloud scale={1} color="#444" position={[-3, 12, 0]} />
-        <Cloud scale={1} color="#444" position={[10, 12, 0]} />
-        <Cloud scale={1} color="#444" position={[-10, 12, 0]} />
-      </group>
-      <Puffycloud />
     </>
   )
 }
 
 
-function Puffycloud() {
+function LightningCloud() {
 
   const light = useRef()
   const [flash] = useState(() => new random.FlashGen({ count: 10, minDuration: 40, maxDuration: 200 })) //min 40ms duration of the flash, 200ms max duration of the flash
   useFrame((state, delta) => {
     const impulse = flash.update(state.clock.elapsedTime, delta)
-    light.current.intensity = impulse * 5000
+    light.current.intensity = impulse * 2000
   })
-  return <pointLight position={[0, 12, 0]} ref={light} color="blue" />
+  return( 
+    <>
+      <pointLight 
+        position={[0, 0, 0.7]} 
+        ref={light} 
+        color="cyan" />
+      <Cloud
+        color="#000C66"
+        segments={3}
+        fade={30}
+        speed={0.1}
+        growth={2}
+        volume={1}
+        opacity={1}
+        bounds={[10, 1, 10]}
+      />
+       <Cloud
+       color="#000C66"
+        segments={3}
+        fade={30}
+        speed={0.1}
+        growth={2}
+        volume={1}
+        opacity={1}
+        bounds={[10, 1, 10]}
+      />
+      <Cloud
+      color="#000C66"
+        segments={3}
+        fade={30}
+        speed={0.1}
+        growth={2}
+        volume={1}
+        opacity={1}
+        bounds={[10, 1, 10]}
+      />
+       <Cloud
+       color="#333"
+        segments={3}
+        fade={30}
+        speed={0.1}
+        growth={2}
+        volume={1}
+        opacity={1}
+        bounds={[10, 1, 10]}
+      />
+      
+      {/* <Cloud material={THREE.MeshLambertMaterial}  segments={10} position-y={10} fade={30} speed={0.1} growth={2} volume={1} opacity={1} bounds={[20, 0.5, 20]} />
+      <Cloud material={THREE.MeshLambertMaterial}  segments={10} position-y={10} fade={30} speed={0.1} growth={2} volume={1} opacity={1} bounds={[20, 0.5, 20]} /> */}
+    </>
+  )
 }
