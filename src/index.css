@@ -1,14 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+  --gradient: linear-gradient(to right, #38bdf8, #c084fc);
+  --gradientLogo: linear-gradient(to left, #38bdf8, #c084fc);
+  --lightColor: #fff;
+  --darkColor: #000;
+  --background:#000;
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Helvetica Neue;
+  font-family: 'Manrope', sans-serif;
+  user-select: none;
 }
 
 body, #root{
   height: 100vh;
+  background: var(--background);
 }
 
 .canvas{
+  position: fixed;
+  top: 0;
   height: 100vh;
+  width: 100%;
+  z-index: 1;
 }
+
+a{
+  text-decoration: none;
+  color: var(--lightColor);
+}
+
+.triangle{
+  aspect-ratio: 1;
+  background: var(--gradient);
+  clip-path: polygon(100% 0, 10% 50%, 100% 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.triangle-inner{
+  height: 60%;
+  aspect-ratio: 1;
+  background: var(--background);
+  clip-path: polygon(100% 0, 10% 50%, 100% 100%);
+}
+

@@ -18,7 +18,6 @@ function Contact(props){
       distanceFactor={3}
       transform 
       occlude
-      onOcclude={set}
       style={{
         transition: 'all 0.2s',
         opacity: hidden ? 0 : 1,

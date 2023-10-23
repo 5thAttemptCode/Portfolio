@@ -1,6 +1,6 @@
-import React from 'react'
-import { CanLabel } from '../../can/CanLabel'
-import { Center, ContactShadows, PerspectiveCamera } from '@react-three/drei'
+import React, { useState, useEffect } from 'react'
+import { CanLabel } from '../../can/canLabel'
+import { Center, ContactShadows, PerspectiveCamera, Text } from '@react-three/drei'
 import { useConfigurator } from '../../../context/Context'
 import { useThree } from '@react-three/fiber'
 import { useSpring, animated, config } from '@react-spring/three'
@@ -8,7 +8,7 @@ import Lights from '../../lights/Lights'
 import Annotation from '../../annotations/Annotation'
 import ContactButton from '../../contactButtons/ContactButton'
 import Floor from '../../floor/Floor'
-import Clouds from '../../clouds/Clouds'
+import Clouding from '../../clouds/Clouds'
 
 
 const AnimatedPerspectiveCamera = animated(PerspectiveCamera);
@@ -20,8 +20,10 @@ export default function CanExperience() {
   const { viewport } = useThree()
   const onMobile = window.innerWidth < 930
 
+  
   // Configurator context
   const { cameraPosition } = useConfigurator()
+
 
   // Camera animation
   const springProps = useSpring({
@@ -30,6 +32,24 @@ export default function CanExperience() {
     from: { position: [-20, 10, 50] },
     to: { position: cameraPosition }
   });
+
+
+  //Text disappear
+  const [textVisible, setTextVisible] = useState(true)
+
+  useEffect(() => {
+    const handleClick = () => {
+      setTextVisible(false)
+      window.removeEventListener('mousedown', handleClick)
+    }
+
+    window.addEventListener('mousedown', handleClick)
+
+    return () => {
+      window.removeEventListener('mousedown', handleClick)
+    }
+  }, [])
+
 
   return (
     <>
@@ -40,7 +60,7 @@ export default function CanExperience() {
       />
 
       <Center>
-        <CanLabel 
+        <CanLabel
           castShadow
           recieveShadow
           rotation-y={3.12} 
@@ -52,6 +72,7 @@ export default function CanExperience() {
       <Floor />
       <Lights />
       <Annotation />
+      <Clouding />
       <ContactButton />
       <ContactShadows 
         resolution={256} 
@@ -60,9 +81,17 @@ export default function CanExperience() {
         blur={0.3} 
         opacity={0.8}
       />
-
-      <Clouds />
-
+      {textVisible && (
+        <Text
+            fontSize={0.3}
+            position={[ -4.3, -2.3, -4.5]}
+            rotation-y={0.5}
+            color="white"
+            material-toneMapped={false}
+          >
+            Drag to Explore
+        </Text>
+      )}
     </>
   )
 }

@@ -59,11 +59,3 @@
     transform: translateX(-50%) 
   }
 }
-
-/* .loading-triangle{
-  height: clamp(6.25rem, -9.375rem + 50vw, 18.75rem);
-}
-
-.loading-triangle-inner{
-  margin-left: clamp(1.04375rem, -1.5578rem + 8.325vw, 3.125rem);
-}  */

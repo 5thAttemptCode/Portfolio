@@ -9,7 +9,7 @@ export default function Clouding() {
 
   return (
     <>
-      <group position={[30, 12, -40]}>
+      <group position={[10, 10, -60]}>
         <LightningCloud />
         <LightningCloud />
         <LightningCloud />
@@ -56,7 +56,7 @@ function LightningCloud() {
         color="#000C66"
         segments={3}
         fade={30}
-        speed={0.1}
+        speed={0.5}
         growth={2}
         volume={1}
         opacity={1}
@@ -66,7 +66,7 @@ function LightningCloud() {
        color="#000C66"
         segments={3}
         fade={30}
-        speed={0.1}
+        speed={0.5}
         growth={2}
         volume={1}
         opacity={1}

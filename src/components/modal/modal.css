@@ -27,8 +27,8 @@
 /*_____________________________________*/
 .overlay > .close{
     position: fixed;
-    top: 30px;
-    right: 30px;
+    top: clamp(0.9375rem, -0.2344rem + 3.75vw, 1.875rem);
+    right: clamp(0.9375rem, -0.2344rem + 3.75vw, 1.875rem);
     height: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
     aspect-ratio: 1;
     rotate: 45deg;
@@ -127,7 +127,7 @@
 
 .overlay > .modal > form > .submit {
     cursor: pointer;
-    background: var(--gradient);
+    /* background: var(--gradient); */
     color: var(--darkColor); 
     border: 2px solid var(--darkColor);
     font-weight: 700;
@@ -142,7 +142,6 @@
     border: 2px solid var(--lightColor);
     box-shadow: 0 -0.5px 10px 5px rgb(255, 255, 255, 0.5);
 }
-
 
 /*_____________________________________*/
 .overlay > .modal > div{
@@ -168,3 +167,9 @@
     user-select:text;
 }
 
+
+@media (max-width: 450px){
+    .overlay > .modal{
+        margin-top: 20px;
+    }
+}

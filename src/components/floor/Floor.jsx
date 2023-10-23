@@ -25,7 +25,7 @@ export default function Floor() {
         position-y={-2.45} 
         rotation-x={Math.PI / -2}
       >
-        <planeGeometry args={[30, 30]}/>
+        <planeGeometry args={[20, 30]}/>
         <MeshReflectorMaterial 
           envMapIntensity={0}
           color={[0.001, 0.003, 0.015]}
