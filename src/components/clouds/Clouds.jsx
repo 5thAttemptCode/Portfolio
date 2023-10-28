@@ -1,8 +1,9 @@
 import React, { useRef,  useState  } from 'react'
-import { useFrame } from "@react-three/fiber"
-import { Cloud } from "@react-three/drei"
-import * as random from "maath/random"
-import * as THREE from "three"
+
+import * as random from 'maath/random'
+
+import { Cloud } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
 
 
 export default function Clouding() {
@@ -92,9 +93,6 @@ function LightningCloud() {
         opacity={1}
         bounds={[10, 1, 10]}
       />
-      
-      {/* <Cloud material={THREE.MeshLambertMaterial}  segments={10} position-y={10} fade={30} speed={0.1} growth={2} volume={1} opacity={1} bounds={[20, 0.5, 20]} />
-      <Cloud material={THREE.MeshLambertMaterial}  segments={10} position-y={10} fade={30} speed={0.1} growth={2} volume={1} opacity={1} bounds={[20, 0.5, 20]} /> */}
     </>
   )
 }

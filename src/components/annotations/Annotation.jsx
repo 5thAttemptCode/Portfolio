@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import "./annotation.css"
+import './annotation.css'
+
 import { Html } from '@react-three/drei'
 import { useConfigurator } from '../../context/Context'
 
@@ -31,7 +32,7 @@ export default function Annotation() {
             <a className='code' href='https://github.com/5thAttemptCode/React_R3F_Full-project_ZLEEP/tree/main/src' target='_blank'>&lt;/&gt;</a>
           </div>
           <div className="annotation sneaker-headz">
-            <a className='live' href='https://codesandbox.io/s/qyz5r?file=/src/App.js:1140-1170' target='_blank'>LIVE</a>
+            <a className='live' href='https://sneaker-headz.netlify.app' target='_blank'>LIVE</a>
             <a className='code' href='https://github.com/5thAttemptCode/React_Firebase_Full-project_SneakerHeadz/tree/main/src' target='_blank'>&lt;/&gt;</a>
           </div>
           <div className="annotation dough-boyz">

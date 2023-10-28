@@ -33,7 +33,7 @@
   top: 0;
   height: 100%;
   aspect-ratio: 1;
-  background: linear-gradient(to right, var(--dark), transparent)
+  background: linear-gradient(to right, var(--darkColor), transparent)
 }
 
 .loading-screen > .bar::before{
@@ -49,6 +49,7 @@
   color: white;
   animation: marquee 10s linear infinite;
 }
+
 
 @keyframes marquee {
   0%, 100% { 

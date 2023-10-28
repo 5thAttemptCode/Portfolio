@@ -1,11 +1,12 @@
 import React from 'react'
+
 import { Grid, MeshReflectorMaterial, useTexture } from '@react-three/drei'
 
 
 export default function Floor() {
 
-  const [ roughness, normal] = useTexture(["../../public/Textures/Roughness.jpg", "../../public/Textures/Normal.jpg"])
-  
+  const [ roughness, normal] = useTexture(["/Textures/Roughness.jpg", "/Textures/Normal.jpg"])
+
   return (
     <>
       <Grid 

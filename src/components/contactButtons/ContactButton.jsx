@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import "./contactButton.css"
+import './contactButton.css'
+
 import { Html } from '@react-three/drei'
 import { useConfigurator } from '../../context/Context'
 
@@ -44,28 +45,28 @@ export default function ContactButton() {
         position={[1.2, -0.95, -0.7]} 
         rotation={2.1}
         text={
-              <div className='mail' onClick={() => setModalOpen(true)}>
-                ✉️
-              </div>
-             }
+          <div className='mail' onClick={() => setModalOpen(true)}>
+            ✉️
+          </div>
+        }
       />
       <Contact
         position={[0.87, -0.95, -1.09]} 
         rotation={2.45}
         text={
-              <a href="https://github.com/5thAttemptCode" target='_blank'>
-                <img src="../../public/Logos/github-black.png" alt="" />
-              </a>
-             }
+          <a href="https://github.com/5thAttemptCode" target='_blank'>
+            <img src="/Logos/github-black.png" alt="" />
+          </a>
+        }
       />
       <Contact
         position={[0.45, -0.95, -1.357]}
         rotation={2.68}
         text={
-              <a href="https://www.linkedin.com/in/henrik-fuerst-10b58a187/" target='_blank'>
-                <img src="../../public/Logos/linkedin.png" alt="" />
-              </a>
-             }
+          <a href="https://www.linkedin.com/in/henrik-fuerst-10b58a187/" target='_blank'>
+            <img src="/Logos/linkedin.png" alt="" />
+          </a>
+        }
       />
     </>
   )

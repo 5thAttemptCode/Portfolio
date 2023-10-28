@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
+
+import { animated, config, useSpring } from '@react-spring/three'
 import { CanLabel } from '../../can/canLabel'
 import { Center, ContactShadows, PerspectiveCamera, Text } from '@react-three/drei'
 import { useConfigurator } from '../../../context/Context'
 import { useThree } from '@react-three/fiber'
-import { useSpring, animated, config } from '@react-spring/three'
-import Lights from '../../lights/Lights'
+
 import Annotation from '../../annotations/Annotation'
+import Clouding from '../../clouds/Clouds'
 import ContactButton from '../../contactButtons/ContactButton'
 import Floor from '../../floor/Floor'
-import Clouding from '../../clouds/Clouds'
+import Lights from '../../lights/Lights'
 
 
 const AnimatedPerspectiveCamera = animated(PerspectiveCamera);
@@ -19,11 +21,9 @@ export default function CanExperience() {
   //Responsive
   const { viewport } = useThree()
   const onMobile = window.innerWidth < 930
-
   
   // Configurator context
   const { cameraPosition } = useConfigurator()
-
 
   // Camera animation
   const springProps = useSpring({
@@ -32,7 +32,6 @@ export default function CanExperience() {
     from: { position: [-20, 10, 50] },
     to: { position: cameraPosition }
   });
-
 
   //Text disappear
   const [textVisible, setTextVisible] = useState(true)
@@ -83,13 +82,13 @@ export default function CanExperience() {
       />
       {textVisible && (
         <Text
-            fontSize={0.3}
-            position={[ -4.3, -2.3, -4.5]}
-            rotation-y={0.5}
-            color="white"
-            material-toneMapped={false}
-          >
-            Drag to Explore
+          fontSize={0.3}
+          position={[ -4.3, -2.3, -4.5]}
+          rotation-y={0.5}
+          color="white"
+          material-toneMapped={false}
+        >
+          Drag to Explore
         </Text>
       )}
     </>
