@@ -1,0 +1,96 @@
+.nav-item{
+    position: fixed;
+    z-index: 10;
+    padding: clamp(0.8125rem, -0.0469rem + 2.75vw, 1.5rem) clamp(1.1875rem, 0.1719rem + 3.25vw, 2rem);
+}
+
+/*_____________________________________*/
+.logo{
+    top: 0;
+    left: 0;
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.logo > .name{
+    overflow: hidden;
+}
+
+.logo > .name > p{
+    position: relative;
+    transition: all 0.25s ease-in-out;
+    line-height: 1;
+}
+
+.logo > .name > p::after{
+    content: 'H3NRY';
+    position: absolute;
+    transform: translateX(0%);
+}
+
+.logo > .name > p, 
+.logo > .name > p::after{
+    font-size: clamp(1.5625rem, 0.7813rem + 2.5vw, 2.1875rem);
+    font-weight: 700;
+    background: var(--gradientLogo);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.logo > .name:hover > p{
+    transform: translateX(-100%);
+}
+
+.logo > .nav-triangle{
+    height: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
+    margin-top: clamp(0.125rem, 0.0469rem + 0.25vw, 0.1875rem);
+}
+
+.logo > .nav-triangle > .nav-triangle-inner{
+    margin-left: clamp(0.1875rem, 0.0313rem + 0.5vw, 0.3125rem);
+}   
+
+/*_____________________________________*/
+.menu{
+    top: 0;
+    right: 0;
+    text-align: right;
+  }
+  
+.menu > p{
+    font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
+}
+
+/*_____________________________________*/
+.info{
+    top: clamp(6.875rem, 5.3125rem + 5vw, 8.125rem);
+    right: 0;
+    display: grid;
+    text-align: right;
+    font-size: clamp(0.75rem, 0.4375rem + 1vw, 1rem);
+    padding-top: 0;
+}
+
+.menu > p,
+.info > p,
+.info > a{
+    color: var(--lightColor);
+    cursor: pointer;
+}
+
+.menu > p:hover,
+.info > p:hover,
+.info > a:hover{
+    text-decoration: underline;
+}
+
+
+/*_____________________________________*/
+@media (max-width: 450px){
+    .menu > p > span,
+    .info{
+        display: none;
+    }
+}

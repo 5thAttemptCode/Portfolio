@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { CameraProvider } from './context/Context'
+import { CameraProvider } from './context/index'
 
-import Experience from './components/experience/Experience'
+import Experience from './components/experience/index'
 
 
 export default function App() {
