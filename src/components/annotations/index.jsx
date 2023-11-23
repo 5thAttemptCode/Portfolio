@@ -37,7 +37,7 @@ export default function Annotation() {
                 <React.Fragment>
                   <b>{'E-Commerce'}</b>
                   <br />
-                  {"R3F, Firebase, Blender"}
+                  {"R3F, Firebase, Paypal, Blender"}
                 </React.Fragment>
               }
             >
@@ -53,7 +53,7 @@ export default function Annotation() {
                 <React.Fragment>
                   <b>{'Product Page'}</b>
                   <br />
-                  {"R3F, Firebase, Blender, Inkscape"}
+                  {"R3F, Firebase, Paypal, Blender, Inkscape"}
                 </React.Fragment>
               }
             >
@@ -69,7 +69,7 @@ export default function Annotation() {
                 <React.Fragment>
                   <b>{'E-Commerce'}</b>
                   <br />
-                  {"React, Firebase, Inkscape"}
+                  {"React, Firebase, Paypal, Inkscape"}
                 </React.Fragment>
               }
             >
