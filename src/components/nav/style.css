@@ -54,8 +54,6 @@
 
 /*_____________________________________*/
 .menu{
-    top: 0;
-    right: 0;
     text-align: right;
   }
   
@@ -65,12 +63,9 @@
 
 /*_____________________________________*/
 .info{
-    top: clamp(6.875rem, 5.3125rem + 5vw, 8.125rem);
-    right: 0;
     display: grid;
     text-align: right;
     font-size: clamp(0.75rem, 0.4375rem + 1vw, 1rem);
-    padding-top: 0;
 }
 
 .menu > p,
@@ -93,4 +88,34 @@
     .info{
         display: none;
     }
+}
+
+.hamburger{
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    width: 50px;
+    height: 15px;
+    border-block: 3px solid white;
+    z-index: 100;
+    transition: all 2s;
+    cursor: pointer;
+}
+
+.menu-container{
+    position: fixed;
+    top: 0;
+    right: -20%;
+    height: 100vh;
+    width: 20%;
+    background: rgb(0, 0, 199);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    transition: all 0.5s;
+}
+
+.menu-container.active{
+    right: 0;
 }
