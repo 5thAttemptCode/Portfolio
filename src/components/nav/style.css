@@ -99,8 +99,12 @@
     height: 15px;
     border-block: 3px solid white;
     z-index: 100;
-    transition: all 2s;
     cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hamburger:hover{
+    border-block: 3px solid #38bdf8;
 }
 
 .menu-container{

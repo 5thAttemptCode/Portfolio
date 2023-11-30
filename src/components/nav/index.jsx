@@ -60,7 +60,7 @@ export default function Nav() {
           <h3>Quick contact</h3>
           <p onClick={() => setModalOpen(true)}>E-mail</p>
           <a onClick={() => setMenuOpen(false)} href="https://github.com/5thAttemptCode" target='_blank'>GitHub</a>
-          <a onClick={() => setMenuOpen(false)} href="https://www.linkedin.com/in/henrik-fuerst-10b58a187/" target='_blank'>LinkedIn</a>
+          <a onClick={() => setMenuOpen(false)} href="https://www.linkedin.com/in/henry-fuerst-10b58a187/" target='_blank'>LinkedIn</a>
           <a onClick={() => setMenuOpen(false)} href="https://codepen.io/your-work/" target='_blank'>Codepen</a>
         </div>
       </div>
