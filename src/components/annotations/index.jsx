@@ -43,7 +43,16 @@ export default function Annotation() {
             >
               <a className='live' href='https://coffee-inc.netlify.app/' target='_blank'>LIVE</a>
             </HtmlTooltip>
-            <a className='code' href='https://github.com/5thAttemptCode/React_R3F_Firebase_Full-project_CoffeeInc' target='_blank'>&lt;/&gt;</a>
+            <HtmlTooltip
+              placement="top-start"
+              title={
+                <React.Fragment>
+                  {"View source code"}
+                </React.Fragment>
+              }
+            >
+              <a className='code' href='https://github.com/5thAttemptCode/React_R3F_Firebase_Full-project_CoffeeInc' target='_blank'>&lt;/&gt;</a>
+            </HtmlTooltip>  
           </div>
 
           <div className="annotation zleep">
@@ -59,7 +68,16 @@ export default function Annotation() {
             >
               <a className='live' href='https://zleep-cbd.netlify.app/' target='_blank'>LIVE</a>
             </HtmlTooltip>
-            <a className='code' href='https://github.com/5thAttemptCode/React_R3F_Full-project_ZLEEP' target='_blank'>&lt;/&gt;</a>
+            <HtmlTooltip
+              placement="top-start"
+              title={
+                <React.Fragment>
+                  {"View source code"}
+                </React.Fragment>
+              }
+            >
+              <a className='code' href='https://github.com/5thAttemptCode/React_R3F_Full-project_ZLEEP' target='_blank'>&lt;/&gt;</a>
+            </HtmlTooltip>  
           </div>
 
           <div className="annotation sneaker-headz">
@@ -75,7 +93,16 @@ export default function Annotation() {
             >
               <a className='live' href='https://sneaker-headz.netlify.app' target='_blank'>LIVE</a>
             </HtmlTooltip>
-            <a className='code' href='https://github.com/5thAttemptCode/React_Firebase_Full-project_SneakerHeadz' target='_blank'>&lt;/&gt;</a>
+            <HtmlTooltip
+              placement="top-start"
+              title={
+                <React.Fragment>
+                  {"View source code"}
+                </React.Fragment>
+              }
+            >
+              <a className='code' href='https://github.com/5thAttemptCode/React_Firebase_Full-project_SneakerHeadz' target='_blank'>&lt;/&gt;</a>
+            </HtmlTooltip>  
           </div>
 
           <div className="annotation dough-boyz">
@@ -91,7 +118,16 @@ export default function Annotation() {
             >
               <a className='live' href='https://doughboyz.netlify.app/' target='_blank'>LIVE</a>
             </HtmlTooltip>
-            <a className='code' href='https://github.com/5thAttemptCode/Doughboyz_ThreeJS_Portfolio-project' target='_blank'>&lt;/&gt;</a>
+            <HtmlTooltip
+              placement="top-start"
+              title={
+                <React.Fragment>
+                  {"View source code"}
+                </React.Fragment>
+              }
+            >
+              <a className='code' href='https://github.com/5thAttemptCode/Doughboyz_ThreeJS_Portfolio-project' target='_blank'>&lt;/&gt;</a>
+            </HtmlTooltip>
           </div>
         </div>
 
