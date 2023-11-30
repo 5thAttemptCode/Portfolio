@@ -63,7 +63,7 @@ export default function ContactButton() {
         position={[0.45, -0.95, -1.357]}
         rotation={2.68}
         text={
-          <a href="https://www.linkedin.com/in/henrik-fuerst-10b58a187/" target='_blank'>
+          <a href="https://www.linkedin.com/in/henry-fuerst-10b58a187/" target='_blank'>
             <img src="/Logos/linkedin.png" alt="" />
           </a>
         }
