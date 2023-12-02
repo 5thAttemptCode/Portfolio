@@ -9,17 +9,18 @@
 .annotation-wrapper > .annotation{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 120px;
 }
 
 .annotation-wrapper > .annotation a{
   color: var(--darkColor);
-  border: 2px solid var(--darkColor);
+  /* border: 2px solid var(--darkColor); */
   transition: all 0.1s;
 }
 
 .annotation-wrapper > .annotation a:hover{
-  border: 2px solid var(--lightColor);
+  /* border: 2px solid var(--lightColor); */
   box-shadow: 0 -0.5px 10px 5px var(--lightColor);
 }
 
