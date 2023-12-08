@@ -105,7 +105,7 @@
     width: 50px;
     height: 15px;
     border-block: 3px solid white;
-    z-index: 100;
+    z-index: 1000;
     cursor: pointer;
     transition: all 0.2s;
 }
