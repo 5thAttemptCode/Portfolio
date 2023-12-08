@@ -10,7 +10,7 @@ import { styled } from '@mui/material/styles';
 export default function Annotation() {
   
   const [ hidden, set ] = useState()
-  const { modalOpen } = useConfigurator()
+  const { modalOpen, menuOpen } = useConfigurator()
 
   return (
     <>
@@ -22,10 +22,9 @@ export default function Annotation() {
         occlude
         style={{
           transition: 'all 0.2s',
-          opacity: hidden ? 0 : 1,
-          transform: `scale(${hidden ? 0 : 1})`,
-          display: modalOpen ? "none" : "block",
-          pointerEvents: modalOpen ? "none" : "auto",
+          opacity: (hidden || menuOpen || modalOpen) ? 0 : 1,
+          transform: `scale(${(hidden || menuOpen || modalOpen) ? 0 : 1})`,
+          pointerEvents: ((hidden || menuOpen || modalOpen) ? "none" : "auto"),
           }}
         >
         <div className="annotation-wrapper">

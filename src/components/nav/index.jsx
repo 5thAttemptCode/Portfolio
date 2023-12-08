@@ -1,39 +1,17 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React from 'react'
 import './style.css'
-
 import { useConfigurator } from '../../context'
 
-
 export default function Nav() {
-
-  //Toggle the menu_________________________________
-  const [ menuOpen, setMenuOpen ] = useState(false);
-  let menuRef = useRef(null);
-  let hamburgerRef = useRef(null);
-
-  useEffect(() => {
-    let handler = (e) => {
-      if (!hamburgerRef.current.contains(e.target) && (!menuRef.current || !menuRef.current.contains(e.target))) {
-        setMenuOpen(false);
-      }
-    };
-
-    window.addEventListener('mousedown', handler);
-
-    return () => {
-      window.removeEventListener('mousedown', handler);
-    };
-
-  }, [menuOpen]);
-
-  const closeMenu = () => setMenuOpen(false);
-
-  //Toggle the modal_________________________________
-  const { setModalOpen } = useConfigurator()
-
-  //Toggle the camera position_________________________________
-  const { setCameraPosition } = useConfigurator()
-  
+  const { 
+    menuOpen, 
+    setMenuOpen, 
+    closeMenu, 
+    setModalOpen, 
+    setCameraPosition, 
+    menuRef, 
+    hamburgerRef 
+  } = useConfigurator()
   
   return (
     <>
@@ -41,7 +19,7 @@ export default function Nav() {
         <div className="nav-triangle triangle">
           <div className="nav-triangle-inner triangle-inner"></div>
         </div>
-        <div className="name" >
+        <div className="name">
           <p onClick={() => setCameraPosition([-0.04, 1.28, 8.82])}>H3NRY</p>
         </div>
       </div>
