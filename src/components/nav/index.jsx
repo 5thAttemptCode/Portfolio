@@ -34,8 +34,6 @@ export default function Nav() {
           <p onClick={() => { setCameraPosition([7.06, 1.57, -5.31]); closeMenu(); }}>ABOUT</p>
           <p onClick={() => { setCameraPosition([6.89, 0.67, -5.75]); closeMenu(); }}>CONTACT</p>
         </div>
-        <br />
-        <br />
         <div className="info menu-child">
           <h3>Quick contact</h3>
           <p onClick={() => setModalOpen(true)}>E-mail</p>
