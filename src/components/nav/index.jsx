@@ -1,8 +1,10 @@
 import React from 'react'
 import './style.css'
-import { useConfigurator } from '../../context'
+import { useConfigurator } from '@/context'
+
 
 export default function Nav() {
+  
   const { 
     menuOpen, 
     setMenuOpen, 

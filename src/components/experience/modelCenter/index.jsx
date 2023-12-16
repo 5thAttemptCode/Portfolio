@@ -1,25 +1,20 @@
 import React, { useState, useEffect } from 'react'
-
-import { useThree } from '@react-three/fiber'
 import { animated, config, useSpring } from '@react-spring/three'
 import { Center, ContactShadows, PerspectiveCamera, Text } from '@react-three/drei'
-import { CanLabel } from '../../can/index'
-import { useConfigurator } from '../../../context/index'
-
-import Annotation from '../../annotations/index'
-import Clouding from '../../clouds/index'
-import ContactButton from '../../contactButtons/index'
-import Floor from '../../floor/index'
-import Lights from '../../lights/index'
+import { CanLabel } from '@/components/can/index'
+import { useConfigurator } from '@/context/index'
+import Annotation from '@/components/annotations/index'
+import Clouding from '@/components/clouds/index'
+import ContactButton from '@/components/contactButtons/index'
+import Floor from '@/components/floor/index'
+import Lights from '@/components/lights/index'
 
 
 const AnimatedPerspectiveCamera = animated(PerspectiveCamera);
 
 
 export default function CanExperience() {
-
   //Responsive
-  const { viewport } = useThree()
   const onMobile = window.innerWidth < 930
   
   // Configurator context
@@ -31,10 +26,10 @@ export default function CanExperience() {
     config: config.slow,
     from: { position: [-20, 10, 50] },
     to: { position: cameraPosition }
-  });
+  })
 
-  //Text disappear
-  const [textVisible, setTextVisible] = useState(true)
+  //Drag-to-explore text disappear
+  const [ textVisible, setTextVisible ] = useState(true)
 
   useEffect(() => {
     const handleClick = () => {

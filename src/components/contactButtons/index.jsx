@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import './style.css'
-
 import { Html } from '@react-three/drei'
-import { useConfigurator } from '../../context'
+import { useConfigurator } from '@/context'
 
 
 function Contact(props){

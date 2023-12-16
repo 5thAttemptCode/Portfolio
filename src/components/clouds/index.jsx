@@ -1,7 +1,5 @@
 import React, { useRef,  useState  } from 'react'
-
 import * as random from 'maath/random'
-
 import { Cloud } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 

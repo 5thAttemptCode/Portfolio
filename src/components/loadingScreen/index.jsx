@@ -1,6 +1,5 @@
 import React, { useEffect } from "react"
 import './style.css'
-
 import { useProgress } from '@react-three/drei'
 
 

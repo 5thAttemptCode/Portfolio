@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import './style.css'
-
 import { Html } from '@react-three/drei'
-import { useConfigurator } from '../../context'
 import { Tooltip, tooltipClasses } from '@mui/material'
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
+import { useConfigurator } from '@/context'
 
 
 export default function Annotation() {

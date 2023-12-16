@@ -1,12 +1,10 @@
 import React, { Suspense, useState } from 'react'
-
 import { Canvas} from '@react-three/fiber'
-import { LoadingScreen } from '../loadingScreen'
 import { OrbitControls } from '@react-three/drei'
-
+import { LoadingScreen } from '@/components/loadingScreen'
 import CanExperience from './modelCenter'
-import Modal from '../modal'
-import Nav from '../nav'
+import Modal from '@/components/modal'
+import Nav from '@/components/nav'
 
 
 export default function Experience() {

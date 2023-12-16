@@ -1,14 +1,17 @@
-import { createContext, useContext, useState, useRef, useEffect } from "react";
+import React, { createContext, useContext, useState, useRef, useEffect } from "react"
 
-const CameraContext = createContext();
+
+const CameraContext = createContext()
+
 
 export const CameraProvider = ({ children }) => {
-    const initialCameraPosition = [0, 1.28, 8.82];
-    const [cameraPosition, setCameraPosition] = useState(initialCameraPosition);
-    const [modalOpen, setModalOpen] = useState(false);
-    const [menuOpen, setMenuOpen] = useState(false);
-    let menuRef = useRef(null);
-    let hamburgerRef = useRef(null);
+
+    const initialCameraPosition = [0, 1.28, 8.82]
+    const [cameraPosition, setCameraPosition] = useState(initialCameraPosition)
+    const [modalOpen, setModalOpen] = useState(false)
+    const [menuOpen, setMenuOpen] = useState(false)
+    let menuRef = useRef(null)
+    let hamburgerRef = useRef(null)
 
     useEffect(() => {
         const handler = (e) => {
@@ -16,19 +19,19 @@ export const CameraProvider = ({ children }) => {
                 (!menuRef.current || !menuRef.current.contains(e.target))) {
                 setMenuOpen(false);
             }
-        };
+        }
 
-        window.addEventListener('mousedown', handler);
+        window.addEventListener('mousedown', handler)
 
         return () => {
-            window.removeEventListener('mousedown', handler);
+            window.removeEventListener('mousedown', handler)
         };
-    }, [menuOpen]);
+    }, [menuOpen])
 
     const closeMenu = () => {
-        setMenuOpen(false);
+        setMenuOpen(false)
         // remove the setCameraPosition here or revert it to previous state, it won't set to initial position
-    };
+    }
 
     return (
         <CameraContext.Provider 
@@ -46,9 +49,9 @@ export const CameraProvider = ({ children }) => {
         >
             {children}
         </CameraContext.Provider>
-    );
+    )
 }
 
 export const useConfigurator = () => {
-    return useContext(CameraContext);
+    return useContext(CameraContext)
 }

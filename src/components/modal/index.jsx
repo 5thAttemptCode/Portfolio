@@ -1,9 +1,7 @@
 import React, { useRef, useState } from 'react'
 import './style.css'
-
 import emailjs from '@emailjs/browser'
-
-import { useConfigurator } from '../../context'
+import { useConfigurator } from '@/context'
 
 
 export default function Modal() {
