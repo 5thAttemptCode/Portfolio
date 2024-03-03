@@ -35,11 +35,12 @@ export default function Annotation() {
                 <React.Fragment>
                   <b>{'E-Commerce'}</b>
                   <br />
-                  {"R3F, Firebase, Paypal, Blender"}
+                  <br />
+                  {"MERN, Docker, R3F, Blender"}
                 </React.Fragment>
               }
             >
-              <a className='live' href='https://coffee-inc.netlify.app/' target='_blank'>LIVE</a>
+              <a className='live' href='https://floor-planer.netlify.app/' target='_blank'>LIVE</a>
             </HtmlTooltip>
             <HtmlTooltip
               placement="top-start"
@@ -49,7 +50,7 @@ export default function Annotation() {
                 </React.Fragment>
               }
             >
-              <a className='code' href='https://github.com/5thAttemptCode/React_R3F_Firebase_Full-project_CoffeeInc' target='_blank'>&lt;/&gt;</a>
+              <a className='code' href='https://github.com/5thAttemptCode/FloorPlaner-MERN_R3F_Docker' target='_blank'>&lt;/&gt;</a>
             </HtmlTooltip>  
           </div>
 
@@ -59,6 +60,7 @@ export default function Annotation() {
               title={
                 <React.Fragment>
                   <b>{'Product Page'}</b>
+                  <br />
                   <br />
                   {"R3F, Firebase, Paypal, Blender, Inkscape"}
                 </React.Fragment>
@@ -85,6 +87,7 @@ export default function Annotation() {
                 <React.Fragment>
                   <b>{'E-Commerce'}</b>
                   <br />
+                  <br />
                   {"React, Firebase, Paypal, Inkscape"}
                 </React.Fragment>
               }
@@ -109,6 +112,7 @@ export default function Annotation() {
               title={
                 <React.Fragment>
                   <b>{'Landing Page'}</b>
+                  <br />
                   <br />
                   {"Three JS, HTML/CSS"}
                 </React.Fragment>
@@ -141,9 +145,9 @@ const HtmlTooltip = styled(({ className, ...props }) => (
       backgroundColor: 'rgb(0, 0, 0, 0.8)',
       color: '#2e70ff',
       backdropFilter: 'blur(10px)',
-      maxWidth: 220,
+      maxWidth: 200,
       fontSize: theme.typography.pxToRem(16),
       padding: '0.5em',
       border: '2px solid white',
     },
-}));
+}))
