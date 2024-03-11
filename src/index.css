@@ -4,9 +4,13 @@
 :root{
   --gradient: linear-gradient(to right, #38bdf8, #c084fc);
   --gradientLogo: linear-gradient(to left, #38bdf8, #c084fc);
+  --contrastColorOne: #c084fc;
+  --contrastColorTwo: #38bdf8;
   --lightColor: #fff;
   --darkColor: #000;
   --background:#000;
+
+  --navMargin: 32px;
 }
 
 *{
@@ -34,20 +38,3 @@ a{
   text-decoration: none;
   color: var(--lightColor);
 }
-
-.triangle{
-  aspect-ratio: 1;
-  background: var(--gradient);
-  clip-path: polygon(100% 0, 10% 50%, 100% 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.triangle-inner{
-  height: 60%;
-  aspect-ratio: 1;
-  background: var(--background);
-  clip-path: polygon(100% 0, 10% 50%, 100% 100%);
-}
-
