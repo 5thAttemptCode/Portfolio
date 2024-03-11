@@ -10,13 +10,13 @@ export default function DragNotice() {
   useEffect(() => {
     const handleClick = () => {
       setTextVisible(false)
-      window.removeEventListener('mousedown', handleClick)
+      window.removeEventListener('pointerdown', handleClick)
     }
 
-    window.addEventListener('mousedown', handleClick)
+    window.addEventListener('pointerdown', handleClick)
 
     return () => {
-      window.removeEventListener('mousedown', handleClick)
+      window.removeEventListener('pointerdown', handleClick)
     }
   }, [])
 
