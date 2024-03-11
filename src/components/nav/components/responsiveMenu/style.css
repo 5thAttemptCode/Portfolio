@@ -1,0 +1,102 @@
+.hamburger{
+    position: fixed;
+    top: var(--navMargin);
+    right: var(--navMargin);
+    width: 50px;
+    height: 15px;
+    border-block: 3px solid var(--lightColor);
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hamburger:hover{
+    border-block: 3px solid var(--contrastColorTwo);
+}
+
+
+/*_______________________________________*/
+.menu-container{
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    height: 100vh;
+    width: 20%;
+    background: linear-gradient(rgb(0, 0, 199, 0.7), transparent);
+    backdrop-filter: blur(10px);
+    border-left: 5px solid var(--darkColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2rem;
+    transition: all 0.5s;
+    padding-right: var(--navMargin);
+    
+    &.active{
+        transform: translateX(0);
+    }
+
+    .menu-child{
+        display: flex;
+        flex-direction: column;
+        gap: 0.7em;
+        text-align: right;
+
+        > a,
+        > p{
+            color: var(--lightColor);
+            cursor: pointer;
+            transition: padding-right 0.1s;
+
+            &:hover{
+                text-decoration: underline;
+                padding-right: 10px;
+            }
+        }
+    }
+      
+    .menu-links > p{
+        font-size: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
+    }
+
+    .quick-contact{
+        font-size: clamp(0.75rem, 0.4375rem + 1vw, 1rem);
+
+        > h3{
+            font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
+            color: var(--contrastColorOne);
+            border-bottom: 2px solid var(--contrastColorOne);
+        }
+
+        > a,
+        > p{
+            font-size: 18px;
+        }
+    }
+
+    span{
+        position: absolute;
+        bottom: 1rem;
+        color: rgb(255, 255, 255, 0.7);
+    }
+}
+
+@media (max-width: 1200px){
+    .menu-container{
+        width: 30%;
+    }
+}
+
+@media (max-width: 768px){
+    .menu-container{
+        width: 40%;
+    }
+}
+
+@media (max-width: 500px){
+    .menu-container{
+        width: 75%;
+    }
+}

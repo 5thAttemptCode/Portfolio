@@ -1,157 +1,45 @@
-.nav-item{
+nav{
     position: fixed;
-    z-index: 10;
-    padding: 1.5em clamp(1.1875rem, 0.1719rem + 3.25vw, 2rem);
-}
-
-/*_____________________________________*/
-.logo{
     top: 0;
     left: 0;
+    padding-top: 25px;
+    width: 100%;
+    padding-inline-start: var(--navMargin);
     display: flex;
-    gap: 5px;
-    cursor: pointer;
-}
+    align-items: center;
 
-.logo > .name{
-    overflow: hidden;
-}
+    .logo{
+        display: flex;
+        gap: 4px;
+        cursor: pointer;
+        overflow: hidden;
 
-.logo > .name > p{
-    position: relative;
-    transition: all 0.25s ease-in-out;
-    line-height: 1;
-}
+        &:hover > p {
+            transform: translateX(-100%);
+        }
 
-.logo > .name > p::after{
-    content: 'H3NRY';
-    position: absolute;
-    transform: translateX(0%);
-}
+        p{
+            position: relative;
+            transition: all 0.25s ease-in-out;
+            line-height: 1;
+            font-size: clamp(1.5625rem, 0.7813rem + 2.5vw, 2.1875rem);
+            font-weight: 700;
+            background: var(--gradientLogo);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
 
-.logo > .name > p, 
-.logo > .name > p::after{
-    font-size: clamp(1.5625rem, 0.7813rem + 2.5vw, 2.1875rem);
-    font-weight: 700;
-    background: var(--gradientLogo);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-}
-
-.logo > .name:hover > p{
-    transform: translateX(-100%);
-}
-
-.logo > .nav-triangle{
-    height: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
-    margin-top: clamp(0.125rem, 0.0469rem + 0.25vw, 0.1875rem);
-}
-
-.logo > .nav-triangle > .nav-triangle-inner{
-    margin-left: clamp(0.1875rem, 0.0313rem + 0.5vw, 0.3125rem);
-}   
-
-/*_____________________________________*/
-.menu-child{
-    display: flex;
-    flex-direction: column;
-    gap: 0.7em;
-}
-
-.menu{
-    text-align: right;
-  }
-  
-.menu > p{
-    font-size: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
-}
-
-.info{
-    text-align: right;
-    font-size: clamp(0.75rem, 0.4375rem + 1vw, 1rem);
-}
-
-.info > h3{
-    font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
-    color:  #c084fc;
-    border-bottom: 2px solid #c084fc;
-}
-
-.menu > p,
-.info > p,
-.info > a{
-    color: var(--lightColor);
-    cursor: pointer;
-    transition: padding-right 0.1s;
-}
-
-.info > a,
-.info > p{
-    font-size: 18px;
-}
-
-.menu > p:hover,
-.info > p:hover,
-.info > a:hover{
-    text-decoration: underline;
-    padding-right: 10px;
-}
-
-.hamburger{
-    position: fixed;
-    top: 32px;
-    right: 32px;
-    width: 50px;
-    height: 15px;
-    border-block: 3px solid white;
-    z-index: 1000;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.hamburger:hover{
-    border-block: 3px solid #38bdf8;
-}
-
-.menu-container{
-    position: fixed;
-    top: 0;
-    right: 0;
-    transform: translateX(100%);
-    height: 100vh;
-    width: 20%;
-    background: rgb(0, 0, 199, 0.6);
-    backdrop-filter: blur(10px);
-    border-left: 2px solid #38bdf8;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
-    align-items: flex-end;
-    transition: all 0.5s;
-    padding-right: 32px;
-}
-
-.menu-container.active{
-    transform: translateX(0);
-}
-
-
-@media (max-width: 1200px){
-    .menu-container{
-        width: 30%;
-    }
-}
-
-@media (max-width: 768px){
-    .menu-container{
-        width: 40%;
-    }
-}
-
-@media (max-width: 500px){
-    .menu-container{
-        width: 75%;
+            &::after{
+                content: 'H3NRY';
+                position: absolute;
+                transform: translateX(0%);
+                font-size: clamp(1.5625rem, 0.7813rem + 2.5vw, 2.1875rem);
+                font-weight: 700;
+                background: var(--gradientLogo);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+            }
+        }
     }
 }
