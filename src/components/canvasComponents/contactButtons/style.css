@@ -1,0 +1,34 @@
+.contact-wrapper{
+    height: 50px;
+    aspect-ratio: 1;
+    background: var(--gradient);
+    border-radius: 50%;
+    padding: 1.5px;
+    transition: all 0.1s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    &:hover{
+      scale: 1.1;
+    }
+  
+    > a{
+        width: 100%;
+        height: 100%;
+  
+        > img{
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+    }
+  
+    > .mail{
+      margin-top: 5px;
+      color: var(--darkColor);
+    }
+}
+
+
