@@ -1,0 +1,27 @@
+.drag-notice{
+    position: absolute;
+    top: 12vh;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(0, 0, 0, 0.6);
+    padding: 0.5rem 0.7rem;
+    border-radius: 5px;
+    
+    .hand{
+        animation: drag 2s infinite;
+    }
+}
+
+@keyframes drag{
+    0%, 100%{
+        transform: translateX(-100%);
+    }
+
+    50%{
+        transform: translateX(100%);
+    }
+}
