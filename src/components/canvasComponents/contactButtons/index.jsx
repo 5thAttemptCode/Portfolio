@@ -16,7 +16,7 @@ export default function ContactButton() {
         rotation={2.1}
         text={
           <div className='mail' onClick={() => setModalOpen(true)}>
-            <Envelope size={40} />
+            <Envelope size={35} color="#ffffff" />
           </div>
         }
       />
