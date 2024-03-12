@@ -2,7 +2,7 @@
 
 
 :root{
-  --gradient: linear-gradient(to right, #38bdf8, #c084fc);
+  --gradient: linear-gradient(135deg, rgba(66,66,220,1) 31%, rgba(228,159,226,1) 100%);
   --gradientLogo: linear-gradient(to left, #38bdf8, #c084fc);
   --contrastColorOne: #c084fc;
   --contrastColorTwo: #38bdf8;
