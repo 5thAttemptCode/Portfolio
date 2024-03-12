@@ -17,17 +17,20 @@
     > a{
         width: 100%;
         height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
   
         > img{
-          height: 100%;
-          width: 100%;
+          height: 75%;
+          width: 75%;
           object-fit: cover;
+          filter: invert();
         }
     }
   
     > .mail{
-      margin-top: 5px;
-      color: var(--darkColor);
+      margin-top: 6px;
     }
 }
 
