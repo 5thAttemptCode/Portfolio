@@ -1,8 +1,5 @@
-# React + Vite
+# Portfolio  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+www.henry-dev.com  
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is my portfolio website. Its build React and React Three Fiber. The 3D model is build in Blender, while I sued Inkscape for the graphics. For further improvement Im thinking about implementing Firebase in the future (for the projects/details). Also an updated and even more exciting 3D scene is already in the works.
