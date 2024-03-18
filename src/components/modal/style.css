@@ -21,152 +21,147 @@
     justify-content: center;
     align-items: center;
     z-index: 10000;
-    padding-inline: 10px;
-}
 
-/*_____________________________________*/
-.overlay > .close{
-    position: fixed;
-    top: clamp(0.9375rem, -0.2344rem + 3.75vw, 1.875rem);
-    right: clamp(0.9375rem, -0.2344rem + 3.75vw, 1.875rem);
-    height: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
-    aspect-ratio: 1;
-    rotate: 45deg;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
+    .close{
+        position: fixed;
+        top: clamp(0.9375rem, -0.2344rem + 3.75vw, 1.875rem);
+        right: clamp(0.9375rem, -0.2344rem + 3.75vw, 1.875rem);
+        height: clamp(1.25rem, 0.4688rem + 2.5vw, 1.875rem);
+        aspect-ratio: 1;
+        rotate: 45deg;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    
+        &::after,
+        &::before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--lightColor);
+        }
+    
+        &:hover::after,
+        &:hover::before{
+            background: var(--blue);
+        }
+    
+        &::after{
+            height: clamp(0.1875rem, 0.1094rem + 0.25vw, 0.25rem);
+            width: 100%;
+        }
+    
+        &::before{
+            width: clamp(0.1875rem, 0.1094rem + 0.25vw, 0.25rem);
+            height: 100%;
+        }
+    }
 
-.overlay > .close::after,
-.overlay > .close::before{
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--lightColor);
-}
+    .modal{
+        position: relative;
+        min-width: 320px;
+        width: 350px;
+        background: var(--darkColor);
+        border-radius: 10px;
+        padding: 20px;
+        border: 1px solid var(--grey);
+        color: var(--grey);
+        transition: all 0.2s;
 
-.overlay > .close:hover::after,
-.overlay > .close:hover::before{
-    background: var(--blue);
-}
+        &:hover{
+            border: 1px solid var(--blue);
+            color: var(--blue);
+            -webkit-box-shadow: -1px 1px 92px -8px var(--boxShadowBlue);
+            -moz-box-shadow: -1px 1px 92px -8px var(--boxShadowBlue);
+            box-shadow: -1px 1px 92px -8px var(--boxShadowBlue);
 
-.overlay > .close::after{
-    height: clamp(0.1875rem, 0.1094rem + 0.25vw, 0.25rem);
-    width: 100%;
-}
+            form{
 
-.overlay > .close::before{
-    width: clamp(0.1875rem, 0.1094rem + 0.25vw, 0.25rem);
-    height: 100%;
-}
+                .form-input{
+                    border-bottom: 1px solid var(--blueLighter);
 
-/*_____________________________________*/
-.overlay > .modal{
-    position: relative;
-    min-width: 320px;
-    width: 350px;
-    background: var(--darkColor);
-    border-radius: 10px;
-    padding: 20px;
-    border: 1px solid var(--grey);
-    color: var(--grey);
-    transition: all 0.2s;
-}
+                    &:focus{
+                        border-bottom: 1px solid var(--blue);
+                    }
 
-.overlay > .modal:hover{
-    border: 1px solid var(--blue);
-    color: var(--blue);
-    -webkit-box-shadow: -1px 1px 92px -8px var(--boxShadowBlue);
-    -moz-box-shadow: -1px 1px 92px -8px var(--boxShadowBlue);
-    box-shadow: -1px 1px 92px -8px var(--boxShadowBlue);
-}
+                    &::placeholder{
+                        color: var(--blueLighter);
+                    }
+                }
+            }
 
-.overlay > .modal:hover ::placeholder{
-    color: var(--blueLighter);
-}
+            .contact-links > a{
+                color: var(--blue);
+            }
+        } 
 
-.overlay > .modal > h1{
-    margin-bottom: 20px;
-}
+        > h1{
+            margin-bottom: 20px;
+        }
 
-/*_____________________________________*/
-.overlay > .modal > form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    transition: all 0.2s;
-}
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.2s;
 
-.overlay > .modal > form > .form-input{
-    background: none;
-    border: none;
-    border-bottom: 1px solid var(--grey);
-    color: var(--lightColor);
-    padding: 5px;
-    width: 100%;
-}
+            .form-input{
+                background: none;
+                border: none;
+                border-bottom: 1px solid var(--grey);
+                color: var(--lightColor);
+                padding: 5px;
+                width: 100%;
 
-.overlay > .modal:hover > form > .form-input{
-    border-bottom: 1px solid var(--blueLighter);
-}
+                &:focus{
+                    outline: none;
+                }
+            }
 
-.overlay > .modal:hover > form > .form-input:focus{
-    outline: none;
-    border-bottom: 1px solid var(--blue);
-}
+            textarea{
+                resize: none;
+                height: 180px;
+            }    
+            
+            .submit {
+                cursor: pointer;
+                color: rgb(255, 255, 255, 0.55); 
+                border: 2px solid rgb(255, 255, 255, 0.55);
+                font-weight: 600;
+                font-size: 17px;
+                width: 50%;
+                padding-block: 10px;
+                border-radius: 10px;
+                transition: all 0.2s;
 
-.overlay > .modal > form > textarea{
-    resize: none;
-    height: 180px;
-}
+                &:hover{
+                  color: var(--lightColor); 
+                  border: 2px solid var(--lightColor);
+                }
+            }
+        }
 
-.overlay > .modal > form > .submit {
-    cursor: pointer;
-    /* background: var(--gradient); */
-    color: var(--darkColor); 
-    border: 2px solid var(--darkColor);
-    font-weight: 700;
-    font-size: 17px;
-    width: 50%;
-    padding-block: 10px;
-    border-radius: 10px;
-    transition: all 0.2s;
-}
+        .contact-links{
+            margin-top: 40px;
+            display: grid;
+            gap: 5px;
 
-.overlay > .modal > form > .submit:hover {
-    border: 2px solid var(--lightColor);
-    box-shadow: 0 -0.5px 10px 5px rgb(255, 255, 255, 0.5);
-}
+            > a{
+                color: var(--grey);
+                transition: all 0.2s;
 
-/*_____________________________________*/
-.overlay > .modal > div{
-    margin-top: 40px;
-    display: grid;
-    gap: 5px;
+                &:hover{
+                    text-decoration: underline;
+                }                
+            }
+        }
+    }
 }
-
-.overlay > .modal > div > a{
-    color: var(--grey);
-    transition: all 0.2s;
-}
-
-.overlay > .modal:hover > div > a{
-    color: var(--blue);
-}
-
-.overlay > .modal > div > a:hover{
-    text-decoration: underline;
-}
-
-.overlay > .modal > div > p{
-    user-select:text;
-}
-
 
 @media (max-width: 450px){
     .overlay > .modal{
