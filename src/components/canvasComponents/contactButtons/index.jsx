@@ -3,6 +3,7 @@ import './style.css'
 import { useConfigurator } from '@/context'
 import { Envelope } from 'phosphor-react'
 import Contact from './components/contact'
+import { ContactData } from '@/components/data/contactData'
 
 
 export default function ContactButton() {
@@ -20,24 +21,18 @@ export default function ContactButton() {
           </div>
         }
       />
-      <Contact
-        position={[0.87, -0.95, -1.09]} 
-        rotation={2.45}
-        text={
-          <a href="https://github.com/5thAttemptCode" target='_blank'>
-            <img src="/Logos/github-black.png" alt="" />
-          </a>
-        }
-      />
-      <Contact
-        position={[0.45, -0.95, -1.357]}
-        rotation={2.68}
-        text={
-          <a href="https://www.linkedin.com/in/henry-fuerst-10b58a187/" target='_blank'>
-            <img src="/Logos/linkedin.png" alt="" />
-          </a>
-        }
-      />
+      {ContactData.map((item) => (
+        <Contact
+          key={item.id}
+          position={item.contactPosition}
+          rotation={item.contactRotation}
+          text={
+            <a href={item.contactURL} target='_blank'>
+              <img src={item.contactIMG} />
+            </a>
+          }
+        />
+      ))}
     </>
   )
 }
