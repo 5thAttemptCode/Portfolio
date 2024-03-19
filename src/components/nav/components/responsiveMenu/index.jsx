@@ -1,6 +1,7 @@
 import React from 'react'
 import './style.css'
 import { useConfigurator } from '@/context'
+import { ContactData } from '@/components/data/contactData'
 
 
 export default function ResponsiveMenu() {
@@ -31,9 +32,16 @@ export default function ResponsiveMenu() {
         <div className="menu-child quick-contact">
           <h3>Quick contact</h3>
           <p onClick={() => setModalOpen(true)}>E-mail</p>
-          <a onClick={() => setMenuOpen(false)} href="https://github.com/5thAttemptCode" target='_blank'>GitHub</a>
-          <a onClick={() => setMenuOpen(false)} href="https://www.linkedin.com/in/henry-fuerst-10b58a187/" target='_blank'>LinkedIn</a>
-          <a onClick={() => setMenuOpen(false)} href="https://codepen.io/your-work/" target='_blank'>Codepen</a>
+          {ContactData.map((item) => (
+            <a 
+              key={item.id}
+              onClick={() => setMenuOpen(false)}
+              href={item.contactURL}
+              target='_blank'
+            >
+              {item.contactName}
+            </a>
+          ))}
         </div>
         <span>&copy; by H3NRY</span>
       </div>
