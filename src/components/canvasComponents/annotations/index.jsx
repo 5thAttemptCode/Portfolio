@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import './style.css'
-import { Html } from '@react-three/drei'
-import { useConfigurator } from '@/context'
 import AnnotationBlock from './components/annotationBlock'
+import { Html } from '@react-three/drei'
+import { ProjectData } from '@/components/data/projectData'
+import { useConfigurator } from '@/context'
 
 
 export default function Annotation() {
@@ -26,33 +27,15 @@ export default function Annotation() {
           }}
         >
         <div className="annotation-wrapper">
-          <AnnotationBlock 
-            hrefLive='https://floor-planer.netlify.app/' 
-            hrefCode='https://github.com/5thAttemptCode/FloorPlaner-MERN_R3F_Docker'
-            header='E-Commerce'
-            description="MERN, Docker, R3F, Blender"
+          {ProjectData.map((item) => (
+            <AnnotationBlock 
+              key={item.id}
+              hrefLive={item.projectURL}
+              hrefCode={item.projectCode}
+              header={item.projectType}
+              description={item.projectTechStack}
           />
-
-          <AnnotationBlock 
-            hrefLive='https://zleep-cbd.netlify.app/' 
-            hrefCode='https://github.com/5thAttemptCode/React_R3F_Full-project_ZLEEP'
-            header='Product Page'
-            description="R3F, Firebase, Paypal, Blender, Inkscape"
-          />
-          
-          <AnnotationBlock 
-            hrefLive='https://sneaker-headz.netlify.app' 
-            hrefCode='https://github.com/5thAttemptCode/React_Firebase_Full-project_SneakerHeadz'
-            header='E-Commerce'
-            description="React, Firebase, Paypal, Inkscape"
-          />
-          
-          <AnnotationBlock 
-            hrefLive='https://doughboyz.netlify.app/' 
-            hrefCode='https://github.com/5thAttemptCode/Doughboyz_ThreeJS_Portfolio-project'
-            header='Landing Page'
-            description="Three JS, HTML/CSS"
-          />
+          ))}
         </div>
       </Html>
     </>
