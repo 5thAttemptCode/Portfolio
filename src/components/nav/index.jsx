@@ -3,7 +3,7 @@ import './style.css'
 import ResponsiveMenu from './components/responsiveMenu'
 import { useMenu } from '@/context/menuContext'
 import { useCameraContext } from '@/context/cameraContext'
-import ProjectButton from './components/projectbutton'
+import ProjectButton from './components/projectButton'
 
 
 export default function Nav() {
