@@ -1,13 +1,13 @@
 import React, { useRef, useState } from 'react'
 import './style.css'
 import emailjs from '@emailjs/browser'
-import { useConfigurator } from '@/context'
+import { useModal } from '@/context/modalContext'
 
 
 export default function Modal() {
 
   //Modal
-  const { modalOpen, setModalOpen } = useConfigurator()
+  const { modalOpen, setModalOpen } = useModal()
 
   //Email JS
   const form = useRef()
