@@ -1,13 +1,13 @@
 import React from 'react'
 import { animated, config, useSpring } from '@react-spring/three'
 import { Center, ContactShadows, PerspectiveCamera} from '@react-three/drei'
-import { useConfigurator } from '@/context/index'
 import Annotation from '@/components/canvasComponents/annotations/index'
 import Clouding from '@/components/canvasComponents/clouds/index'
 import ContactButton from '@/components/canvasComponents/contactButtons/index'
 import Floor from '@/components/canvasComponents/floor/index'
 import Lights from '@/components/canvasComponents/lights/index'
 import { SodaCan } from '@/components/canvasComponents/can/SodaCan'
+import { useCameraContext } from '@/context/cameraContext'
 
 
 const AnimatedPerspectiveCamera = animated(PerspectiveCamera)
@@ -19,7 +19,7 @@ export default function CanExperience() {
   const onMobile = window.innerWidth < 930
   
   // Configurator context
-  const { cameraPosition } = useConfigurator()
+  const { cameraPosition } = useCameraContext()
 
   // Camera animation
   const springProps = useSpring({
