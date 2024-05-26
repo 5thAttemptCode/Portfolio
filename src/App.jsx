@@ -1,14 +1,19 @@
 import React from 'react'
-import { CameraProvider } from './context/index'
 import Experience from './components/experience/index'
+import { MenuProvider } from './context/menuContext'
+import { CameraProvider } from './context/cameraContext'
+import { ModalProvider } from './context/modalContext'
 
 
 export default function App() {
 
   return (
-    <CameraProvider>
-      <Experience />
-    </CameraProvider>
+    <MenuProvider>
+      <ModalProvider>
+        <CameraProvider>
+          <Experience />
+        </CameraProvider>
+      </ModalProvider>
+    </MenuProvider>
   )
 }
-

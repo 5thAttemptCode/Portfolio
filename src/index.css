@@ -5,6 +5,7 @@
   --gradient: linear-gradient(135deg, #4242dc 31%, #e49fe2 100%);
   --contrastColorOne: #e49fe2;
   --contrastColorTwo: #4242dc;
+  --contrastColorTwoHover: #3232ad;
   --lightColor: #fff;
   --darkColor: #000;
   --background:#000;
@@ -36,4 +37,16 @@ body, #root{
 a{
   text-decoration: none;
   color: var(--lightColor);
+}
+
+button{
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+
+  &:focus{
+    outline: none;
+    box-shadow: none;
+  }
 }
