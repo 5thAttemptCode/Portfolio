@@ -1,14 +1,14 @@
 import React from 'react'
 import './style.css'
-import { useConfigurator } from '@/context'
 import { Envelope } from 'phosphor-react'
 import Contact from './components/contact'
 import { ContactData } from '@/components/data/contactData'
+import { useModal } from '@/context/modalContext'
 
 
 export default function ContactButton() {
 
-  const { setModalOpen } = useConfigurator()
+  const { setModalOpen } = useModal()
 
   return (
     <>
