@@ -3,13 +3,15 @@ import './style.css'
 import AnnotationBlock from './components/annotationBlock'
 import { Html } from '@react-three/drei'
 import { ProjectData } from '@/components/data/projectData'
-import { useConfigurator } from '@/context'
+import { useMenu } from '@/context/menuContext'
+import { useModal } from '@/context/modalContext'
 
 
 export default function Annotation() {
   
   const [ hidden, set ] = useState()
-  const { modalOpen, menuOpen } = useConfigurator()
+  const { menuOpen } = useMenu()
+  const { modalOpen } = useModal()
 
   return (
     <>
@@ -34,7 +36,7 @@ export default function Annotation() {
               hrefCode={item.projectCode}
               header={item.projectType}
               description={item.projectTechStack}
-          />
+            />
           ))}
         </div>
       </Html>
