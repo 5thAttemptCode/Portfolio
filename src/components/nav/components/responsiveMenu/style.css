@@ -1,17 +1,32 @@
 .hamburger{
-    position: fixed;
-    top: var(--navMargin);
-    right: var(--navMargin);
+    position: relative;
     width: 50px;
-    height: 15px;
+    height: 25px;
     border-block: 3px solid var(--lightColor);
     z-index: 1000;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.1s;
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        transform: translateY(-50%);
+        width: 60%;
+        height: 3px;
+        background: var(--lightColor);
+        transition: all 0.1s;
+    }
 }
 
 .hamburger:hover{
     border-block: 3px solid var(--contrastColorTwo);
+
+    &:hover::after{
+        background: var(--contrastColorTwo);
+        left: 0;
+    }
 }
 
 
@@ -21,7 +36,7 @@
     top: 0;
     right: 0;
     transform: translateX(100%);
-    height: 100vh;
+    height: 100svh;
     width: 20%;
     background: linear-gradient(rgb(0, 0, 199, 0.7), transparent);
     backdrop-filter: blur(10px);
@@ -66,8 +81,8 @@
 
         > h3{
             font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
-            color: var(--contrastColorOne);
-            border-bottom: 2px solid var(--contrastColorOne);
+            color: #00daff;
+            border-bottom: 2px solid #00daff;
         }
 
         > a,

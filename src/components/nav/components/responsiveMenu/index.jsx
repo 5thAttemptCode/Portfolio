@@ -1,24 +1,26 @@
 import React from 'react'
 import './style.css'
-import { useConfigurator } from '@/context'
 import { ContactData } from '@/components/data/contactData'
+import { useMenu } from '@/context/menuContext'
+import { useCameraContext } from '@/context/cameraContext'
+import { useModal } from '@/context/modalContext'
 
 
 export default function ResponsiveMenu() {
 
+  const { setCameraPosition } = useCameraContext()
+  const { setModalOpen } = useModal()
   const { 
     menuOpen, 
     setMenuOpen, 
     closeMenu, 
-    setModalOpen, 
-    setCameraPosition, 
     menuRef, 
     hamburgerRef 
-  } = useConfigurator()
+  } = useMenu()
 
   return (
     <>
-      <div 
+      <button 
         className="hamburger" 
         ref={hamburgerRef} 
         onClick={() => setMenuOpen(!menuOpen)} 
@@ -31,7 +33,7 @@ export default function ResponsiveMenu() {
         </div>
         <div className="menu-child quick-contact">
           <h3>Quick contact</h3>
-          <p onClick={() => setModalOpen(true)}>E-mail</p>
+          <p onClick={() => {setModalOpen(true); closeMenu();}}>E-mail</p>
           {ContactData.map((item) => (
             <a 
               key={item.id}
@@ -45,7 +47,6 @@ export default function ResponsiveMenu() {
         </div>
         <span>&copy; by H3NRY</span>
       </div>
-
     </>
   )
 }
