@@ -4,42 +4,29 @@ nav{
     left: 0;
     padding-top: 25px;
     width: 100%;
-    padding-inline-start: var(--navMargin);
+    padding-inline: var(--navMargin);
     display: flex;
+    justify-content: space-between;
     align-items: center;
-
-    .logo{
-        display: flex;
-        gap: 4px;
-        cursor: pointer;
-        overflow: hidden;
-
-        &:hover > p {
-            transform: translateX(-100%);
-        }
-
-        p{
-            position: relative;
-            transition: all 0.25s ease-in-out;
-            line-height: 1;
-            font-size: clamp(1.5625rem, 0.7813rem + 2.5vw, 2.1875rem);
-            font-weight: 700;
+    
+    .cta-logo{
+        position: relative;
+        line-height: 1;
+        font-size: clamp(1.5625rem, 0.7813rem + 2.5vw, 2.1875rem);
+        font-weight: 700;
+        color: var(--lightColor);
+        
+        span{
             background: var(--gradient);
             background-clip: text;
             -webkit-text-fill-color: transparent;
             -webkit-background-clip: text;
-
-            &::after{
-                content: 'H3NRY';
-                position: absolute;
-                transform: translateX(0%);
-                font-size: clamp(1.5625rem, 0.7813rem + 2.5vw, 2.1875rem);
-                font-weight: 700;
-                background: var(--gradient);
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-                -webkit-background-clip: text;
-            }
         }
+    }
+
+    .nav-container{
+        display: flex;
+        align-items: center;
+        gap: 2rem
     }
 }
