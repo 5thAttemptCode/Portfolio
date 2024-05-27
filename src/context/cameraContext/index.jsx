@@ -9,7 +9,6 @@ export const CameraProvider = ({ children }) => {
   const [ cameraPosition, setCameraPosition ] = useState(initialCameraPosition)
 
   useEffect(() => {
-    console.log("Camera Position Updated:", cameraPosition)
   }, [cameraPosition])
 
   return (
