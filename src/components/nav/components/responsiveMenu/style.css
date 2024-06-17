@@ -1,7 +1,7 @@
 .hamburger{
     position: relative;
-    width: 50px;
-    height: 25px;
+    width: clamp(1.875rem, 0.3125rem + 5vw, 3.125rem);
+    height: 20px;
     border-block: 3px solid var(--lightColor);
     z-index: 1000;
     cursor: pointer;
@@ -19,14 +19,15 @@
         transition: all 0.1s;
     }
 }
-
-.hamburger:hover{
+@media (min-width: 768px){
+  .hamburger:hover{
     border-block: 3px solid var(--contrastColorTwo);
 
     &:hover::after{
-        background: var(--contrastColorTwo);
-        left: 0;
+      background: var(--contrastColorTwo);
+      left: 0;
     }
+  }
 }
 
 
