@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import './style.css'
 import emailjs from '@emailjs/browser'
 import { useModal } from '@/context/modalContext'
+import { X } from 'phosphor-react'
 
 
 export default function Modal() {
@@ -11,20 +12,20 @@ export default function Modal() {
 
   //Email JS
   const form = useRef()
-  const [ submitText, setSubmitText ] = useState("SEND MAIL")
-  const [ background, setBackground ] = useState("#000")
+  const [ submitText, setSubmitText ] = useState("Submit")
+  const [ background, setBackground ] = useState("#151515")
 
   function sendEmail(e){
     e.preventDefault()
- 
+
     emailjs.sendForm("service_lvjifwh", "template_kdcdb1e", form.current, "76EmLHF7jqlJMKQqj")
       .then((result) => {
         setSubmitText("Thank you!")
         setBackground("#538c50")
         setTimeout(() => {
           setModalOpen(false)
-          setSubmitText('SEND MAIL')
-          setBackground('#000')
+          setSubmitText('Send')
+          setBackground('#151515')
         }, 1200)
 
       }, (error) => {
@@ -37,19 +38,17 @@ export default function Modal() {
   }
 
   if(!modalOpen) return null
-  
+
   return (
     <div className='overlay'>
-      <div className="close" onClick={() => setModalOpen(false)}></div>
       <div className="modal">
-        <h1>Get in touch</h1>
+        <X size={20} className="close" onClick={() => setModalOpen(false)} />
         <form ref={form} onSubmit={sendEmail}>
-          <input className='form-input' type="text" placeholder='your Name' required />
           <input className='form-input' type="email" placeholder='your Email' required />
           <textarea className='form-input' placeholder='your Message' required />
-          <button className="submit" type="submit" style={{background}}>
+          <button className="submit" style={{background}} >
             {submitText}
-          </button>      
+          </button>
         </form>
         <div className='contact-links'>
           <a href="https://github.com/5thAttemptCode" target='_blank'>GitHub</a>
@@ -59,6 +58,3 @@ export default function Modal() {
     </div>
   )
 }
-
-
-
