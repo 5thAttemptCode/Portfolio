@@ -42,17 +42,19 @@ export default function Modal() {
   return (
     <div className='overlay'>
       <div className="modal">
-        <X size={20} className="close" onClick={() => setModalOpen(false)} />
+        <abbr title="close Modal">
+          <X size={20} className="close" onClick={() => setModalOpen(false)} />
+        </abbr>
         <form ref={form} onSubmit={sendEmail}>
-          <input className='form-input' type="email" placeholder='your Email' required />
-          <textarea className='form-input' placeholder='your Message' required />
+          <input className='form-input' type="email" placeholder='[ your Email ]' required />
+          <textarea className='form-input' placeholder='[ your Message ]' required />
           <button className="submit" style={{background}} >
             {submitText}
           </button>
         </form>
         <div className='contact-links'>
-          <a href="https://github.com/5thAttemptCode" target='_blank'>GitHub</a>
-          <a href="https://www.linkedin.com/in/henry-fuerst-10b58a187/" target='_blank'>LinkedIn</a>
+          <a href="https://github.com/5thAttemptCode" target='_blank'>[ GitHub ]</a>
+          <a href="https://www.linkedin.com/in/henry-fuerst-10b58a187/" target='_blank'>[ LinkedIn ]</a>
         </div>
       </div>
     </div>

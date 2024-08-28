@@ -5,7 +5,7 @@
   --boxShadowBlue: rgba(46,112,255,0.54);
   --boxShadowBlueLow: rgba(46,112,255,0.3);
 
-  --transitionTime: all 0.2s;
+  --transitionTime: all 0.1s;
   --gapValue: 1.5rem;
   --paddingValue: 1.5rem;
   --borderRadiusForm: 10px;
@@ -19,7 +19,7 @@
 .overlay{
   position: fixed;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -37,9 +37,14 @@
     border: 1px solid var(--grey);
     transition: var(--transitionTime);
     border-radius: var(--borderRadiusForm);
+    z-index: 3000;
 
     @media (max-width: 450px){
       margin-top: var(--paddingValue);
+    }
+
+    .contact-links > a{
+      max-width: max-content;
     }
  
     &:hover{
@@ -58,7 +63,7 @@
           }
 
           &::placeholder{
-            color: var(--blueLighter);
+            color: var(--lightColor)
           }
         }
       }
