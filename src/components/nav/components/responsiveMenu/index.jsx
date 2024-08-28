@@ -20,11 +20,13 @@ export default function ResponsiveMenu() {
 
   return (
     <>
-      <button 
-        className="hamburger" 
-        ref={hamburgerRef} 
-        onClick={() => setMenuOpen(!menuOpen)} 
-      />
+      <abbr title="toggle Menu">
+        <button 
+          className="hamburger" 
+          ref={hamburgerRef} 
+          onClick={() => setMenuOpen(!menuOpen)} 
+        />
+      </abbr>
       <div className={menuOpen ? "menu-container active" : "menu-container"} ref={menuRef} >
         <div className="menu-child menu-links">
           <p onClick={() => { setCameraPosition([-6.61, 2.11, -5.73]); closeMenu(); }}>PROJECTS</p>
