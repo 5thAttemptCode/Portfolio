@@ -1,30 +1,43 @@
 .hamburger{
     position: relative;
     width: clamp(1.875rem, 0.3125rem + 5vw, 3.125rem);
-    height: 20px;
-    border-block: 3px solid var(--lightColor);
-    z-index: 1000;
+    height: 1rem;
+    border-block-start: 3px solid var(--lightColor);
     cursor: pointer;
-    transition: all 0.1s;
+    transition: var(--transitionTime);
 
-    &::after{
+    &::after, &::before{
         content: '';
         position: absolute;
-        top: 50%;
-        left: 40%;
-        transform: translateY(-50%);
-        width: 60%;
         height: 3px;
+        transform: translateY(-50%);
         background: var(--lightColor);
+        pointer-events: none;
+    }
+
+    &::after{
+        top: 50%;
+        left: 50%;
+        width: 50%;
         transition: all 0.1s;
     }
-}
-@media (min-width: 768px){
-  .hamburger:hover{
-    border-block: 3px solid var(--contrastColorTwo);
 
-    &:hover::after{
-      background: var(--contrastColorTwo);
+    &::before{
+        top: calc(100% + 1.5px);
+        left: 30%;
+        width: 70%;
+        transition: all 0.3s;
+    }
+}
+
+@media (min-width: 768px){
+
+  .hamburger{
+    height: 22px;
+  }
+
+  .hamburger:hover{
+    &:hover::after, &:hover::before{
       left: 0;
     }
   }
@@ -52,6 +65,14 @@
     
     &.active{
         transform: translateX(0);
+    }
+
+    .close{
+        position: absolute;
+        top: 1rem;
+        cursor: pointer;
+        color: var(--lightColor);
+        right: var(--navMargin);
     }
 
     .menu-child{

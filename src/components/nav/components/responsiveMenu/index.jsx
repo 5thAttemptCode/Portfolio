@@ -4,6 +4,7 @@ import { ContactData } from '@/components/data/contactData'
 import { useMenu } from '@/context/menuContext'
 import { useCameraContext } from '@/context/cameraContext'
 import { useModal } from '@/context/modalContext'
+import { X } from 'phosphor-react'
 
 
 export default function ResponsiveMenu() {
@@ -20,7 +21,7 @@ export default function ResponsiveMenu() {
 
   return (
     <>
-      <abbr title="toggle Menu">
+      <abbr title="Open menu">
         <button 
           className="hamburger" 
           ref={hamburgerRef} 
@@ -28,6 +29,9 @@ export default function ResponsiveMenu() {
         />
       </abbr>
       <div className={menuOpen ? "menu-container active" : "menu-container"} ref={menuRef} >
+        <abbr title="Close menu">
+          <X size={30} className="close" onClick={() => setMenuOpen(false)} />
+        </abbr>
         <div className="menu-child menu-links">
           <p onClick={() => { setCameraPosition([-6.61, 2.11, -5.73]); closeMenu(); }}>PROJECTS</p>
           <p onClick={() => { setCameraPosition([7.06, 1.57, -5.31]); closeMenu(); }}>ABOUT</p>
@@ -47,7 +51,7 @@ export default function ResponsiveMenu() {
             </a>
           ))}
         </div>
-        <span>&copy; by H3NRY</span>
+        <span>&copy; by Henry Fuerst</span>
       </div>
     </>
   )
