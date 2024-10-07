@@ -7,7 +7,7 @@ nav{
     padding-inline: var(--navMargin);
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     
     .cta-logo{
         position: relative;
