@@ -17,9 +17,11 @@ export default function Modal() {
   function sendEmail(e){
     e.preventDefault()
 
+    setSubmitText("Sending...")
+
     emailjs.sendForm("service_lvjifwh", "template_kdcdb1e", form.current, "76EmLHF7jqlJMKQqj")
       .then((result) => {
-        setSubmitText("Thank you!")
+        setSubmitText("Success!")
         setTimeout(() => {
           setModalOpen(false)
           setSubmitText('Submit')
@@ -27,7 +29,7 @@ export default function Modal() {
 
       }, (error) => {
         console.log(error.text);
-        setSubmitText("Error")
+        setSubmitText("Error..")
       });
       //Resets form after submit
       e.target.reset()
@@ -48,9 +50,9 @@ export default function Modal() {
         <div className="form-wrapper">
           <h2>Drop me a Message</h2>
           <form ref={form} onSubmit={sendEmail}>
-            <input className='form-input' type="email" placeholder='[ My email adress is.. ]' required />
-            <textarea className='form-input' placeholder='[ I wanted to talk to you about.. ]' required />
-            <button>
+            <input className='form-input' type="email" placeholder='My email adress is... ' required />
+            <textarea className='form-input' placeholder='I wanted to talk to you about...' required />
+            <button className={submitText === "Sending..." ? "sending" : ""}>
               {submitText}
             </button>
           </form>

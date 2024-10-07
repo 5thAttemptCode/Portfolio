@@ -140,3 +140,19 @@
     }
   }
 }
+
+
+/*______________Sending animation______________*/
+.sending{
+  animation: sending 1s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes sending{
+  0%, 100%{
+    color: var(--lightColor);
+  }
+  50%{
+    color: rgb(255, 255, 255, 0.2);
+  }
+}
