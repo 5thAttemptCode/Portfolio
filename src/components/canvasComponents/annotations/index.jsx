@@ -3,14 +3,12 @@ import './style.css'
 import AnnotationBlock from './components/annotationBlock'
 import { Html } from '@react-three/drei'
 import { ProjectData } from '@/components/data/projectData'
-import { useMenu } from '@/context/menuContext'
 import { useModal } from '@/context/modalContext'
 
 
 export default function Annotation() {
   
   const [ hidden, set ] = useState()
-  const { menuOpen } = useMenu()
   const { modalOpen } = useModal()
 
   return (
@@ -22,10 +20,7 @@ export default function Annotation() {
         transform 
         occlude
         style={{
-          transition: 'all 0.2s',
-          opacity: (hidden || menuOpen || modalOpen) ? 0 : 1,
-          transform: `scale(${(hidden || menuOpen || modalOpen) ? 0 : 1})`,
-          pointerEvents: ((hidden || menuOpen || modalOpen) ? "none" : "auto"),
+          display: (hidden || modalOpen) ? "none" : "block"
           }}
         >
         <div className="annotation-wrapper">
