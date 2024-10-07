@@ -9,6 +9,9 @@
   --lightColor: #fff;
   --darkColor: #000;
   --background:#000;
+  --modalColor: #dfe1e4;
+
+  --transitionTime: all 0.1s;
 
   --navMargin: 32px;
 }
@@ -49,4 +52,8 @@ button{
     outline: none;
     box-shadow: none;
   }
+}
+
+::placeholder{
+  font-size: 12px;
 }
