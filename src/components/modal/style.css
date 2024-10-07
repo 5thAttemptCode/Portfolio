@@ -1,149 +1,141 @@
-:root{
-  --grey: #4f4f4f;
-  --blue: #2e70ff;
-  --blueLighter: rgba(46,112,255,0.65);
-  --boxShadowBlue: rgba(46,112,255,0.54);
-  --boxShadowBlueLow: rgba(46,112,255,0.3);
-
-  --transitionTime: all 0.1s;
-  --gapValue: 1.5rem;
-  --paddingValue: 1.5rem;
-  --borderRadiusForm: 10px;
-}
-
-::placeholder{
-  font-size: 12px;
-  color: var(--grey);
-}
-
 .overlay{
   position: fixed;
   top: 0;
-  z-index: 1000;
   height: 100vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: rgb(7, 7, 7, 0.5);
   backdrop-filter: blur(10px);
+  z-index: 3000;
+  transition: var(--transitionTime);
 
   .modal{
     position: relative;
-    width: 300px;
+    max-width: 320px;
+    width: 100%;
     color: var(--grey);
-    padding: var(--paddingValue);
-    background: var(--darkColor);
-    border: 1px solid var(--grey);
     transition: var(--transitionTime);
-    border-radius: var(--borderRadiusForm);
-    z-index: 3000;
 
-    @media (max-width: 450px){
-      margin-top: var(--paddingValue);
+    .top-bar{
+      position: relative;
+      width: 100%;
+      height: calc(25px);
+      background: transparent;
+      display: flex;
+      justify-content: flex-end;
+
+      > abbr{
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 0.5rem;
+        padding-right: 0.5rem;
+        background: var(--modalColor);
+      
+        &::after{
+          content: '';
+          position: absolute;
+          top: 0%;
+          right: 50%;
+          height: 101%;
+          width: 50px;
+          clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+          background: var(--modalColor);
+        }
+
+        .close{
+          cursor: pointer;
+        }
+      }
     }
 
-    .contact-links > a{
-      max-width: max-content;
-    }
- 
-    &:hover{
-      color: var(--blue);
-      border: 1px solid var(--blue);
-      box-shadow: -1px 1px 92px -8px var(--boxShadowBlue);
-      -moz-box-shadow: -1px 1px 92px -8px var(--boxShadowBlue);
-      -webkit-box-shadow: -1px 1px 92px -8px var(--boxShadowBlue);
+    .form-wrapper{
+      padding: 1rem;
+      background: var(--modalColor);
 
       form{
-        .form-input{
-          border-bottom: 1px solid var(--blueLighter);
+        display: grid;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--darkColor);
 
-          &:focus{
-            border-bottom: 1px solid var(--blue);
-          }
-
-          &::placeholder{
-            color: var(--lightColor)
-          }
-        }
-      }
-
-      .contact-links > a{
-        color: var(--blue);
-      }
-    } 
-
-    .close{
-      position: absolute;
-      top: 0.75rem;
-      right: 0.75rem;
-      cursor: pointer;
-      color: rgb(255, 255, 255, 0.55); 
-      transition: var(--transitionTime);
-
-      &:hover{
-        color: var(--lightColor);
-      }
-    }
-
-    form{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--gapValue);
-      transition: var(--transitionTime);
-
-      .form-input{
-        width: 100%;
-        padding: 5px;
-        border: none;
-        background: none;
-        color: var(--lightColor);
-        border-bottom: 1px solid var(--grey);
-
-        &:nth-child(1){
-            margin-top: var(--paddingValue);
-        }
-
-        &:focus{
+        textarea, input{
+          background: none;
+          border: none; 
           outline: none;
+          caret-color: var(--contrastColorTwo);
         }
-      }
-
-      textarea{
-        resize: none;
-        height: 180px;
-      }    
-    
-      .submit {
-        font-size: 1rem;
-        cursor: pointer;
-        padding: 0.6rem 2rem;
-        color: rgb(255, 255, 255, 0.55); 
-        border: 1px solid rgb(255, 255, 255, 0.55);
-        transition: var(--transitionTime);
-        border-radius: var(--borderRadiusForm);
         
-        &:hover{
-          color: var(--lightColor); 
-          border: 1px solid var(--lightColor);
+        input{
+          padding-block: 0.75rem;
+          margin-top: 1rem;
+          border-block: 1px solid var(--darkColor);
+        }
+
+        textarea{
+          resize: none;
+          height: 150px;
+          border-bottom: 1px solid var(--darkColor);
+        }
+
+        > button{
+          position: relative;
+          padding-block: 0.75rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          font-size: 1rem;
+          font-weight: bold;
+          background: var(--contrastColorTwo);
+          color: var(--lightColor);
+          transition: var(--transitionTime);
+        
+          &::after, &::before{
+            content: '';
+            position: absolute;
+            height: 30%;
+            aspect-ratio: 2 / 1;
+            background: var(--modalColor);
+          }
+
+          &::after{
+            bottom: -1px;
+            right: -1px;
+            clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+          }
+        
+          &::before{
+            top: -1px;
+            left: -1px;
+            clip-path: polygon(0 0, 0% 100%, 100% 0);
+          }
+        
+          &:hover{
+            background: var(--contrastColorTwoHover);
+          }
         }
       }
-    }
 
-    .contact-links{
-      display: grid;
-      gap: 5px;
-      margin-top: var(--gapValue);
-
-      > a{
-        color: var(--grey);
-        transition: var(--transitionTime);
-
-        &:hover{
-          text-decoration: underline;
-          color: var(--lightColor); 
-        }                
+      .contact-links{
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      
+        > a{
+          max-width: max-content;      
+          font-weight: 500;         
+          color: var(--darkColor);
+          transition: var(--transitionTime);
+      
+          &:hover{
+            margin-left: 0.2rem;
+          }
+        }
       }
     }
   }
