@@ -13,7 +13,6 @@ export default function Modal() {
   //Email JS
   const form = useRef()
   const [ submitText, setSubmitText ] = useState("Submit")
-  const [ background, setBackground ] = useState("#151515")
 
   function sendEmail(e){
     e.preventDefault()
@@ -21,17 +20,14 @@ export default function Modal() {
     emailjs.sendForm("service_lvjifwh", "template_kdcdb1e", form.current, "76EmLHF7jqlJMKQqj")
       .then((result) => {
         setSubmitText("Thank you!")
-        setBackground("#538c50")
         setTimeout(() => {
           setModalOpen(false)
-          setSubmitText('Send')
-          setBackground('#151515')
+          setSubmitText('Submit')
         }, 1200)
 
       }, (error) => {
         console.log(error.text);
         setSubmitText("Error")
-        setBackground("#f2003c")
       });
       //Resets form after submit
       e.target.reset()
@@ -41,20 +37,27 @@ export default function Modal() {
 
   return (
     <div className='overlay'>
+
       <div className="modal">
-        <abbr title="close Modal">
-          <X size={20} className="close" onClick={() => setModalOpen(false)} />
-        </abbr>
-        <form ref={form} onSubmit={sendEmail}>
-          <input className='form-input' type="email" placeholder='[ your Email ]' required />
-          <textarea className='form-input' placeholder='[ your Message ]' required />
-          <button className="submit" style={{background}} >
-            {submitText}
-          </button>
-        </form>
-        <div className='contact-links'>
-          <a href="https://github.com/5thAttemptCode" target='_blank'>[ GitHub ]</a>
-          <a href="https://www.linkedin.com/in/henry-fuerst-10b58a187/" target='_blank'>[ LinkedIn ]</a>
+        <div className="top-bar">
+          <abbr title="Close modal">
+            <X size={20} className="close" onClick={() => setModalOpen(false)} />
+          </abbr>
+        </div>
+
+        <div className="form-wrapper">
+          <h2>Drop me a Message</h2>
+          <form ref={form} onSubmit={sendEmail}>
+            <input className='form-input' type="email" placeholder='[ My email adress is.. ]' required />
+            <textarea className='form-input' placeholder='[ I wanted to talk to you about.. ]' required />
+            <button>
+              {submitText}
+            </button>
+          </form>
+          <div className='contact-links'>
+            <a href="https://github.com/5thAttemptCode" target='_blank'>[ GitHub ]</a>
+            <a href="https://www.linkedin.com/in/henry-fuerst-10b58a187/" target='_blank'>[ LinkedIn ]</a>
+          </div>
         </div>
       </div>
     </div>
