@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import { Html } from '@react-three/drei'
-import { useMenu } from '@/context/menuContext'
 import { useModal } from '@/context/modalContext'
 
 
 export default function Contact(props) {
 
     const [ hidden, set ] = useState()
-    const { menuOpen } = useMenu()
     const { modalOpen } = useModal()
   
     return(
@@ -20,10 +18,7 @@ export default function Contact(props) {
         transform 
         occlude
         style={{
-          transition: 'all 0.2s',
-          opacity: (hidden || menuOpen || modalOpen) ? 0 : 1,
-          transform: `scale(${(hidden || menuOpen || modalOpen) ? 0 : 1})`,
-          pointerEvents: ((hidden || menuOpen || modalOpen) ? "none" : "auto"),
+          display: (hidden || modalOpen) ? "none" : "block"
         }}
       >
         <div className="contact-wrapper">
