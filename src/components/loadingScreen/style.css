@@ -5,57 +5,38 @@
   width: 100%;
   background: var(--background);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   transition: opacity 0.5s;
   z-index: 1000;
+
+  .loading-wrapper{
+
+    > h3{
+      color: var(--modalColor);
+      letter-spacing: 1px;
+    }
+
+    > h1{
+      color: var( --contrastColorTwo);
+      margin-top: 0.5rem;
+      animation: pulse 1s infinite linear;
+    }
+  }
+
 }
 
-.loading-screen--started{
+.loading-screen-disappear{
   opacity: 0;
   pointer-events: none;
 }
 
-.loading-screen > .bar{
-  position: relative;
-  width: clamp(18.75rem, 3.125rem + 50vw, 31.25rem);
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.loading-screen > .bar::after,
-.loading-screen > .bar::before{
-  content: '';
-  position: absolute;
-  top: 0;
-  height: 100%;
-  aspect-ratio: 1;
-  background: linear-gradient(to right, var(--darkColor), transparent)
-}
-
-.loading-screen > .bar::before{
-  right: -1px;
-  rotate: 180deg;
-  z-index: 10;
-}
-
-.loading-screen > .bar > .load{
-  display: flex;
-  flex-shrink: 0;
-  font-size: clamp(1.25rem, -1.0938rem + 7.5vw, 3.125rem);
-  color: white;
-  animation: marquee 10s linear infinite;
-}
-
-
-@keyframes marquee {
+@keyframes pulse {
   0%, 100% { 
-    transform: translateX(0)
+    opacity: 1;
   }
 
   50% { 
-    transform: translateX(-50%) 
+    opacity: 0.3;
   }
 }

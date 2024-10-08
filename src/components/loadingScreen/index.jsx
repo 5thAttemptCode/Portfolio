@@ -14,11 +14,10 @@ export const LoadingScreen = ({ started, onStarted }) => {
    }, [progress, onStarted])
 
    return (
-      <div className={`loading-screen ${started ? "loading-screen--started" : ""}`}>
-         <div className="bar">
-            <div className="load">
-               LOADING... LOADING... LOADING... LOADING...
-            </div>
+      <div className={`loading-screen ${started ? "loading-screen-disappear" : ""}`}>
+         <div className="loading-wrapper">
+            <h3>Henry's Portfolio</h3>
+            <h1>Loading..</h1>
          </div>
       </div>
    )
