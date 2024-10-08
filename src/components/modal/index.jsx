@@ -23,6 +23,7 @@ export default function Modal() {
       .then((result) => {
         setSubmitText("Success!")
         setTimeout(() => {
+          e.target.reset() //Resets form after submit
           setModalOpen(false)
           setSubmitText('Submit')
         }, 1200)
@@ -31,8 +32,6 @@ export default function Modal() {
         console.log(error.text);
         setSubmitText("Error..")
       });
-      //Resets form after submit
-      e.target.reset()
   }
 
   if(!modalOpen) return null
@@ -42,9 +41,9 @@ export default function Modal() {
 
       <div className="modal">
         <div className="top-bar">
-          <abbr title="Close modal">
+          <div className="close-bar">
             <X size={20} className="close" onClick={() => setModalOpen(false)} />
-          </abbr>
+          </div>
         </div>
 
         <div className="form-wrapper">
