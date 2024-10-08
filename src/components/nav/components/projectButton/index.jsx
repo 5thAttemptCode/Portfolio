@@ -12,7 +12,7 @@ export default function ProjectButton() {
       className='project-button' 
       onClick={() => { setCameraPosition([-6.61, 2.11, -5.73]) }}
     >
-      PROJECTS
+      Projects
     </button>
   )
 }
