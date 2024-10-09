@@ -14,7 +14,7 @@ export default function AnnotationBlock({ hrefLive, hrefCode, header, descriptio
           {description}
         </React.Fragment>
       }>
-        <a className='live' href={hrefLive} target='_blank'>LIVE</a>
+        <a className='live' href={hrefLive} target='_blank'>Live</a>
       </HtmlTooltipText>
       <HtmlTooltipView>
         <a className='code' href={hrefCode} target='_blank'>

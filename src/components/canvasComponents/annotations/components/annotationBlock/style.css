@@ -1,34 +1,39 @@
 .annotation{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 120px;
-    z-index: 0;
-    transition: all 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 120px;
+  z-index: 0;
+  transition: all 0.3s;
 
-    > a{
-      background: var(--gradient);
-      color: var(--lightColor);
-      transition: all 0.1s;
-      
-      &:hover{
-        scale: 1.1;
-      }
+  > a{
+    background: var(--gradient);
+    color: var(--lightColor);
+    transition: all 0.1s;
+    
+    &:hover{
+      scale: 1.1;
     }
 
-    .live{
-      padding: 5px 20px;
-      border-radius: 20px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .code{
-      height: 35px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
   }
+
+  .live{
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .code{
+    height: 33px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+b{
+  color: var(--lightColor);
+}
