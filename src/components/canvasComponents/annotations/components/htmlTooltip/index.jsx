@@ -9,12 +9,11 @@ const HtmlTooltipText = styled(({ className, ...props }) =>
     backgroundColor: 'rgb(0, 0, 0, 0.8)',
     color: '#2e70ff',
     backdropFilter: 'blur(10px)',
-    maxWidth: 200,
+    maxWidth: 210,
     fontSize: theme.typography.pxToRem(16),
-    padding: '0.5em',
-    border: '2px solid white',
+    padding: '1rem',
     display: "grid",
-    gap: "1rem"
+    gap: "0.7rem"
   }
 }))
 
