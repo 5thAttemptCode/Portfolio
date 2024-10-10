@@ -1,36 +1,16 @@
 .annotation{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 1rem;
   width: 120px;
   z-index: 0;
   transition: all 0.3s;
 
   > a{
+    letter-spacing: 1px;
+    padding: 5px 20px;
     background: var(--gradient);
     color: var(--lightColor);
-    transition: all 0.1s;
-    
-    &:hover{
-      scale: 1.1;
-    }
-
-  }
-
-  .live{
-    padding: 5px 20px;
-    border-radius: 20px;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-
-  .code{
-    height: 33px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-radius: var(--borderRadius);
   }
 }
 

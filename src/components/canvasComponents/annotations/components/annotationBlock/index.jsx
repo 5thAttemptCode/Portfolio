@@ -1,7 +1,6 @@
 import React from 'react'
 import './style.css'
 import { HtmlTooltipText, HtmlTooltipView } from '../htmlTooltip'
-import { Code } from 'phosphor-react'
 
 
 export default function AnnotationBlock({ hrefLive, hrefCode, header, description }) {
@@ -14,12 +13,10 @@ export default function AnnotationBlock({ hrefLive, hrefCode, header, descriptio
           {description}
         </React.Fragment>
       }>
-        <a className='live' href={hrefLive} target='_blank'>Live</a>
+        <a href={hrefLive} target='_blank'>Live</a>
       </HtmlTooltipText>
       <HtmlTooltipView>
-        <a className='code' href={hrefCode} target='_blank'>
-          <Code size={20} weight="bold" />
-        </a>
+        <a href={hrefCode} target='_blank'>Code</a>
       </HtmlTooltipView>  
     </div>
   )
