@@ -21,9 +21,9 @@ export default function Contact(props) {
           display: (hidden || modalOpen) ? "none" : "block"
         }}
       >
-        <div className="contact-wrapper">
+        <abbr title={props.title} className="contact-wrapper">
           {props.text}
-        </div>
+        </abbr>
       </Html>
     )
   }
