@@ -3,7 +3,7 @@
   gap: 1rem;
   width: 120px;
   z-index: 0;
-  transition: all 0.3s;
+  transition: var(--transitionTime);
 
   > a{
     letter-spacing: 1px;
@@ -11,6 +11,10 @@
     background: var(--gradient);
     color: var(--lightColor);
     border-radius: var(--borderRadius);
+
+    &:nth-child(2){
+      padding-inline: 16px;
+    }
   }
 }
 
