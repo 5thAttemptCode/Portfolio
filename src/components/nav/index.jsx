@@ -4,6 +4,7 @@ import ResponsiveMenu from './components/responsiveMenu'
 import { useMenu } from '@/context/menuContext'
 import { useCameraContext } from '@/context/cameraContext'
 import ProjectButton from './components/projectButton'
+import CvButton from './components/cvButton'
 
 
 export default function Nav() {
@@ -21,6 +22,7 @@ export default function Nav() {
       </button>
       <div className="nav-container">
         <ProjectButton />
+        <CvButton />
         <ResponsiveMenu />
       </div>
     </nav>
