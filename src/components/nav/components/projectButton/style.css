@@ -3,12 +3,12 @@
   font-size: 1rem;
   letter-spacing: 1px;
   font-weight: 500;
+  cursor: pointer;
+  outline: none;
   border-radius: var(--borderRadius);
   background: var(--contrastColorTwo);
   color: var(--lightColor);
-  transition: all 0.1s;
-  cursor: pointer;
-  outline: none;
+  transition: var(--transitionTime);
 
   &:hover{
     background: var(--contrastColorTwoHover);
