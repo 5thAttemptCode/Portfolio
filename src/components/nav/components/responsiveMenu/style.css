@@ -86,6 +86,7 @@
             color: var(--lightColor);
             cursor: pointer;
             transition: padding-right 0.1s;
+            letter-spacing: 1px;
 
             &:hover{
                 text-decoration: underline;
