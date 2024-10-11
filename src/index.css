@@ -22,6 +22,7 @@
   box-sizing: border-box;
   font-family: 'Manrope', sans-serif;
   user-select: none;
+  text-decoration: none;
 }
 
 body, #root{
@@ -38,7 +39,6 @@ body, #root{
 }
 
 a{
-  text-decoration: none;
   color: var(--lightColor);
 }
 
