@@ -2,8 +2,8 @@
     position: relative;
     width: clamp(1.875rem, 0.3125rem + 5vw, 3.125rem);
     height: 1rem;
-    border-block-start: 3px solid var(--lightColor);
     cursor: pointer;
+    border-block-start: 3px solid var(--lightColor);
     transition: var(--transitionTime);
 
     &::after, &::before{
@@ -11,8 +11,8 @@
         position: absolute;
         height: 3px;
         transform: translateY(-50%);
-        background: var(--lightColor);
         pointer-events: none;
+        background: var(--lightColor);
     }
 
     &::after{
@@ -54,13 +54,13 @@
     width: 20%;
     background: linear-gradient(rgb(0, 0, 199, 0.7), transparent);
     backdrop-filter: blur(10px);
-    border-left: 5px solid var(--darkColor);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     gap: 2rem;
     transition: all 0.5s;
+    border-left: 5px solid var(--darkColor100);
     padding-right: var(--navMargin);
     
     &.active{
@@ -83,10 +83,10 @@
 
         > a,
         > p{
-            color: var(--lightColor);
             cursor: pointer;
             transition: padding-right 0.1s;
             letter-spacing: 1px;
+            color: var(--lightColor);
 
             &:hover{
                 text-decoration: underline;
