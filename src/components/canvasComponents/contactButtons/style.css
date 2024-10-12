@@ -1,17 +1,17 @@
 .contact-wrapper{
   height: 50px;
   aspect-ratio: 1;
-  background: var(--gradient);
   border-radius: 50%;
   padding: 1.5px;
-  transition: var(--transitionTime);
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: var(--darkColor200);
+  transition: var(--transitionTime);
 
   &:hover{
-    scale: 1.1;
+    background: var(--darkColor200Hover);
   }
 
   > a{
