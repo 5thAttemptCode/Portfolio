@@ -8,12 +8,16 @@
   > a{
     letter-spacing: 1px;
     padding: 5px 20px;
-    background: var(--gradient);
+    background: var(--darkColor200);
     color: var(--lightColor);
     border-radius: var(--borderRadius);
 
     &:nth-child(2){
       padding-inline: 16px;
+    }
+
+    &:hover{
+      background: var(--darkColor200Hover);
     }
   }
 }
