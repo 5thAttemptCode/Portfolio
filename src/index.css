@@ -7,9 +7,11 @@
   --contrastColorTwo: #4242dc;
   --contrastColorTwoHover: #3232ad;
   --lightColor: #fff;
-  --darkColor: #000;
+  --darkColor100: #000;
+  --darkColor200: #0c0d11;
+  --darkColor200Hover: #333b44;
   --background:#000;
-  --modalColor: #dfe1e4;
+  --modalBackground: #dfe1e4;
 
   --transitionTime: all 0.1s;
   --borderRadius: 1px;
