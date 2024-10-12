@@ -16,7 +16,6 @@
     position: relative;
     max-width: 320px;
     width: 100%;
-    color: var(--grey);
     transition: var(--transitionTime);
 
     .top-bar{
@@ -33,7 +32,7 @@
         justify-content: flex-end;
         padding-top: 0.5rem;
         padding-right: 0.5rem;
-        background: var(--modalColor);
+        background: var(--modalBackground);
       
         &::after{
           content: '';
@@ -43,7 +42,7 @@
           height: 101%;
           width: 50px;
           clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-          background: var(--modalColor);
+          background: var(--modalBackground);
         }
 
         .close{
@@ -54,13 +53,13 @@
 
     .form-wrapper{
       padding: 1rem;
-      background: var(--modalColor);
+      background: var(--modalBackground);
 
       form{
         display: grid;
         gap: 1rem;
         padding-bottom: 1rem;
-        border-bottom: 1px solid var(--darkColor);
+        border-bottom: 1px solid var(--darkColor100);
 
         textarea, input{
           background: none;
@@ -72,13 +71,13 @@
         input{
           padding-block: 0.75rem;
           margin-top: 1rem;
-          border-block: 1px solid var(--darkColor);
+          border-block: 1px solid var(--darkColor100);
         }
 
         textarea{
           resize: none;
           height: 150px;
-          border-bottom: 1px solid var(--darkColor);
+          border-bottom: 1px solid var(--darkColor100);
         }
 
         > button{
@@ -99,7 +98,7 @@
             position: absolute;
             height: 30%;
             aspect-ratio: 2 / 1;
-            background: var(--modalColor);
+            background: var(--modalBackground);
           }
 
           &::after{
@@ -129,7 +128,7 @@
         > a{
           max-width: max-content;      
           font-weight: 500;         
-          color: var(--darkColor);
+          color: var(--darkColor100);
           transition: var(--transitionTime);
       
           &:hover{
