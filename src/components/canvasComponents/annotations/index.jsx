@@ -4,12 +4,14 @@ import AnnotationBlock from './components/annotationBlock'
 import { Html } from '@react-three/drei'
 import { ProjectData } from '@/components/data/projectData'
 import { useModal } from '@/context/modalContext'
+import { useMenu } from '@/context/menuContext'
 
 
 export default function Annotation() {
   
   const [ hidden, set ] = useState()
   const { modalOpen } = useModal()
+  const { menuOpen } = useMenu()
 
   return (
     <>
@@ -20,8 +22,8 @@ export default function Annotation() {
         transform 
         occlude
         style={{
-          display: (hidden || modalOpen) ? "none" : "block"
-          }}
+          display: (hidden || modalOpen || menuOpen) ? "none" : "block",
+        }}
         >
         <div className="annotation-wrapper">
           {ProjectData.map((item) => (
