@@ -1,20 +1,6 @@
 .project-button{
-  padding: 0.6rem 2rem;
   font-size: 1rem;
-  letter-spacing: 1px;
-  font-weight: 500;
   cursor: pointer;
   outline: none;
-  border-radius: var(--borderRadius);
-  background: var(--contrastColorTwo);
   color: var(--lightColor);
-  transition: var(--transitionTime);
-
-  &:hover{
-    background: var(--contrastColorTwoHover);
-  }
-
-  @media(max-width: 500px){
-    display: none;
-  }
 }
