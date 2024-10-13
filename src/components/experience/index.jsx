@@ -10,31 +10,30 @@ import DragNotice from '../dragNotice'
 
 export default function Experience() {
   
-  const [start, setStart] = useState(false)
+  const [ start, setStart ] = useState(false)
 
   return (
-    <div className="canvas">
-      <LoadingScreen 
-        started={start}  
-        onStarted={() => setStart(true)} 
-      />
-
-      <Canvas shadows>
-        <OrbitControls 
-          enablePan={false} 
-          enableZoom={false} 
-          minPolarAngle={Math.PI / 2.5} 
-          maxPolarAngle={Math.PI / 2.1} 
+    <Suspense fallback={null}>
+      <div className="canvas">
+        <LoadingScreen 
+          started={start}  
+          onStarted={() => setStart(true)} 
         />
-        <Suspense fallback={null}>
+
+        <Canvas frameloop="demand" shadows>
+          <OrbitControls 
+            enablePan={false} 
+            enableZoom={false} 
+            minPolarAngle={Math.PI / 2.5} 
+            maxPolarAngle={Math.PI / 2.1} 
+          />
           {start && <CanExperience />}
-        </Suspense>
-      </Canvas> 
-      
-      <Nav />
-      <Modal />
-      <DragNotice />
-    </div>
+        </Canvas> 
+        
+        <Nav />
+        <Modal />
+        <DragNotice />
+      </div>
+    </Suspense>
   )
 }
- 
