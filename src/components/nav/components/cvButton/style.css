@@ -3,14 +3,4 @@
     justify-content: center;
     align-items: center;
     gap: 0.2rem;
-    padding: 0.6rem 2rem;
-    letter-spacing: 1px;
-    font-weight: 500;
-    border-radius: var(--borderRadius);
-    background: var(--contrastColorTwo);
-    transition: var(--transitionTime);
-
-    &:hover{
-    background: var(--contrastColorTwoHover);
-    }
 }
