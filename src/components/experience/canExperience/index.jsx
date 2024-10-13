@@ -1,41 +1,26 @@
 import React from 'react'
-import { animated, config, useSpring } from '@react-spring/three'
-import { Center, ContactShadows, PerspectiveCamera} from '@react-three/drei'
+import { Center } from '@react-three/drei'
+import { SodaCan } from '@/components/canvasComponents/can/SodaCan'
+import AnimatedCamera from '@/components/canvasComponents/camera'
 import Annotation from '@/components/canvasComponents/annotations/index'
 import Clouding from '@/components/canvasComponents/clouds/index'
 import ContactButton from '@/components/canvasComponents/contactButtons/index'
 import Floor from '@/components/canvasComponents/floor/index'
 import Lights from '@/components/canvasComponents/lights/index'
-import { SodaCan } from '@/components/canvasComponents/can/SodaCan'
-import { useCameraContext } from '@/context/cameraContext'
-
-
-const AnimatedPerspectiveCamera = animated(PerspectiveCamera)
+import Shadows from '@/components/canvasComponents/shadows'
 
 
 export default function CanExperience() {
 
-  //Responsive
-  const onMobile = window.innerWidth < 930
-  
-  // Configurator context
-  const { cameraPosition } = useCameraContext()
-
-  // Camera animation
-  const springProps = useSpring({
-    loop: false,
-    config: config.slow,
-    from: { position: [-20, 10, 50] },
-    to: { position: cameraPosition }
-  })
-
   return (
     <>
-      <AnimatedPerspectiveCamera 
-        makeDefault 
-        fov={onMobile ? 44 : 38} 
-        {...springProps} 
-      />
+      <AnimatedCamera />
+      <Annotation />
+      <Clouding />
+      <ContactButton />
+      <Floor />
+      <Lights />
+      <Shadows />
 
       <Center>
         <SodaCan
@@ -46,20 +31,6 @@ export default function CanExperience() {
           onPointerLeave={ () => {document.body.style.cursor = "default"}}
         />
       </Center>
-
-      <ContactShadows 
-        resolution={256} 
-        position={[0, -2.41, 0]} 
-        scale={15}
-        blur={0.3} 
-        opacity={0.8}
-      />
-
-      <Floor />
-      <Lights />
-      <Annotation />
-      <Clouding />
-      <ContactButton />
     </>
   )
 }
