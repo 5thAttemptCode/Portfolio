@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { Html } from '@react-three/drei'
 import { useModal } from '@/context/modalContext'
+import { useMenu } from '@/context/menuContext'
 
 
 export default function Contact(props) {
 
     const [ hidden, set ] = useState()
     const { modalOpen } = useModal()
+    const { menuOpen } = useMenu()
   
     return(
       <Html
@@ -18,7 +20,7 @@ export default function Contact(props) {
         transform 
         occlude
         style={{
-          display: (hidden || modalOpen) ? "none" : "block"
+          display: (hidden || modalOpen || menuOpen ) ? "none" : "block"
         }}
       >
         <abbr title={props.title} className="contact-wrapper">
