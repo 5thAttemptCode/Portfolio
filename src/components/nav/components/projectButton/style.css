@@ -2,5 +2,5 @@
   font-size: 1rem;
   cursor: pointer;
   outline: none;
-  color: var(--lightColor);
+  color: var(--light-color-100);
 }

@@ -7,16 +7,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgb(7, 7, 7, 0.5);
+  background: var(--bg-color-200);
   backdrop-filter: blur(10px);
   z-index: 3000;
-  transition: var(--transitionTime);
+  transition: var(--transition-time-100);
 
   .modal{
     position: relative;
     max-width: 320px;
     width: 100%;
-    transition: var(--transitionTime);
+    transition: var(--transition-time-100);
 
     .top-bar{
       position: relative;
@@ -32,7 +32,7 @@
         justify-content: flex-end;
         padding-top: 0.5rem;
         padding-right: 0.5rem;
-        background: var(--modalBackground);
+        background: var(--light-color-200);
       
         &::after{
           content: '';
@@ -42,7 +42,7 @@
           height: 101%;
           width: 50px;
           clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-          background: var(--modalBackground);
+          background: var(--light-color-200);
         }
 
         .close{
@@ -53,31 +53,31 @@
 
     .form-wrapper{
       padding: 1rem;
-      background: var(--modalBackground);
+      background: var(--light-color-200);
 
       form{
         display: grid;
         gap: 1rem;
         padding-bottom: 1rem;
-        border-bottom: 1px solid var(--darkColor100);
+        border-bottom: 1px solid var(--dark-color-100);
 
         textarea, input{
           background: none;
           border: none; 
           outline: none;
-          caret-color: var(--contrastColorTwo);
+          caret-color: var(--accent-color-100);
         }
         
         input{
           padding-block: 0.75rem;
           margin-top: 1rem;
-          border-block: 1px solid var(--darkColor100);
+          border-block: 1px solid var(--dark-color-100);
         }
 
         textarea{
           resize: none;
           height: 150px;
-          border-bottom: 1px solid var(--darkColor100);
+          border-bottom: 1px solid var(--dark-color-100);
         }
 
         > button{
@@ -89,16 +89,16 @@
           cursor: pointer;
           font-size: 1rem;
           font-weight: bold;
-          background: var(--contrastColorTwo);
-          color: var(--lightColor);
-          transition: var(--transitionTime);
+          background: var(--accent-color-100);
+          color: var(--light-color-100);
+          transition: var(--transition-time-100);
         
           &::after, &::before{
             content: '';
             position: absolute;
             height: 30%;
             aspect-ratio: 2 / 1;
-            background: var(--modalBackground);
+            background: var(--light-color-200);
           }
 
           &::after{
@@ -114,7 +114,7 @@
           }
         
           &:hover{
-            background: var(--contrastColorTwoHover);
+            background: var(--accent-color-100-hover);
           }
         }
       }
@@ -128,8 +128,8 @@
         > a{
           max-width: max-content;      
           font-weight: 500;         
-          color: var(--darkColor100);
-          transition: var(--transitionTime);
+          color: var(--dark-color-100);
+          transition: var(--transition-time-100);
       
           &:hover{
             margin-left: 0.2rem;
@@ -149,7 +149,7 @@
 
 @keyframes sending{
   0%, 100%{
-    color: var(--lightColor);
+    color: var(--light-color-100);
   }
   50%{
     color: rgb(255, 255, 255, 0.2);

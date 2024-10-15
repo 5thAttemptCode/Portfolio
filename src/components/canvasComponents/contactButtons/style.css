@@ -7,11 +7,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--darkColor200);
-  transition: var(--transitionTime);
+  background: var(--dark-color-200);
+  transition: var(--transition-time-100);
 
   &:hover{
-    background: var(--darkColor200Hover);
+    background: var(--dark-color-200-hover);
   }
 
   > a{
@@ -36,5 +36,3 @@
     margin-top: 6px;
   }
 }
-
-

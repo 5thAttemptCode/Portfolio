@@ -3,25 +3,25 @@
   gap: 1rem;
   width: 120px;
   z-index: 0;
-  transition: var(--transitionTime);
+  transition: var(--transition-time-100);
 
   > a{
     letter-spacing: 1px;
     padding: 5px 20px;
-    background: var(--darkColor200);
-    color: var(--lightColor);
-    border-radius: var(--borderRadius);
+    background: var(--dark-color-200);
+    color: var(--light-color-100);
+    border-radius: var(--border-radius-100);
 
     &:nth-child(2){
-      padding-inline: 16px;
+      padding-inline: 1rem;
     }
 
     &:hover{
-      background: var(--darkColor200Hover);
+      background: var(--dark-color-200-hover);
     }
   }
 }
 
 b{
-  color: var(--lightColor);
+  color: var(--light-color-100);
 }

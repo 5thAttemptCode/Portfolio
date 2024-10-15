@@ -8,19 +8,19 @@
   align-items: center;
   transition: opacity 0.5s;
   z-index: 1000;
-  background: var(--background);
+  background: var(--background-color-100);
 
   .loading-wrapper{
 
     > h3{
       letter-spacing: 1px;
-      color: var(--modalBackground);
+      color: var(--light-color-200);
     }
 
     > h1{
       margin-top: 0.5rem;
       animation: pulse 1s infinite linear;
-      color: var(--contrastColorTwo);
+      color: var(--accent-color-100);
     }
   }
 
