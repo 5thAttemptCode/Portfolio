@@ -29,9 +29,7 @@ export default function ResponsiveMenu() {
         />
       </abbr>
       <div className={menuOpen ? "menu-container active" : "menu-container"} ref={menuRef} >
-        <abbr title="Close menu">
-          <X size={30} className="close" onClick={() => setMenuOpen(false)} />
-        </abbr>
+        <X size={30} className="close" onClick={() => setMenuOpen(false)} />
         <div className="menu-child menu-links">
           <p onClick={() => { setCameraPosition([-6.61, 2.11, -5.73]); closeMenu(); }}>Projects</p>
           <p onClick={() => { setCameraPosition([7.06, 1.57, -5.31]); closeMenu(); }}>About</p>
