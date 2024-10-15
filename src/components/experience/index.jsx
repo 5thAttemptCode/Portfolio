@@ -34,7 +34,7 @@ export default function Experience() {
           {start && <CanExperience />}
       </Canvas> 
 
-      {canvasLoaded && (
+      {start && canvasLoaded && (
         <>
           <Nav />
           <Modal />
