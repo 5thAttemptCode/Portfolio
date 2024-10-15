@@ -22,7 +22,6 @@ export default function Experience() {
       />
 
       <Canvas 
-        frameloop="demand" 
         shadows 
         onCreated={() => setCanvasLoaded(true)}
       >
