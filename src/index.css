@@ -10,13 +10,13 @@
   --accent-color-100: #4242dc;
   --accent-color-100-hover: #3232ad;
   --accent-color-200: #00daff;
-  --bg-color-200: rgb(7, 7, 7, 0.5);
   --bg-color-100: #000;
+  --bg-color-200: rgb(7, 7, 7, 0.5);
   --gradient-100: linear-gradient(rgb(0, 0, 199, 0.7), transparent);
   --gradient-200: linear-gradient(135deg, #4242dc 31%, #e49fe2 100%);
 
   --transition-time-100: all 0.1s;
-  --border-tadius-100: 1px;
+  --border-radius-100: 1px;
   --nav-margin: 32px;
 
   --font-family-100: 'Manrope', sans-serif;
