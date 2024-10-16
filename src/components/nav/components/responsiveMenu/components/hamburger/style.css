@@ -1,0 +1,44 @@
+.hamburger{
+    position: relative;
+    width: clamp(1.875rem, 0.3125rem + 5vw, 3.125rem);
+    height: 1rem;
+    cursor: pointer;
+    border-block-start: 3px solid var(--light-color-100);
+    transition: var(--transition-time-100);
+
+    &::after, &::before{
+        content: '';
+        position: absolute;
+        height: 3px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        background: var(--light-color-100);
+    }
+
+    &::after{
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        transition: all 0.1s;
+    }
+
+    &::before{
+        top: calc(100% + 1.5px);
+        left: 30%;
+        width: 70%;
+        transition: all 0.3s;
+    }
+}
+
+@media (min-width: 768px){
+
+  .hamburger{
+    height: 22px;
+  }
+
+  .hamburger:hover{
+    &:hover::after, &:hover::before{
+      left: 0;
+    }
+  }
+}
