@@ -9,7 +9,7 @@ import useClickOutside from '../../customHooks/useClickOutside'
 export default function Modal() {
 
   //Modal
-  const { modalOpen, setModalOpen } = useModal()
+  const { modalOpen, closeModal } = useModal()
 
    // Refs for modal and container
   const modalRef = useRef()
@@ -20,7 +20,7 @@ export default function Modal() {
     containerRef: overlayRef, 
     childRef: modalRef, 
     isActive: modalOpen, 
-    toggle: () => setModalOpen(false)
+    toggle: closeModal
   })
 
   //Email JS
@@ -37,7 +37,7 @@ export default function Modal() {
         setSubmitText("Success!")
         setTimeout(() => {
           e.target.reset() //Resets form after submit
-          setModalOpen(false)
+          closeModal()
           setSubmitText('Submit')
         }, 1200)
 
@@ -55,7 +55,7 @@ export default function Modal() {
 
         <div className="top-bar">
           <div className="close-bar">
-            <X size={20} className="close" onClick={() => setModalOpen(false)} />
+            <X size={20} className="close" onClick={closeModal} />
           </div>
         </div>
 
