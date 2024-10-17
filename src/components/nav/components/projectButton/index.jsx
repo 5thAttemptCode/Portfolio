@@ -10,7 +10,7 @@ export default function ProjectButton() {
   return (
     <button  
       className='project-button nav-button' 
-      onClick={() => { setCameraPosition([-6.61, 2.11, -5.73]) }}
+      onClick={() => { setCameraPosition([-6.61, 1.3, -5.73]) }}
     >
       Projects
     </button>
