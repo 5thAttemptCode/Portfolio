@@ -56,7 +56,7 @@
          > h3{
             font-size: 1.25rem;
             color: var(--accent-color-200);
-            border-bottom: var(--accent-color-200);
+            border-bottom: 2px solid var(--accent-color-200);
         }
 
         > a,
