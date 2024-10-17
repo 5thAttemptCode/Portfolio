@@ -1,6 +1,6 @@
 import React from 'react'
 import { Center } from '@react-three/drei'
-import { SodaCan } from '@/components/canvasComponents/can/SodaCan'
+import { SodaCan } from '@/components/canvasComponents/can/index'
 import AnimatedCamera from '@/components/canvasComponents/camera'
 import Annotation from '@/components/canvasComponents/annotations/index'
 import Clouding from '@/components/canvasComponents/clouds/index'
