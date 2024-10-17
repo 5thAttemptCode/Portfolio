@@ -1,8 +1,9 @@
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function CanLabel(props) {
-  const { nodes, materials } = useGLTF('/canLabel.gltf')
+
+export function SodaCan(props) {
+  const { nodes, materials } = useGLTF('/Model/SodaCan.gltf')
   return (
     <group {...props} dispose={null}>
       <group position={[0, 3.471, -0.289]} scale={[-1.324, -2.473, -1.324]}>
@@ -14,4 +15,4 @@ export function CanLabel(props) {
   )
 }
 
-useGLTF.preload('/canLabel.gltf')
+useGLTF.preload('/Model/SodaCan.gltf')
