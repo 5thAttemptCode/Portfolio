@@ -1,14 +1,15 @@
 import React from 'react'
 import './style.css'
-import { Envelope } from 'phosphor-react'
 import Contact from './components/contact'
 import { ContactData } from '@/components/data/contactData'
+import { Envelope } from 'phosphor-react'
 import { useModal } from '@/context/modalContext'
 
 
 export default function ContactButton() {
 
   const { setModalOpen } = useModal()
+  const socialContact = ContactData.slice(0, 2)
 
   return (
     <>
@@ -17,12 +18,12 @@ export default function ContactButton() {
         rotation={2.1}
         title="Send email"
         text={
-          <div className='mail' onClick={() => setModalOpen(true)}>
+          <button className='mail' onClick={() => setModalOpen(true)}>
             <Envelope size={35} color="#ffffff" />
-          </div>
+          </button>
         }
       />
-      {ContactData.map((item) => (
+      {socialContact.map((item) => (
         <Contact
           key={item.id}
           position={item.contactPosition}
