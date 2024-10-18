@@ -14,5 +14,10 @@ export const ContactData= [
         contactIMG: "/Logos/linkedin.png",
         contactPosition: [0.45, -0.95, -1.357],
         contactRotation: 2.68
+    },
+    {
+        id: 3,
+        contactName: "Download CV",
+        contactURL: "/CV/Henry_Fuerst_CV.pdf"
     }
 ]
