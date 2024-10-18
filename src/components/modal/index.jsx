@@ -1,14 +1,15 @@
 import React, { useRef, useState } from 'react'
 import './style.css'
 import emailjs from '@emailjs/browser'
+import useClickOutside from '../../customHooks/useClickOutside'
+import { ContactData } from '@/components/data/contactData'
 import { useModal } from '@/context/modalContext'
 import { X } from 'phosphor-react'
-import useClickOutside from '../../customHooks/useClickOutside'
 
 
 export default function Modal() {
 
-  //Modal
+  // Modal
   const { modalOpen, closeModal } = useModal()
 
    // Refs for modal and container
@@ -23,7 +24,7 @@ export default function Modal() {
     toggle: closeModal
   })
 
-  //Email JS
+  // Email JS
   const form = useRef()
   const [ submitText, setSubmitText ] = useState("Submit")
 
@@ -49,6 +50,9 @@ export default function Modal() {
 
   if(!modalOpen) return null
 
+  // Social contact 
+  const socialContact = ContactData.slice(0, 2)
+
   return (
     <div className='overlay' ref={overlayRef}>
       <div className="modal" ref={modalRef}>
@@ -69,8 +73,15 @@ export default function Modal() {
             </button>
           </form>
           <div className='contact-links'>
-            <a href="https://github.com/5thAttemptCode" target='_blank'>[ GitHub ]</a>
-            <a href="https://www.linkedin.com/in/henry-fuerst-10b58a187/" target='_blank'>[ LinkedIn ]</a>
+          {socialContact.map((item) => (
+            <a 
+              key={item.id} 
+              href={item.contactURL} 
+              target="_blank"
+            >
+              [ {item.contactName} ]
+            </a>
+          ))}
           </div>
         </div>
 
