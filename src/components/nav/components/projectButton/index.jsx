@@ -1,18 +1,20 @@
 import React from 'react'
 import './style.css'
+import { MenuData } from '@/components/data/menuData'
 import { useCameraContext } from '@/context/cameraContext'
 
 
 export default function ProjectButton() {
 
   const { setCameraPosition } = useCameraContext()
+  const projectData = MenuData.find(projectData => projectData.id === 1)
 
   return (
     <button  
       className='project-button nav-button' 
-      onClick={() => { setCameraPosition([-6.61, 1.3, -5.73]) }}
+      onClick={() => { setCameraPosition(projectData.cameraPosition) }}
     >
-      Projects
+      {projectData.name}
     </button>
   )
 }
