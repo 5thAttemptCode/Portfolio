@@ -15,9 +15,10 @@
   --gradient-100: linear-gradient(rgb(0, 0, 199, 0.7), transparent);
   --gradient-200: linear-gradient(135deg, #4242dc 31%, #e49fe2 100%);
 
-  --transition-time-100: all 0.1s;
+  --blur-100: blur(10px);
   --border-radius-100: 1px;
   --nav-margin: 32px;
+  --transition-time-100: all 0.1s;
 
   --font-family-100: 'Manrope', sans-serif;
 }
@@ -32,7 +33,7 @@
 }
 
 body, #root{
-  height: 100vh;
+  height: 100svh;
   background: var(--bg-color-100);
 }
 
