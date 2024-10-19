@@ -13,12 +13,12 @@ export default function ResponsiveMenu() {
 
   const { setCameraPosition } = useCameraContext()
   const { setModalOpen } = useModal()
-  const { menuOpen, closeMenu, menuRef } = useMenu()
+  const { menuOpen, closeMenu, menuChildRef } = useMenu()
 
   return (
     <>
       <HamburgerMenu />
-      <div className={menuOpen ? "menu-container active" : "menu-container"} ref={menuRef}>
+      <div className={menuOpen ? "menu-container active" : "menu-container"} ref={menuChildRef}>
         <X size={30} className="close" onClick={closeMenu} />
 
         <div className="menu-child menu-links">

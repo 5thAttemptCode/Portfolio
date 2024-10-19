@@ -5,13 +5,13 @@ import { useMenu } from '@/context/menuContext'
 
 export default function HamburgerMenu() {
   
-  const { hamburgerRef, menuOpen, setMenuOpen } = useMenu()
+  const { menuRef, menuOpen, setMenuOpen } = useMenu()
   
   return (
     <abbr title="Open menu">
       <button 
         className="hamburger" 
-        ref={hamburgerRef} 
+        ref={menuRef} 
         onClick={() => setMenuOpen(!menuOpen)} 
       />
     </abbr>
