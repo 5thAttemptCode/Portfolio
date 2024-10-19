@@ -9,15 +9,14 @@ export const MenuProvider = ({ children }) => {
   const [ menuOpen, setMenuOpen ] = useState(false)
   const menuRef = useRef(null)
   const menuChildRef = useRef(null)
+  const closeMenu = () => setMenuOpen(false)
 
   useClickOutside({
     containerRef: menuRef,
     childRef: menuChildRef,
     isActive: menuOpen,
-    toggle: () => setMenuOpen(false),
+    toggle: closeMenu,
   })
-
-  const closeMenu = () => setMenuOpen(false)
 
   return (
     <MenuContext.Provider value={{ menuOpen, setMenuOpen, closeMenu, menuRef, menuChildRef }}>
