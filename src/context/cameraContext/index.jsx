@@ -16,6 +16,7 @@ export const CameraProvider = ({ children }) => {
       value={{
         cameraPosition,
         setCameraPosition,
+        initialCameraPosition
       }}
     >
       {children}

@@ -10,13 +10,13 @@ import CvButton from './components/cvButton'
 export default function Nav() {
   
   const { closeMenu } = useMenu()
-  const { setCameraPosition } = useCameraContext()
+  const { initialCameraPosition, setCameraPosition } = useCameraContext()
   
   return (
     <nav>
       <button 
         className='cta-logo' 
-        onClick={() => {setCameraPosition([-0.04, 1.28, 8.82]); closeMenu;}}
+        onClick={() => {setCameraPosition(initialCameraPosition); closeMenu;}}
       >
         H<span>3</span>NRY
       </button>
