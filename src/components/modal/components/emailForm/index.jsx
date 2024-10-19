@@ -34,8 +34,8 @@ export default function EmailForm() {
 
   return (
     <form ref={form} onSubmit={sendEmail}>
-      <input className='form-input' type="email" placeholder='My email adress is... ' required />
-      <textarea className='form-input' placeholder='I wanted to talk to you about...' required />
+      <input className='form-input' type="email" name="user_email" placeholder='My email adress is... ' required />
+      <textarea className='form-input' name="message" placeholder='I wanted to talk to you about...' required />
       <button className={submitText === "Sending..." ? "sending" : ""}>
         {submitText}
       </button>
