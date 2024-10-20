@@ -82,6 +82,10 @@
       
           &:hover{
             margin-left: 0.5rem;
+
+            @media (hover: none) {
+              margin-left: 0;
+            }
           }
         }
       }

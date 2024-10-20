@@ -59,6 +59,10 @@ button{
     outline: none;
     box-shadow: none;
   }
+
+  @media (hover: none) {
+    background: initial;
+  }
 }
 
 ::placeholder{

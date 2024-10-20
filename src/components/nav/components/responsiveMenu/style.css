@@ -43,6 +43,11 @@
       &:hover{
         padding-right: 10px;
         text-decoration: underline;
+
+        @media (hover: none) {
+          padding-right: initial; 
+          text-decoration: none;
+        }
       }
     }
   }

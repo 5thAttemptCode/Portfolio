@@ -12,6 +12,10 @@
 
   &:hover{
     background: var(--dark-color-200-hover);
+
+    @media (hover: none) {
+      background: initial;
+    }
   }
 
   > a{
