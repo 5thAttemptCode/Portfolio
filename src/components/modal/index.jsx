@@ -1,5 +1,6 @@
 import React from 'react'
 import './style.css'
+import CopyEmail from './components/copyEmailButton'
 import EmailForm from './components/emailForm'
 import { ContactData } from '@/components/data/contactData'
 import { useModal } from '@/context/modalContext'
@@ -29,16 +30,17 @@ export default function Modal() {
           <h2>Drop me a Message</h2>
           <EmailForm />
           <div className='contact-links'>
-          {socialContact.map((item) => (
-            <a 
-              key={item.id} 
-              href={item.contactURL} 
-              target="_blank"
-              onClick={closeModal}
-            >
-              [ {item.contactName} ]
-            </a>
-          ))}
+            {socialContact.map((item) => (
+              <a 
+                target="_blank"
+                href={item.contactURL} 
+                key={item.id} 
+                onClick={closeModal}
+              >
+                [ {item.contactName} ]
+              </a>
+            ))}
+            <CopyEmail />
           </div>
         </div>
       </div>
