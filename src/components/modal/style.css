@@ -80,12 +80,16 @@
           color: var(--dark-color-100);
           transition: var(--transition-time-100);
       
-          &:hover{
+          &:hover {
             margin-left: 0.5rem;
-
+        
             @media (hover: none) {
               margin-left: 0;
             }
+          }
+        
+          @media (hover: none) {
+            margin-left: 0; 
           }
         }
       }
