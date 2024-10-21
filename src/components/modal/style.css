@@ -80,14 +80,10 @@
           color: var(--dark-color-100);
           transition: var(--transition-time-100);
       
-          @media(hover: hover) {
+          @media (min-width: 768px) {
             &:hover {
               margin-left: 0.5rem;
             }
-          }
-        
-          @media(hover: none) {
-            margin-left: 0; 
           }
         }
       }

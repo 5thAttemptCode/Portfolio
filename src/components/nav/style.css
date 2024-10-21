@@ -37,11 +37,9 @@ nav{
       background: var(--accent-color-100);
       transition: var(--transition-time-100);
 
-      &:hover{
-        background: var(--accent-color-100-hover);
-
-        @media (hover: none) {
-          background: initial;
+      @media (min-width: 768px){
+        &:hover{
+          background: var(--accent-color-100-hover);
         }
       }
 

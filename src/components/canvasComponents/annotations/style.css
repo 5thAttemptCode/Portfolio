@@ -5,8 +5,10 @@
   flex-direction: column;
   justify-content: space-between;
   
-  &:has(.annotation:hover) .annotation:not(:hover){
-    opacity: 0.8;
-    filter: blur(3px)
+  @media (min-width: 768px){
+    &:has(.annotation:hover) .annotation:not(:hover){
+      opacity: 0.8;
+      filter: blur(3px)
+    }
   }
 }

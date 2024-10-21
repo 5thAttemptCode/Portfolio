@@ -55,9 +55,11 @@ form{
       left: -1px;
       clip-path: polygon(0 0, 0% 100%, 100% 0);
     }
-  
-    &:hover{
-      background: var(--accent-color-100-hover);
+
+    @media (min-width: 768px){
+      &:hover{
+        background: var(--accent-color-100-hover);
+      }
     }
   }
 }

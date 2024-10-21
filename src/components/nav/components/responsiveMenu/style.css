@@ -40,13 +40,10 @@
       color: var(--light-color-100);
       transition: var(--transition-time-100);
 
-      &:hover{
-        padding-right: 10px;
-        text-decoration: underline;
-
-        @media (hover: none) {
-          padding-right: initial; 
-          text-decoration: none;
+      @media (min-width: 768px){
+        &:hover{
+          padding-right: 10px;
+          text-decoration: underline;
         }
       }
     }

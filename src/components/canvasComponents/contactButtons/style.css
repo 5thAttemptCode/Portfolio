@@ -10,11 +10,9 @@
   background: var(--dark-color-200);
   transition: var(--transition-time-100);
 
-  &:hover{
-    background: var(--dark-color-200-hover);
-
-    @media (hover: none) {
-      background: initial;
+  @media (min-width: 768px){
+    &:hover{
+      background: var(--dark-color-200-hover);
     }
   }
 

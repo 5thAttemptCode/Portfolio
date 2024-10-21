@@ -16,11 +16,9 @@
       padding-inline: 1rem;
     }
 
-    &:hover{
-      background: var(--dark-color-200-hover);
-
-      @media (hover: none) {
-        background: initial;
+    @media (min-width: 768px){
+      &:hover{
+        background: var(--dark-color-200-hover);
       }
     }
   }
