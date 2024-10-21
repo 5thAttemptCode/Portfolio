@@ -37,8 +37,6 @@ form{
     transition: var(--transition-time-100);
   
     &::after, &::before{
-      content: '';
-      position: absolute;
       height: 30%;
       aspect-ratio: 2 / 1;
       background: var(--light-color-200);
@@ -55,7 +53,7 @@ form{
       left: -1px;
       clip-path: polygon(0 0, 0% 100%, 100% 0);
     }
-
+    
     @media (min-width: 768px){
       &:hover{
         background: var(--accent-color-100-hover);

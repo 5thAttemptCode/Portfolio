@@ -32,6 +32,11 @@
   text-decoration: none;
 }
 
+*::after, *::before{
+  content: '';
+  position: absolute;
+}
+
 body, #root{
   height: 100svh;
   background: var(--bg-color-100);

@@ -35,8 +35,6 @@
         background: var(--light-color-200);
       
         &::after{
-          content: '';
-          position: absolute;
           top: 0%;
           right: 50%;
           height: 101%;
@@ -64,7 +62,6 @@
 
         &::after{
           content: "or";
-          position: absolute;
           top: -1.75rem;
           left: 50%;
           transform: translateX(-50%);

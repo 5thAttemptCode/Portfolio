@@ -7,8 +7,6 @@
     transition: var(--transition-time-100);
 
     &::after, &::before{
-      content: '';
-      position: absolute;
       height: 3px;
       transform: translateY(-50%);
       pointer-events: none;
