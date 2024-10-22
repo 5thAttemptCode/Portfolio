@@ -5,7 +5,9 @@ const CameraContext = createContext()
 
 export const CameraProvider = ({ children }) => {
   
-  const initialCameraPosition = [0, 1.28, 8.82]
+  const initialCameraPosition = [ 0, 1.28, 8.82 ]
+  const animatedCameraPosition = [ -20, 10, 50 ]
+
   const [ cameraPosition, setCameraPosition ] = useState(initialCameraPosition)
 
   useEffect(() => {
@@ -16,7 +18,8 @@ export const CameraProvider = ({ children }) => {
       value={{
         cameraPosition,
         setCameraPosition,
-        initialCameraPosition
+        initialCameraPosition,
+        animatedCameraPosition
       }}
     >
       {children}

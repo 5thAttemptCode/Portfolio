@@ -13,13 +13,13 @@ export default function AnimatedCamera() {
   const onMobile = window.innerWidth < 930
 
   // Configurator context
-  const { cameraPosition } = useCameraContext()
+  const { cameraPosition, animatedCameraPosition } = useCameraContext()
 
   // Camera animation
   const springProps = useSpring({
     loop: false,
     config: config.slow,
-    from: { position: [-20, 10, 50] },
+    from: { position: animatedCameraPosition },
     to: { position: cameraPosition }
   })
  
