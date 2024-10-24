@@ -8,19 +8,22 @@ import ContactButton from '@/components/canvasComponents/contactButtons/index'
 import Floor from '@/components/canvasComponents/floor/index'
 import Lights from '@/components/canvasComponents/lights/index'
 import Shadows from '@/components/canvasComponents/shadows'
+import useOnMobile from '@/customHooks/useOnMobile'
 
 
 export default function CanExperience() {
+
+  const onMobile = useOnMobile()
 
   return (
     <>
       <AnimatedCamera />
       <Annotation />
-      <Clouding />
       <ContactButton />
       <Floor />
       <Lights />
       <Shadows />
+      {!onMobile && <Clouding />}
 
       <Center>
         <SodaCan

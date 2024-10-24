@@ -2,6 +2,7 @@ import React from 'react'
 import { animated, config, useSpring } from '@react-spring/three'
 import { PerspectiveCamera } from '@react-three/drei'
 import { useCameraContext } from '@/context/cameraContext'
+import useOnMobile from '@/customHooks/useOnMobile'
 
 
 const AnimatedPerspectiveCamera = animated(PerspectiveCamera)
@@ -10,7 +11,7 @@ const AnimatedPerspectiveCamera = animated(PerspectiveCamera)
 export default function AnimatedCamera() {
   
   //Responsive
-  const onMobile = window.innerWidth < 930
+  const onMobile = useOnMobile()
 
   // Configurator context
   const { cameraPosition, animatedCameraPosition } = useCameraContext()
