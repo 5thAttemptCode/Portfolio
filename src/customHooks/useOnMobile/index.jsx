@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 export default function useOnMobile() {
 
-  const [ onMobile, setOnMobile ] = useState(false)
+  const [ onMobile, setOnMobile ] = useState(null)
 
   useEffect(() => {
     const handleResize = () => {

@@ -15,6 +15,11 @@ export default function CanExperience() {
 
   const onMobile = useOnMobile()
 
+  // Don't render anything until onMobile is determined
+  if (onMobile === null) {
+    return null
+  }
+
   return (
     <>
       <AnimatedCamera />
