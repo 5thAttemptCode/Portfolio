@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 export default function CopyEmail() {
   
-  const initialText = 'Copy email'
+  const initialText = 'Copy my email'
   const [ buttonText, setButtonText ] = useState(initialText)
   
   const handleCopyEmail = () => {
