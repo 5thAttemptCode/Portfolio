@@ -4,7 +4,7 @@
   width: 120px;
   z-index: 0;
   transition: var(--transition-time-100);
-
+  
   > a{
     letter-spacing: 1px;
     padding: 5px 20px;

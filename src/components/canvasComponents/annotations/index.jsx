@@ -16,7 +16,7 @@ export default function Annotation() {
   return (
     <>
       <Html 
-        position={[-0.75, 1.01, -1.12]} 
+        position={[-0.8, 1.01, -1.12]} 
         rotation-y={3.7} 
         distanceFactor={3}
         transform 
