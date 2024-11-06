@@ -19,12 +19,5 @@ export const ProjectData = [
         projectCode: "https://github.com/5thAttemptCode/React_Firebase_Full-project_SneakerHeadz",
         projectType: "E-Commerce",
         projectTechStack: "React, Firebase, Docker, Paypal, Inkscape",
-    },
-    {
-        id: 4,
-        projectURL: "https://doughboyz.netlify.app/",
-        projectCode: "https://github.com/5thAttemptCode/Doughboyz_ThreeJS_Portfolio-project",
-        projectType: "Landing Page",
-        projectTechStack: "Three JS, HTML/CSS",
-    },
+    }
 ]
