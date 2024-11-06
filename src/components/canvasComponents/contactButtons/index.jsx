@@ -14,8 +14,8 @@ export default function ContactButton() {
   return (
     <>
       <Contact 
-        position={[1.2, -0.95, -0.7]} 
-        rotation={2.1}
+        position={[1.35, -0.9, -0.15]} 
+        rotation={1.7}
         title="Send email"
         text={
           <button className='mail' onClick={() => setModalOpen(true)}>
