@@ -4,9 +4,9 @@
 :root{
   --light-color-100: #fff;
   --light-color-200: #dfe1e4;
+  --light-color-200-hover: #c0c2c5;
   --dark-color-100: #000;
   --dark-color-200: #0c0d11;
-  --dark-color-200-hover: #333b44;
   --accent-color-100: #4242dc;
   --accent-color-100-hover: #3232ad;
   --accent-color-200: #00daff;

@@ -19,7 +19,7 @@ export default function ContactButton() {
         title="Send email"
         text={
           <button className='mail' onClick={() => setModalOpen(true)}>
-            <Envelope size={35} color="#ffffff" />
+            <Envelope size={35} color="#000000" />
           </button>
         }
       />

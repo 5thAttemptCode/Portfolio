@@ -7,12 +7,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--dark-color-200);
+  background: var(--light-color-200);
   transition: var(--transition-time-100);
 
   @media (min-width: 768px){
     &:hover{
-      background: var(--dark-color-200-hover);
+      background: var(--light-color-200-hover);
     }
   }
 
@@ -27,7 +27,7 @@
       height: 75%;
       width: 75%;
       object-fit: cover;
-      filter: invert();
+    
       pointer-events: none;
       margin-left: 1px;
       margin-top: 1px;

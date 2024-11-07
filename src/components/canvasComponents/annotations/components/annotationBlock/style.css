@@ -8,9 +8,9 @@
   > a{
     letter-spacing: 1px;
     padding: 5px 20px;
-    background: var(--dark-color-200);
-    color: var(--light-color-100);
+    background: var(--light-color-200);
     border-radius: var(--border-radius-100);
+    color: var(--dark-color-100);
 
     &:nth-child(2){
       padding-inline: 1rem;
@@ -18,7 +18,7 @@
 
     @media (min-width: 768px){
       &:hover{
-        background: var(--dark-color-200-hover);
+        background: var(--light-color-200-hover);
       }
     }
   }
