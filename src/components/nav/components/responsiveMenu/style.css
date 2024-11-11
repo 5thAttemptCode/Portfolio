@@ -22,7 +22,7 @@
 
   .close{
     position: absolute;
-    top: 1rem;
+    top: 2rem;
     cursor: pointer;
     color: var(--light-color-100);
     right: var(--nav-margin);
