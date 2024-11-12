@@ -7,7 +7,11 @@
   
   > a{
     letter-spacing: 1px;
-    padding: 5px 20px;
+    padding: 5px 0;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: var(--light-color-200);
     border-radius: var(--border-radius-100);
     color: var(--dark-color-100);
