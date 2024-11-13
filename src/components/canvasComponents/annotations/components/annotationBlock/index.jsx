@@ -1,23 +1,26 @@
 import React from 'react'
 import './style.css'
-import { HtmlTooltipText, HtmlTooltipView } from '../htmlTooltip'
+import { HtmlTooltipText } from '../htmlTooltip'
 
 
-export default function AnnotationBlock({ hrefLive, hrefCode, header, description }) {
+export default function AnnotationBlock({ href, header, description, liveLink }) {
     
   return (
     <div className="annotation">
-      <HtmlTooltipText placement="top-start" title={
-        <React.Fragment>
-          <b>{header}</b>
-          {description}
-        </React.Fragment>
-      }>
-        <a href={hrefLive} target='_blank'>Live</a>
-      </HtmlTooltipText>
-      <HtmlTooltipView>
-        <a href={hrefCode} target='_blank'>Code</a>
-      </HtmlTooltipView>  
+      {liveLink ? (
+        <HtmlTooltipText placement="top-start" title={
+          <React.Fragment>
+            <b>{header}</b>
+            {description}
+          </React.Fragment>
+        }>
+          <a href={href} target='_blank'>Live</a>
+        </HtmlTooltipText>
+      ) : (
+        <abbr title="View source-code">
+          <a href={href} target='_blank'>Code</a>
+        </abbr>
+      )}
     </div>
   )
 }

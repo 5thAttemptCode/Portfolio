@@ -1,24 +1,20 @@
 .annotation{
   display: flex;
   gap: 1rem;
-  width: 120px;
   z-index: 0;
   transition: var(--transition-time-100);
   
-  > a{
-    letter-spacing: 1px;
-    padding: 5px 0;
-    width: 80px;
+  > a, > abbr a{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding-block: 5px;
     background: var(--light-color-200);
     border-radius: var(--border-radius-100);
     color: var(--dark-color-100);
-
-    &:nth-child(2){
-      padding-inline: 1rem;
-    }
+    width: var(--annotation-btn-width);
 
     @media (min-width: 768px){
       &:hover{
