@@ -1,15 +1,8 @@
 .annotation-wrapper{
-  margin-top: 350px;
-  height: 350px;
-  gap: 65px;
+  cursor: grab;
   display: flex;
   flex-direction: column;
-  cursor: grab;
-  
-  @media (min-width: 768px){
-    &:has(.annotation:hover) .annotation:not(:hover){
-      opacity: 0.8;
-      filter: blur(3px)
-    }
-  }
+  gap: 65px;
+  margin-top: 230px;
+  width: var(--annotation-btn-width);
 }
