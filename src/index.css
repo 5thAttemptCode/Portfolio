@@ -4,7 +4,7 @@
 :root{
   --light-color-100: #fff;
   --light-color-200: #dfe1e4;
-  --light-color-200-hover: #c0c2c5;
+  --light-color-200-hover: #9aa7c8;
   --dark-color-100: #000;
   --dark-color-200: #0c0d11;
   --accent-color-100: #4242dc;
@@ -15,6 +15,7 @@
   --gradient-100: linear-gradient(rgb(0, 0, 199, 0.7), transparent);
   --gradient-200: linear-gradient(135deg, #4242dc 31%, #e49fe2 100%);
 
+  --annotation-btn-width: 75px;
   --blur-100: blur(10px);
   --border-radius-100: 1px;
   --nav-margin: 32px;
