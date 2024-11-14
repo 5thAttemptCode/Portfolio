@@ -14,7 +14,7 @@ export default function ContactButton() {
   return (
     <>
       <Contact 
-        position={[1.35, -0.9, -0.15]} 
+        position={[1.315, -0.9, -0.12]} 
         rotation={1.7}
         title="Send email"
         text={
