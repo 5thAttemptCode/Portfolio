@@ -3,36 +3,21 @@ nav{
   top: 0;
   left: 0%;
   width: 100%;
-  padding-top: 25px;
+  padding-top: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding-inline: var(--nav-margin);
-    
-  .cta-logo{
-    position: relative;
-    line-height: 1;
-    font-size: clamp(1.5625rem, 0.7813rem + 2.5vw, 2.1875rem);
-    font-weight: 700;
-    color: var(--light-color-100);
-        
-    span{
-      background: var(--gradient-200);
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
-    }
-  }
 
   .nav-container{
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: var(--nav-margin);
 
     .nav-button{
       font-weight: 500;
       letter-spacing: 1px;
-      padding: 0.6rem 0;
+      padding-block: 0.6rem;
       width: 160px;
       border-radius: var(--border-radius-100);
       background: var(--accent-color-100);

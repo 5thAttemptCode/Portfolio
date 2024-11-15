@@ -1,0 +1,12 @@
+.logo{
+  font-size: clamp(1.5625rem, 0.7813rem + 2.5vw, 2.1875rem);
+  font-weight: 700;
+  color: var(--light-color-100);
+
+  span{
+    background: var(--gradient-200);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+}
