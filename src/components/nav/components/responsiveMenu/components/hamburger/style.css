@@ -1,15 +1,14 @@
 .hamburger-wrapper{
   height: 2.5rem;
   aspect-ratio: 1;
-  border: 2px solid var(--dark-color-200);
   transition: var(--transition-time-100);
 
-  &:hover{
-    border: 2px solid var(--light-color-100);
-  }
-
-  @media (max-width: 768px){
-    border: none;
+  @media (min-width: 768px){
+    border: 2px solid var(--dark-color-200);
+    
+    &:hover{
+      border: 2px solid var(--light-color-100);
+    }
   }
 
   .hamburger{
