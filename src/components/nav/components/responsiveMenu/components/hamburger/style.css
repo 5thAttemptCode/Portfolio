@@ -1,42 +1,23 @@
-.hamburger{
-    position: relative;
-    height: 1rem;
-    aspect-ratio: 2.2 / 1;
-    cursor: pointer;
-    border-block-start: 3px solid var(--light-color-100);
-    transition: var(--transition-time-100);
+.hamburger-wrapper{
+  height: 2.5rem;
+  aspect-ratio: 1;
+  border: 2px solid var(--dark-color-200);
+  transition: var(--transition-time-100);
 
-    &::after, &::before{
-      height: 3px;
-      transform: translateY(-50%);
-      pointer-events: none;
-      background: var(--light-color-100);
-    }
-
-    &::after{
-      top: 50%;
-      left: 50%;
-      width: 50%;
-      transition: all 0.1s;
-    }
-
-    &::before{
-      top: calc(100% + 1.5px);
-      left: 30%;
-      width: 70%;
-      transition: all 0.3s;
-    }
-}
-
-@media (min-width: 768px){
-  .hamburger{
-    height: 22px;
+  &:hover{
+    border: 2px solid var(--light-color-100);
   }
 
-  .hamburger:hover{
-    &:hover::after, 
-    &:hover::before{
-      left: 0;
-    }
+  @media (max-width: 768px){
+    border: none;
+  }
+
+  .hamburger{
+    height: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-100);
   }
 }
