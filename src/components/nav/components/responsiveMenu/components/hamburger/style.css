@@ -3,14 +3,6 @@
   aspect-ratio: 1;
   transition: var(--transition-time-100);
 
-  @media (min-width: 768px){
-    border: 2px solid var(--dark-color-200);
-    
-    &:hover{
-      border: 2px solid var(--light-color-100);
-    }
-  }
-
   .hamburger{
     height: 100%;
     aspect-ratio: 1;
@@ -18,5 +10,13 @@
     justify-content: center;
     align-items: center;
     border-radius: var(--border-radius-100);
+
+    @media (min-width: 640px){
+      border: 2px solid var(--dark-color-200);
+      
+      &:hover{
+        border: 2px solid var(--light-color-100);
+      }
+    }
   }
 }
