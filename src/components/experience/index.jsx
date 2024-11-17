@@ -3,9 +3,9 @@ import { Canvas} from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { LoadingScreen } from '@/components/loadingScreen'
 import CanExperience from './canExperience'
+import DragNotice from '../dragNotice'
 import Modal from '@/components/modal'
 import Nav from '@/components/nav'
-import DragNotice from '../dragNotice'
 
 
 export default function Experience() {
@@ -13,13 +13,19 @@ export default function Experience() {
   const [ start, setStart ] = useState(false)
   const [ canvasLoaded, setCanvasLoaded ] = useState(false)
 
+  const handleStarted = () => {
+    setTimeout(() => setStart(true), 800)
+  }
+
   return (
     <div className="canvas">
 
-      <LoadingScreen 
-        started={start}  
-        onStarted={() => setStart(true)} 
-      />
+      {!start && (
+        <LoadingScreen 
+          started={start}  
+          onStarted={handleStarted} 
+        />
+      )}
 
       <Canvas 
         frameloop='demand'

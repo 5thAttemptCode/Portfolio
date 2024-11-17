@@ -3,22 +3,22 @@ import './style.css'
 import { useProgress } from '@react-three/drei'
 
 
-export const LoadingScreen = ({ started, onStarted }) => {
+export const LoadingScreen = ({ onStarted }) => {
 
-   const { progress } = useProgress()
+  const { progress } = useProgress()
 
-   useEffect(() => {
-      if (progress >= 100) {
-         onStarted()
-      }
-   }, [progress, onStarted])
+  useEffect(() => {
+   if (progress >= 100) {
+     onStarted()
+   }
+  }, [ progress, onStarted ])
 
-   return (
-      <div className={`loading-screen ${started ? "loading-screen-disappear" : ""}`}>
-         <div className="loading-wrapper">
-            <h3>Henry's Portfolio</h3>
-            <h1>Loading..</h1>
-         </div>
+  return (
+    <div className="loading-screen">
+      <div className="loading-wrapper">
+        <h3>Henry's Portfolio</h3>
+        <h1>Loading..</h1>
       </div>
-   )
+    </div>
+  )
 }
