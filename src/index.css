@@ -60,9 +60,10 @@ button{
   outline: none;
   background: none;
   cursor: pointer;
+  touch-action: manipulation;
 
   &:focus{
-    outline: none;
+    outline: none !important;
     box-shadow: none;
   }
 
