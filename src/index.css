@@ -60,11 +60,12 @@ button{
   outline: none;
   background: none;
   cursor: pointer;
-  touch-action: manipulation;
+  touch-action: manipulation !important;
 
-  &:focus{
+  &:focus, &:active{
     outline: none !important;
-    box-shadow: none;
+    box-shadow: none !important;
+    touch-action: manipulation !important;
   }
 
   @media (hover: none) {
