@@ -79,7 +79,7 @@
       
           @media (min-width: 768px) {
             &:hover {
-              margin-left: 0.5rem;
+              padding-left: 0.5rem;
             }
           }
         }
