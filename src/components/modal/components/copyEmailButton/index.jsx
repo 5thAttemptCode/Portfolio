@@ -1,26 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { HtmlTooltipText } from '@/components/canvasComponents/annotations/components/htmlTooltip'
+import { useCopyEmail } from '@/customHooks/useCopyEmail'
 
 
 export default function CopyEmail() {
   
-  const initialText = 'Copy my email'
-  const [ buttonText, setButtonText ] = useState(initialText)
-  
-  const handleCopyEmail = () => {
-    const email = 'htlfuerst@gmail.com'
-    navigator.clipboard.writeText(email).then(() => {
-      setButtonText('Copied!')
-      setTimeout(() => {
-        setButtonText(initialText)
-      }, 1500)
-    })
-  }
+  const { buttonText, copyEmail } = useCopyEmail()
 
   return (
-    <abbr title='Copy my email adress'>
-      <button onClick={handleCopyEmail} className='copy-email'>
+    <HtmlTooltipText placement="top-start" title='Copy my email adress'>
+      <button onClick={copyEmail} className='copy-email'>
         [ {buttonText} ]
       </button>
-    </abbr>
+    </HtmlTooltipText>
   )
 }

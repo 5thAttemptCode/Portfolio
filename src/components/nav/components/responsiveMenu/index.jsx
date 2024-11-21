@@ -4,6 +4,7 @@ import HamburgerMenu from './components/hamburger'
 import { ContactData } from '@/components/data/contactData'
 import { MenuData } from '@/components/data/menuData'
 import { useCameraContext } from '@/context/cameraContext'
+import { useCopyEmail } from '@/customHooks/useCopyEmail'
 import { useMenu } from '@/context/menuContext'
 import { useModal } from '@/context/modalContext'
 import { X } from 'phosphor-react'
@@ -12,8 +13,12 @@ import { X } from 'phosphor-react'
 export default function ResponsiveMenu() {
 
   const { setCameraPosition } = useCameraContext()
+
   const { setModalOpen } = useModal()
+
   const { menuOpen, closeMenu, menuChildRef } = useMenu()
+
+  const { buttonText, copyEmail } = useCopyEmail()
 
   return (
     <>
@@ -34,7 +39,7 @@ export default function ResponsiveMenu() {
 
         <div className="menu-child quick-contact">
           <h3>Quick contact</h3>
-          <button onClick={() => {setModalOpen(true); closeMenu();}}>E-mail</button>
+          <button onClick={() => {setModalOpen(true); closeMenu();}}>Send e-mail</button>
           {ContactData.map((item) => (
             <a 
               key={item.id}
@@ -45,6 +50,7 @@ export default function ResponsiveMenu() {
               {item.contactName}
             </a>
           ))}
+          <button onClick={copyEmail}>{buttonText}</button>
         </div>
 
         <span>&copy; by Henry Fuerst</span>
