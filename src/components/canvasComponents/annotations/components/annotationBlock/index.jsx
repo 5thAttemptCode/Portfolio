@@ -17,9 +17,9 @@ export default function AnnotationBlock({ href, header, description, liveLink })
           <a href={href} target='_blank'>Live</a>
         </HtmlTooltipText>
       ) : (
-        <abbr title="View source-code">
+        <HtmlTooltipText placement="top-start" title="View source-code">
           <a href={href} target='_blank'>Code</a>
-        </abbr>
+        </HtmlTooltipText>
       )}
     </div>
   )

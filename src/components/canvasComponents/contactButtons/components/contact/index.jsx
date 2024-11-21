@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { Html } from '@react-three/drei'
+import { HtmlTooltipText } from '@/components/canvasComponents/annotations/components/htmlTooltip'
 import { useModal } from '@/context/modalContext'
 import { useMenu } from '@/context/menuContext'
 
 
 export default function Contact(props) {
 
-    const [ hidden, set ] = useState()
+    const [ hidden, setHidden ] = useState()
     const { modalOpen } = useModal()
     const { menuOpen } = useMenu()
   
@@ -24,9 +25,11 @@ export default function Contact(props) {
         }}
       >
         <div className="contact-wrapper">
-          <abbr title={props.title} className="contact-container">
-            {props.text}
-          </abbr>
+          <HtmlTooltipText position="top" title={props.title}>
+            <div className="contact-container">
+              {props.text}
+            </div>
+          </HtmlTooltipText>
         </div>
       </Html>
     )
