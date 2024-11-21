@@ -15,10 +15,8 @@ export const LoadingScreen = ({ onStarted }) => {
 
   return (
     <div className="loading-screen">
-      <div className="loading-wrapper">
-        <h3>Henry's Portfolio</h3>
-        <h1>Loading..</h1>
-      </div>
+      <h3>Henry's Portfolio</h3>
+      <h1>Loading..</h1>
     </div>
   )
 }
