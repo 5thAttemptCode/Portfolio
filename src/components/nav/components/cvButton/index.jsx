@@ -16,7 +16,7 @@ export default function CvButton() {
       backgroundColor="rgb(61, 61, 61, 0.7)"
     >
       <a 
-        className='cv-button nav-button' 
+        className='cv-button nav-button flex-center' 
         href={cvData.contactURL} 
         target='_blank' 
       >
