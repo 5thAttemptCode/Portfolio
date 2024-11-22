@@ -5,7 +5,7 @@ import { Hand } from 'phosphor-react'
 
 export default function DragNotice() {
 
-  const [textVisible, setTextVisible] = useState(false)
+  const [ textVisible, setTextVisible ] = useState(false)
 
   // timeOut for DragNotice
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function DragNotice() {
   return (
     <>
       {textVisible && (
-        <div className='drag-notice' >
+        <div className='drag-notice flex-col-center'>
           <Hand className='hand' size={32} />
           <h3>Drag to Explore</h3>
         </div>

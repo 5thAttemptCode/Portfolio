@@ -5,12 +5,10 @@
   transition: var(--transition-time-100);
   
   > a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 15px;
     letter-spacing: 1px;
     padding-block: 5px;
+    font-weight: 500;
     background: var(--light-color-200);
     border-radius: var(--border-radius-100);
     color: var(--dark-color-100);

@@ -25,7 +25,7 @@ export default function Annotation() {
         distanceFactor={distanceFactor}
         style={displayStyle}
         >
-        <div className="annotation-wrapper">
+        <div className="annotation-wrapper flex-col">
           {ProjectData.map((item) => (
             <AnnotationBlock 
               key={item.id}
@@ -46,7 +46,7 @@ export default function Annotation() {
         distanceFactor={distanceFactor}
         style={displayStyle}
         >
-        <div className="annotation-wrapper">
+        <div className="annotation-wrapper flex-col">
           {ProjectData.map((item) => (
             <AnnotationBlock 
               key={item.id}

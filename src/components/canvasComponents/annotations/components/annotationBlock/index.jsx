@@ -3,7 +3,7 @@ import './style.css'
 import { HtmlTooltipText } from '../htmlTooltip'
 
 
-export default function AnnotationBlock({ href, header, description, liveLink }) {
+export default function AnnotationBlock({ description, header, href, liveLink }) {
     
   return (
     <div className="annotation">
@@ -14,11 +14,11 @@ export default function AnnotationBlock({ href, header, description, liveLink })
             {description}
           </>
         }>
-          <a href={href} target='_blank'>Live</a>
+          <a href={href} target='_blank' className='flex-center'>Live</a>
         </HtmlTooltipText>
       ) : (
         <HtmlTooltipText placement="top-start" title="View source-code">
-          <a href={href} target='_blank'>Code</a>
+          <a href={href} target='_blank' className='flex-center'>Code</a>
         </HtmlTooltipText>
       )}
     </div>

@@ -26,7 +26,7 @@ export default function Contact(props) {
       >
         <div className="contact-wrapper">
           <HtmlTooltipText position="top" title={props.title}>
-            <div className="contact-container">
+            <div className="contact-container flex-center">
               {props.text}
             </div>
           </HtmlTooltipText>

@@ -30,7 +30,7 @@ export default function ContactButton() {
           rotation={item.contactRotation}
           title={item.contactName}
           text={
-            <a href={item.contactURL} target='_blank'>
+            <a href={item.contactURL} target='_blank' className='flex-center'>
               <img src={item.contactIMG} />
             </a>
           }

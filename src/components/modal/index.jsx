@@ -19,17 +19,17 @@ export default function Modal() {
   if(!modalOpen) return null
 
   return (
-    <div className='overlay' ref={overlayRef}>
+    <div className="overlay flex-col-center" ref={overlayRef}>
       <div className="modal" ref={modalRef}>
-        <div className="top-bar">
-          <div className="close-bar">
+        <div className="top-bar flex-end">
+          <div className="close-bar flex-end">
             <X size={20} className="close" onClick={closeModal} />
           </div>
         </div>
         <div className="form-wrapper">
           <h2>Drop me a Message</h2>
           <EmailForm />
-          <div className='contact-links'>
+          <div className="contact-links flex-col">
             {socialContact.map((item) => (
               <a 
                 target="_blank"

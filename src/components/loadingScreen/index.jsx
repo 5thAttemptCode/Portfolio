@@ -14,9 +14,9 @@ export const LoadingScreen = ({ onStarted }) => {
   }, [ progress, onStarted ])
 
   return (
-    <div className="loading-screen">
+    <div className="loading-screen flex-col-center">
       <h3>Henry's Portfolio</h3>
-      <h1>Loading..</h1>
+      <h1 className="pulse-animation">isLoading..</h1>
     </div>
   )
 }

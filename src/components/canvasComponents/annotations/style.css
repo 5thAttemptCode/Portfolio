@@ -1,7 +1,5 @@
 .annotation-wrapper{
   cursor: grab;
-  display: flex;
-  flex-direction: column;
   gap: 65px;
   margin-top: 230px;
   width: var(--annotation-btn-width);
