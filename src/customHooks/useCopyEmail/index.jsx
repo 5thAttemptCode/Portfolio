@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 
-export function useCopyEmail( defaultText = 'Copy email', timeout = 1500 ) {
+export function useCopyEmail( defaultText = 'Copy my email', timeout = 1500 ) {
 
   const [ buttonText, setButtonText ] = useState(defaultText)
 
