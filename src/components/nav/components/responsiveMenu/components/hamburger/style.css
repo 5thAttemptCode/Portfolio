@@ -1,14 +1,11 @@
 .hamburger-wrapper{
-  height: 2.5rem;
+  height: calc(2.5rem + 2px);
   aspect-ratio: 1;
   transition: var(--transition-time-100);
 
   .hamburger{
     height: 100%;
     aspect-ratio: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: var(--border-radius-100);
 
     @media (min-width: 640px){

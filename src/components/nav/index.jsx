@@ -11,7 +11,7 @@ export default function Nav() {
   return (
     <nav>
       <Logo />
-      <div className="nav-container">
+      <div className="nav-container flex-center">
         <ProjectButton />
         <CvButton />
         <ResponsiveMenu />

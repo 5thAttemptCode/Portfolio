@@ -11,7 +11,7 @@ export default function HamburgerMenu() {
   return (
     <div className="hamburger-wrapper">
       <button 
-        className="hamburger" 
+        className="hamburger flex-center" 
         ref={menuRef} 
         onClick={() => setMenuOpen(!menuOpen)} 
       >

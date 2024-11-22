@@ -23,10 +23,10 @@ export default function ResponsiveMenu() {
   return (
     <>
       <HamburgerMenu />
-      <div className={menuOpen ? "menu-container active" : "menu-container"} ref={menuChildRef}>
+      <div className={menuOpen ? "menu-container flex-col active" : "menu-container flex-col"} ref={menuChildRef}>
         <X size={30} className="close" onClick={closeMenu} />
 
-        <div className="menu-child menu-links">
+        <div className="menu-child flex-col menu-links">
           {MenuData.map((item) => (
             <button 
               key={item.id} 
@@ -37,7 +37,7 @@ export default function ResponsiveMenu() {
           ))}
         </div>
 
-        <div className="menu-child quick-contact">
+        <div className="menu-child flex-col quick-contact">
           <h3>Quick contact</h3>
           <button onClick={() => {setModalOpen(true); closeMenu();}}>Send e-mail</button>
           {ContactData.map((item) => (
