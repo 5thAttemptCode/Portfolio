@@ -1,4 +1,5 @@
 .cv-button{
+  background: var(--dark-color-100);
   gap: 0.2rem;
   padding-block: calc(0.6rem - 1px);
   border: 2px solid var(--dark-color-200);

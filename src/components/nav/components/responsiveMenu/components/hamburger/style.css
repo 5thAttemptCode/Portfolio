@@ -1,5 +1,6 @@
 .hamburger-wrapper{
-  height: calc(2.5rem + 2px);
+  background: var(--dark-color-100);
+  height: 2.45rem;
   aspect-ratio: 1;
   transition: var(--transition-time-100);
 

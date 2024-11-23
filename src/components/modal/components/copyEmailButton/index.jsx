@@ -8,7 +8,7 @@ export default function CopyEmail() {
   const { buttonText, copyEmail } = useCopyEmail()
 
   return (
-    <HtmlTooltipText placement="top-start" title='Copy my email adress'>
+    <HtmlTooltipText placement="top-start" title='Copy my e-mail adress'>
       <button onClick={copyEmail} className='copy-email'>
         [ {buttonText} ]
       </button>

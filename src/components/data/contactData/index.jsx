@@ -9,7 +9,7 @@ export const ContactData= [
     },
     {
         id: 2,
-        contactName: "Linkedin",
+        contactName: "LinkedIn",
         contactURL: "https://www.linkedin.com/in/henry-fuerst-10b58a187/",
         contactIMG: "/Logos/linkedin.png",
         contactPosition: [0.81, -0.9, -1.045],

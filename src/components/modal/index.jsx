@@ -27,7 +27,7 @@ export default function Modal() {
           </div>
         </div>
         <div className="form-wrapper">
-          <h2>Drop me a Message</h2>
+          <h2>Drop me a message</h2>
           <EmailForm />
           <div className="contact-links flex-col">
             {socialContact.map((item) => (

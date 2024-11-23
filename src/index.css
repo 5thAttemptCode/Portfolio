@@ -10,7 +10,7 @@
   --bg-color-100: #000;
   --bg-color-200: rgb(7, 7, 7, 0.5);
   --gradient-100: linear-gradient(rgb(0, 0, 199, 0.7), transparent);
-  --gradient-200: linear-gradient(135deg, #0b0ba0 27%, #00d9ff 100%);
+  --gradient-200: linear-gradient(135deg, #0b0ba0 23%, #8deeff 100%);
 
   --annotation-btn-width: 75px;
   --blur-100: blur(10px);

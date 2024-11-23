@@ -8,6 +8,7 @@
   @media (min-width: 768px){
     &:hover{
       background: var(--accent-color-100-hover);
+      border: 1px solid var(--accent-color-100-hover);
     }
   }
 }

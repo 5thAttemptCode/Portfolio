@@ -15,7 +15,7 @@ export const LoadingScreen = ({ onStarted }) => {
 
   return (
     <div className="loading-screen flex-col-center">
-      <h3>Henry's Portfolio</h3>
+      <h1>Henry's Portfolio</h1>
       <h1 className="pulse-animation">isLoading..</h1>
     </div>
   )

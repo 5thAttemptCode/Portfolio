@@ -1,6 +1,7 @@
 .logo{
-  font-size: clamp(1.5625rem, 0.7813rem + 2.5vw, 2.1875rem);
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
   color: var(--light-color-100);
 
   span{
@@ -8,5 +9,11 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+  }
+
+  @media(min-width: 768px){
+    font-size: 2rem;
+    letter-spacing: -1px;
+    margin-top: 0;
   }
 }

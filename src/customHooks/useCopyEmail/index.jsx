@@ -1,16 +1,16 @@
 import { useState } from 'react'
 
 
-export function useCopyEmail( defaultText = 'Copy my email', timeout = 1500 ) {
+export function useCopyEmail( defaultText = "Copy my e-mail", timeout = 1500 ) {
 
   const [ buttonText, setButtonText ] = useState(defaultText)
 
   const copyEmail = () => {
     
-    const email = 'htlfuerst@gmail.com'
+    const email = "htlfuerst@gmail.com"
 
     navigator.clipboard.writeText(email).then(() => {
-      setButtonText('Copied!')
+      setButtonText("Copied!")
       setTimeout(() => {
         setButtonText(defaultText)
       }, timeout)

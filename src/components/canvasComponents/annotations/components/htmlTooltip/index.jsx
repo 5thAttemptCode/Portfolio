@@ -18,7 +18,7 @@ const HtmlTooltipText = styled(({ className, backgroundColor, ...props }) =>
       backgroundColor: backgroundColor,
       color: "#ffffff",
       display: "grid",
-      gap: "0.7rem",
+      gap: "0.35rem",
       lineHeight: "1.4",
       padding: "0.5rem 1rem",
       fontSize: theme.typography.pxToRem(14),
