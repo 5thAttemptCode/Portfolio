@@ -1,13 +1,13 @@
 import React from 'react'
 import './style.css'
-import { useCameraContext } from '@/context/cameraContext'
+import useCameraStore from '@/context/cameraContext'
 import { useMenu } from '@/context/menuContext'
 
 
 export default function Logo() {
 
   const { closeMenu } = useMenu()
-  const { initialCameraPosition, setCameraPosition } = useCameraContext()
+  const { initialCameraPosition, setCameraPosition } = useCameraStore()
 
   return (
     <button 

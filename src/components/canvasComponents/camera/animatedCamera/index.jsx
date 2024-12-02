@@ -1,7 +1,7 @@
 import React from "react"
 import { animated, config, useSpring } from "@react-spring/three"
 import { PerspectiveCamera } from "@react-three/drei"
-import { useCameraContext } from "@/context/cameraContext"
+import useCameraStore from "@/context/cameraContext"
 import useOnMobile from "@/customHooks/useOnMobile"
 
 
@@ -18,7 +18,7 @@ export default function AnimatedCamera() {
     initialCameraPosition,
     disableAnimation,
     hasInteracted,
-  } = useCameraContext()
+  } = useCameraStore()
 
   // Camera animation
   const springProps = useSpring({

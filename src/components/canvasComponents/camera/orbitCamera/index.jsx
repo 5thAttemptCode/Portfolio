@@ -1,12 +1,12 @@
 import { useEffect } from "react"
 import { useThree } from "@react-three/fiber"
-import { useCameraContext } from "@/context/cameraContext"
+import useCameraStore from "@/context/cameraContext"
 
 
 function OrbitCamera() {
 
   const { camera } = useThree()
-  const { setCameraPosition, setDisableAnimation, setHasInteracted } = useCameraContext()
+  const { setCameraPosition, setDisableAnimation, setHasInteracted } = useCameraStore()
 
   useEffect(() => {
     const updateCameraPosition = () => {

@@ -1,42 +1,30 @@
-import React, { createContext, useContext, useState } from "react"
+import { create } from "zustand"
 
 
-const CameraContext = createContext()
+const useCameraStore = create((set) => ({
+  initialCameraPosition: [ 0, 1.28, 8.82 ],
+  animatedCameraPosition: [ -20, 10, 50 ],
+  cameraPosition: [ 0, 1.28, 8.82 ],
+  disableAnimation: false,
+  hasInteracted: false,
 
+  // Method to update camera position with animation control
+  setCameraPosition: (position, useAnimation = true) => {
+    set({
+      cameraPosition: position,
+      disableAnimation: !useAnimation,
+    })
+  },
 
-export const CameraProvider = ({ children }) => {
+  // Method to toggle interaction state
+  setHasInteracted: (hasInteracted) => {
+    set({ hasInteracted })
+  },
 
-  const initialCameraPosition = [ 0, 1.28, 8.82 ]
-  const animatedCameraPosition = [ -20, 10, 50 ]
+  // Method to toggle animation disabling
+  setDisableAnimation: (disableAnimation) => {
+    set({ disableAnimation })
+  },
+}))
 
-  const [ cameraPosition, setCameraPositionState ] = useState(initialCameraPosition)
-  const [ disableAnimation, setDisableAnimation ] = useState(false)
-  const [ hasInteracted, setHasInteracted ] = useState(false)
-
-  // Enhanced setCameraPosition with animation control
-  const setCameraPosition = (position, useAnimation = true) => {
-    setDisableAnimation(!useAnimation) // Enable/disable animation based on parameter
-    setCameraPositionState(position)
-  }
-
-  return (
-    <CameraContext.Provider
-      value={{
-        cameraPosition,
-        setCameraPosition,
-        disableAnimation,
-        setDisableAnimation,
-        hasInteracted,
-        setHasInteracted,
-        initialCameraPosition,
-        animatedCameraPosition,
-      }}
-    >
-      {children}
-    </CameraContext.Provider>
-  )
-}
-
-export const useCameraContext = () => {
-  return useContext(CameraContext)
-}
+export default useCameraStore

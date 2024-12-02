@@ -3,7 +3,7 @@ import './style.css'
 import HamburgerMenu from './components/hamburger'
 import { ContactData } from '@/components/data/contactData'
 import { MenuData } from '@/components/data/menuData'
-import { useCameraContext } from '@/context/cameraContext'
+import useCameraStore from '@/context/cameraContext'
 import { useCopyEmail } from '@/customHooks/useCopyEmail'
 import { useMenu } from '@/context/menuContext'
 import { useModal } from '@/context/modalContext'
@@ -12,7 +12,7 @@ import { X } from 'phosphor-react'
 
 export default function ResponsiveMenu() {
 
-  const { setCameraPosition } = useCameraContext()
+  const { setCameraPosition } = useCameraStore()
 
   const { setModalOpen } = useModal()
 
