@@ -7,7 +7,7 @@
   width: 310px;
   justify-content: center;
   align-items: flex-end;
-  gap: 2rem;
+  gap: 2.5rem;
   transition: all 0.5s;
   backdrop-filter: var(--blur-100);
   background: var(--gradient-100);
@@ -58,8 +58,11 @@
   .quick-contact{
 
     > h3{
-      font-size: 1.3rem;
+      align-self: flex-end;
       border-bottom: 2px solid var(--accent-color-200);
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
       color: var(--accent-color-200);
     }
 
