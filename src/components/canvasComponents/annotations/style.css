@@ -1,6 +1,9 @@
 .annotation-wrapper{
   cursor: grab;
-  gap: 65px;
-  margin-top: 230px;
+  gap: 88px;
   width: var(--annotation-btn-width);
+
+  &:active{
+    cursor: grabbing;
+  }
 }

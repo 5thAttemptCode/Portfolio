@@ -37,10 +37,10 @@ export default function DragNotice() {
     <>
       {textVisible && (
         <div className='drag-notice flex-col-center'>
-          <Hand className='hand' size={32} />
-          <h3>Drag to Explore</h3>
+          <Hand className='hand' size={25} />
+          <h3>Drag to explore</h3>
         </div>
       )}
     </>
-  );
+  )
 }

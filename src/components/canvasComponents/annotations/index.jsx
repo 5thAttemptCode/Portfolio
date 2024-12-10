@@ -15,10 +15,12 @@ export default function Annotation() {
   const distanceFactor = 3
   const displayStyle = { display: (modalOpen || menuOpen) ? "none" : "block" }
 
+  const yPosition = -0.2
+
   return (
     <>
       <Html 
-        position={[ -0.65, 1.01, -1.15 ]} 
+        position={[ -0.65, yPosition, -1.15 ]} 
         rotation-y={3.65} 
         transform 
         occlude
@@ -39,7 +41,7 @@ export default function Annotation() {
       </Html>
       
       <Html 
-        position={[ -1.13, 1.01, -0.7 ]} 
+        position={[ -1.13, yPosition, -0.7 ]} 
         rotation-y={-2.15} 
         transform
         occlude
