@@ -1,14 +1,8 @@
 .annotation{
-  display: flex;
-  gap: 1rem;
-  z-index: 0;
-  transition: var(--transition-time-100);
-  
   > a{
     font-size: 15px;
     letter-spacing: 1px;
     padding-block: 5px;
-    font-weight: 500;
     background: var(--light-color-200);
     border-radius: var(--border-radius-100);
     color: var(--dark-color-100);
