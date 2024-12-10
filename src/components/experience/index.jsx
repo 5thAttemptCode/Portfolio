@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Canvas} from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { LoadingScreen } from '@/components/loadingScreen'
 import CanExperience from './canExperience'
@@ -33,6 +33,8 @@ export default function Experience() {
         onCreated={() => setCanvasLoaded(true)}
       >
         <OrbitControls 
+          enableDamping={true}
+          dampingFactor={0.07}
           enablePan={false} 
           enableZoom={false} 
           minPolarAngle={Math.PI / 2.5} 
