@@ -5,9 +5,9 @@ import LightFormer from './components/lightFormer'
 
 export default function Lights() {
 
-  const intensityCeiling = 6
-  const intensityFloor = 2
-  const intensitySides = 0.4
+  const intensityCeiling = 8
+  const intensityFloor = 4
+  const intensitySides = 0.5
 
   const lightPropsCeiling = [
     { intensity: intensityCeiling, rotationX: Math.PI / 2, position: [-6, 4, -6], scale: [10, 1, 1] },
@@ -59,4 +59,3 @@ export default function Lights() {
     </>
   )
 }
-
